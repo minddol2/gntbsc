@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Jcounsels">
+
+    <typeAlias  alias="egovMap"      type = "egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="JcounselVO"       type = "egovframework.goncs.sub04.service.JcounselVO"/>
+    <typeAlias  alias="JcounselVOs"       type = "egovframework.goncs.sub04.service.JcounselVO"/>
+    
+
+	<select id="jcounselDAO.selectJcounselList" parameterClass="JcounselVO" resultClass="JcounselVOs">
+	    <![CDATA[
+	    	SELECT 
+        		*
+   			FROM    tb_jobcounsel
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="datexx">
+		     <![CDATA[   
+				AND datexx = #datexx#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="timexx">
+		     <![CDATA[   
+				AND timexx LIKE CONCAT ('%', #timexx#,'%')
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="counsel_gbn">
+		     <![CDATA[   
+				AND counsel_gbn = #counsel_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="name">
+		     <![CDATA[   
+				AND name LIKE CONCAT ('%', #name#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="mobile">
+		     <![CDATA[   
+				AND mobile LIKE CONCAT ('%', #mobile#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="status">
+            <isNotEqual property="status" compareValue="0">
+            	AND status = #status#
+            </isNotEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY idx desc
+			LIMIT 20
+		]]>
+    </select>
+    
+	<select id="jcounselDAO.selectJcounselListw" parameterClass="JcounselVO" resultClass="JcounselVOs">
+	    <![CDATA[
+	    	SELECT 
+        		*
+   			FROM    tb_jobcounsel
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="datexx">
+		     <![CDATA[   
+				AND datexx = #datexx#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="timexx">
+		     <![CDATA[   
+				AND timexx LIKE CONCAT ('%', #timexx#,'%')
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="counsel_gbn">
+		     <![CDATA[   
+				AND counsel_gbn = #counsel_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="name">
+		     <![CDATA[   
+				AND name LIKE CONCAT ('%', #name#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="mobile">
+		     <![CDATA[   
+				AND mobile LIKE CONCAT ('%', #mobile#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="status">
+            <isNotEqual property="status" compareValue="0">
+            	AND status = #status#
+            </isNotEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY idx desc
+			LIMIT  #recordCountPerPage# OFFSET #firstIndex#
+		]]>
+    </select>
+    
+	<select id="jcounselDAO.selectJcounselListCnt" parameterClass="JcounselVO" resultClass="int">
+	    <![CDATA[
+	    	SELECT 
+        		COUNT(idx) AS totcnt
+   			FROM    tb_jobcounsel
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="datexx">
+		     <![CDATA[   
+				AND datexx = #datexx#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="timexx">
+		     <![CDATA[   
+				AND timexx LIKE CONCAT ('%', #timexx#,'%')
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="counsel_gbn">
+		     <![CDATA[   
+				AND counsel_gbn = #counsel_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="name">
+		     <![CDATA[   
+				AND name LIKE CONCAT ('%', #name#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="mobile">
+		     <![CDATA[   
+				AND mobile LIKE CONCAT ('%', #mobile#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="status">
+            <isNotEqual property="status" compareValue="0">
+            	AND status = #status#
+            </isNotEqual>
+        </isNotEmpty>
+    </select>
+    
+	<insert id="jcounselDAO.insertJcounsel_info" parameterClass="JcounselVO">
+        <![CDATA[
+            INSERT INTO tb_jobcounsel 
+                  ( counsel_gbn
+                  , datexx
+                  , timexx
+                  , us_id
+                  , name
+                  , mobile
+                  , userfile1
+                  , userfile2
+                  , userfile3
+                  , content1
+                  , status
+                  , sys_id
+                  , com_ip
+                  , refuse_txt
+                  , reg_date )
+           VALUES ( #counsel_gbn#
+           		  , #datexx#
+                  , #timexx#
+                  , #us_id#
+                  , #name#
+                  , #mobile#
+                  , #userfile1#
+                  , #userfile2#
+                  , #userfile3#
+                  , #content1#
+                  , #status#
+                  , #sys_id#
+                  , #com_ip#
+                  , #refuse_txt#
+                  , now() )
+        ]]>
+    </insert>
+    
+	<update id="jcounselDAO.updateJcounsel_info" parameterClass="JcounselVO">
+        <![CDATA[
+            UPDATE tb_jobcounsel 
+               SET counsel_gbn = #counsel_gbn#, 
+               	   datexx = #datexx#,
+               	   timexx = #timexx#,
+               	   name = #name#,
+               	   mobile = #mobile#
+        ]]>
+        <isNotEmpty property="us_id">
+        	<![CDATA[
+               	  , us_id = #us_id#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="userfile1">
+        	<![CDATA[
+               	   ,userfile1 = #userfile1#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="userfile2">
+        	<![CDATA[
+               	   ,userfile2 = #userfile2#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="userfile3">
+        	<![CDATA[
+               	   ,userfile3 = #userfile3#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="content1">
+        	<![CDATA[
+               	   ,content1 = #content1#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="status">
+        	<![CDATA[
+               	   ,status = #status#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="sys_id">
+        	<![CDATA[
+               	   ,sys_id = #sys_id#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="com_ip">
+        	<![CDATA[
+               	   ,com_ip = #com_ip#
+        	]]>
+        </isNotEmpty>
+        <isNotEmpty property="refuse_txt">
+        	<![CDATA[
+               	   ,refuse_txt = #refuse_txt#
+        	]]>
+        </isNotEmpty>
+        <![CDATA[
+             WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="jcounselDAO.changeJcounsel_info" parameterClass="JcounselVO">
+        <![CDATA[
+            UPDATE tb_jobcounsel 
+               SET status = #status#,
+        ]]>
+               <isNotEmpty property="refuse_txt">
+                refuse_txt  = #refuse_txt#,
+               </isNotEmpty>
+        <![CDATA[
+               	   sys_id = #sys_id#,
+               	   com_ip = #com_ip# 
+             WHERE idx = #idx#
+        ]]>
+    </update>
+	
+	<select id="jcounselDAO.selectJcounsel" parameterClass="JcounselVO" resultClass="JcounselVOs">
+		<![CDATA[
+			SELECT *
+			FROM tb_jobcounsel
+			WHERE 1=1
+        ]]>
+        <isNotEmpty property="idx">
+		     <isNotEqual property="idx" compareValue="0">
+		     <![CDATA[   
+				AND idx = #idx#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="datexx">
+		     <![CDATA[   
+				AND datexx = #datexx#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="timexx">
+		     <![CDATA[   
+				AND timexx LIKE CONCAT ('%', #timexx#,'%')
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="counsel_gbn">
+		     <![CDATA[   
+				AND counsel_gbn = #counsel_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="name">
+		     <![CDATA[   
+				AND name LIKE CONCAT ('%', #name#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="mobile">
+		     <![CDATA[   
+				AND mobile LIKE CONCAT ('%', #mobile#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="status">
+            <isNotEqual property="status" compareValue="0">
+            	AND status = #status#
+            </isNotEqual>
+        </isNotEmpty>
+	</select>
+	
+	<select id="jcounselDAO.selectJcounsel2" parameterClass="JcounselVO" resultClass="JcounselVOs">
+		<![CDATA[
+			SELECT *
+			FROM tb_jobcounsel
+			WHERE 1=1
+        ]]>
+        <isNotEmpty property="idx">
+            <isNotEqual property="idx" compareValue="0">
+		     <![CDATA[   
+				AND idx = #idx#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+        <isNotEmpty property="datexx">
+		     <![CDATA[   
+				AND datexx = #datexx#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="timexx">
+		     <![CDATA[   
+   				AND timexx LIKE CONCAT ('%', #timexx#,'%')
+   			]]>
+		</isNotEmpty>
+		<isNotEmpty property="counsel_gbn">
+		     <![CDATA[   
+				AND counsel_gbn = #counsel_gbn#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="status">
+            <isEqual property="status" compareValue="1">
+             	<![CDATA[   AND status = #status#	]]> 
+            </isEqual>
+            <isEqual property="status" compareValue="2">
+               <![CDATA[ AND status = #status#	]]> 
+            </isEqual>
+            <isEqual property="status" compareValue="3">
+               <![CDATA[ AND status = #status#	]]> 
+            </isEqual>
+            <isEqual property="status" compareValue="5">
+               <![CDATA[ AND (status = '1' or status = '2')	]]> 
+            </isEqual>
+        </isNotEmpty>
+	</select>
+	
+	<select id="jcounselDAO.selectJcounsel3" resultClass="JcounselVOs">
+		<![CDATA[
+			SELECT *
+			FROM tb_jobcounsel
+			WHERE 1=1
+			AND idx = #idx#
+        ]]>
+	</select>
+	
+	<delete id="jcounselDAO.deleteJcounsel">
+        <![CDATA[
+            delete 
+            from tb_jobcounsel
+            WHERE idx = #idx#
+        ]]>
+    </delete>
+    
+	<select id="jcounselDAO.selectJcounselXls" parameterClass="JcounselVO" resultClass="JcounselVOs">
+	    <![CDATA[
+	    	SELECT 
+        		*
+   			FROM    tb_jobcounsel
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="datexx">
+		     <![CDATA[   
+				AND datexx = #datexx#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="timexx">
+		     <![CDATA[   
+				AND timexx LIKE CONCAT ('%', #timexx#,'%')
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="counsel_gbn">
+		     <![CDATA[   
+				AND counsel_gbn = #counsel_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="name">
+		     <![CDATA[   
+				AND name LIKE CONCAT ('%', #name#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="mobile">
+		     <![CDATA[   
+				AND mobile LIKE CONCAT ('%', #mobile#,'%') 
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="status">
+            <isNotEqual property="status" compareValue="0">
+            	AND status = #status#
+            </isNotEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY idx desc
+		]]>
+    </select>
+    
+</sqlMap>	

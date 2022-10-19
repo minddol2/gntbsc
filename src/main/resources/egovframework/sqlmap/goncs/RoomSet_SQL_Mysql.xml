@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="RoomSets">
+
+    <typeAlias  alias="egovMap"      type = "egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="RoomSetVO"       type = "egovframework.goncs.RoomRent.service.RoomSetVO"/>
+    <typeAlias  alias="RoomSetVOs"       type = "egovframework.goncs.RoomRent.service.RoomSetVO"/>
+    
+
+	<select id="roomSetDAO.selectRoomSetList" parameterClass="RoomSetVO" resultClass="RoomSetVOs">
+	    <![CDATA[
+	    	SELECT 
+        		*
+   			FROM    tb_room_set
+        	WHERE datexx = #datexx#
+        	ORDER BY datexx, idx
+       ]]>
+    </select>
+    
+	<insert id="roomSetDAO.insertRoomSet_info" parameterClass="RoomSetVO">
+        <![CDATA[
+            INSERT INTO tb_room_set 
+                  ( datexx
+                  , room_id
+                  , rent_yn
+                  , sys_id
+                  , com_ip
+                  , reg_date )
+           VALUES ( #datexx#
+                  , #room_id#
+                  , #rent_yn#
+                  , #sys_id#
+                  , #com_ip#
+                  , now() )
+        ]]>
+    </insert>
+    
+	<update id="roomSetDAO.updateRoomSet_info" parameterClass="RoomSetVO">
+        <![CDATA[
+            UPDATE tb_room_set 
+               SET rent_yn = #rent_yn#, sys_id = #sys_id#,
+               	   com_ip = #com_ip# 
+             WHERE room_id = #room_id# AND datexx = #datexx#
+        ]]>
+    </update>
+    
+	<select id="roomSetDAO.selectRoomSet_info" parameterClass="RoomSetVO" resultClass="RoomSetVOs">
+	    <![CDATA[
+	    	SELECT 
+        		*
+   			FROM    tb_room_set
+        	WHERE datexx = #datexx#
+        ]]>
+        <isNotEmpty property="room_id">
+		     <![CDATA[   
+				AND room_id = #room_id#
+			]]> 
+		</isNotEmpty>
+        <![CDATA[
+        	ORDER BY idx 
+        	LIMIT 1
+        ]]>
+    </select>
+    
+	<select id="roomSetDAO.selectRoomSet_info2" parameterClass="RoomSetVO" resultClass="RoomSetVOs">
+	    <![CDATA[
+	    	SELECT 
+        		*
+   			FROM    tb_room_set
+        	WHERE datexx = #datexx#
+        ]]>
+        <isNotEmpty property="room_id">
+		     <![CDATA[   
+				AND room_id = #room_id#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="rent_yn">
+		     <![CDATA[   
+				AND rent_yn = #rent_yn#
+			]]> 
+		</isNotEmpty>
+        <![CDATA[
+        	ORDER BY idx 
+        	LIMIT 1
+        ]]>
+    </select>
+    
+</sqlMap>	

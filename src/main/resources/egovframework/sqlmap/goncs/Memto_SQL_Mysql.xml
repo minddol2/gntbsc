@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Memtos">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="MemtoVO" type="egovframework.goncs.memto.service.MemtoVO"/>
+	<typeAlias  alias="MemtoVOs" type="egovframework.goncs.memto.service.MemtoVO"/>
+	
+	<select id="memtoDAO.selectMemtoList" parameterClass="MemtoVO" resultClass="MemtoVOs">
+	    <![CDATA[
+	    	SELECT 
+        		a.*, ifnull(b.us_phone,'') us_mobile, ifnull(c.cd_name,'') us_major11_nm, ifnull(d.cd_name,'') us_major12_nm
+        		, ifnull(e.us_name,'') memto_nm, ifnull(e.us_phone,'') memto_mobile, ifnull(b.us_buss_gbn,'1') us_buss_gbn
+        		, ifnull(b.us_name,'') us_name,
+        		CASE WHEN CHAR_LENGTH(b.us_name) > 2 THEN 
+				    CONCAT(
+        				SUBSTRING(b.us_name, 1, 1)
+        				,LPAD('*', CHAR_LENGTH(b.us_name) - 2, '*')
+        				,SUBSTRING(b.us_name, CHAR_LENGTH(b.us_name), CHAR_LENGTH(b.us_name))
+    				)
+    				ELSE CONCAT(
+        				SUBSTRING(b.us_name, 1, 1)
+        				,LPAD('*', CHAR_LENGTH(b.us_name) - 1, '*')
+    				)
+				END AS us_namex
+   			FROM   tb_memtocounsel a
+   			left join member b on b.us_id=a.us_id
+   			left join tb_code c on c.code=a.us_major11 and c.maxcod=0
+   			left join tb_code d on d.code=a.us_major12 and d.maxcod=a.us_major11
+   			left join member e on e.us_id=a.memto
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND a.us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="status">
+		     <![CDATA[   
+				AND a.status = #status#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="memto">
+		     <![CDATA[   
+				AND a.memto = #memto#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_major11">
+		    <isNotEqual property="us_major11" compareValue="0">
+		     <![CDATA[   
+				AND a.us_major11 = #us_major11#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="us_major12">
+		    <isNotEqual property="us_major12" compareValue="0">
+		     <![CDATA[   
+				AND a.us_major12 = #us_major12#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+		     <![CDATA[   
+				AND b.us_buss_gbn = #us_buss_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="memto_gbn">
+		     <![CDATA[   
+				AND a.memto_gbn = #memto_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="searchWrd">
+		    <isEqual property="searchCnd" compareValue="1">
+		     <![CDATA[   
+				AND b.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="2">
+		     <![CDATA[   
+				AND e.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="3">
+		     <![CDATA[   
+				AND a.memto LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="4">
+		     <![CDATA[   
+				AND c.cd_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="5">
+		     <![CDATA[   
+				AND a.title LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="6">
+		     <![CDATA[   
+				AND a.us_company LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+		</isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.idx desc
+			LIMIT  #recordCountPerPage# OFFSET #firstIndex#
+		]]>
+    </select>
+    
+	<select id="memtoDAO.selectMemtoXls" parameterClass="MemtoVO" resultClass="MemtoVOs">
+	    <![CDATA[
+	    	SELECT 
+        		a.*, ifnull(b.us_phone,'') us_mobile, ifnull(c.cd_name,'') us_major11_nm, ifnull(d.cd_name,'') us_major12_nm
+        		, ifnull(e.us_name,'') memto_nm, ifnull(e.us_phone,'') memto_mobile, ifnull(b.us_buss_gbn,'1') us_buss_gbn
+        		, ifnull(b.us_name,'') us_name
+   			FROM   tb_memtocounsel a
+   			left join member b on b.us_id=a.us_id
+   			left join tb_code c on c.code=a.us_major11 and c.maxcod=0
+   			left join tb_code d on d.code=a.us_major12 and d.maxcod=a.us_major11
+   			left join member e on e.us_id=a.memto
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND a.us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="status">
+		     <![CDATA[   
+				AND a.status = #status#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="memto">
+		     <![CDATA[   
+				AND a.memto = #memto#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_major11">
+		    <isNotEqual property="us_major11" compareValue="0">
+		     <![CDATA[   
+				AND a.us_major11 = #us_major11#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="us_major12">
+		    <isNotEqual property="us_major12" compareValue="0">
+		     <![CDATA[   
+				AND a.us_major12 = #us_major12#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+		     <![CDATA[   
+				AND b.us_buss_gbn = #us_buss_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="memto_gbn">
+		     <![CDATA[   
+				AND a.memto_gbn = #memto_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="searchWrd">
+		    <isEqual property="searchCnd" compareValue="1">
+		     <![CDATA[   
+				AND b.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="2">
+		     <![CDATA[   
+				AND e.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="3">
+		     <![CDATA[   
+				AND a.memto LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="4">
+		     <![CDATA[   
+				AND c.cd_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="5">
+		     <![CDATA[   
+				AND a.title LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="6">
+		     <![CDATA[   
+				AND a.us_company LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+		</isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.idx desc
+		]]>
+    </select>
+    
+	<select id="memtoDAO.selectMemtoListCnt" parameterClass="MemtoVO" resultClass="int">
+	    <![CDATA[
+	    	SELECT 
+        		COUNT(a.idx) AS totcnt
+   			FROM   tb_memtocounsel a
+   			left join member b on b.us_id=a.us_id
+   			left join tb_code c on c.code=a.us_major11 and c.maxcod=0
+   			left join tb_code d on d.code=a.us_major12 and d.maxcod=a.us_major11
+   			left join member e on e.us_id=a.memto
+        	WHERE 1=1
+        ]]>
+        <isNotEmpty property="us_id">
+		     <![CDATA[   
+				AND a.us_id = #us_id#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="status">
+		     <![CDATA[   
+				AND a.status = #status#
+			]]> 
+		</isNotEmpty>
+        <isNotEmpty property="memto">
+		     <![CDATA[   
+				AND a.memto = #memto#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="us_major11">
+		    <isNotEqual property="us_major11" compareValue="0">
+		     <![CDATA[   
+				AND a.us_major11 = #us_major11#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="us_major12">
+		    <isNotEqual property="us_major12" compareValue="0">
+		     <![CDATA[   
+				AND a.us_major12 = #us_major12#
+			]]> 
+			</isNotEqual>
+		</isNotEmpty>
+		<isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+		     <![CDATA[   
+				AND b.us_buss_gbn = #us_buss_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="memto_gbn">
+		     <![CDATA[   
+				AND a.memto_gbn = #memto_gbn#
+			]]> 
+		</isNotEmpty>
+		<isNotEmpty property="searchWrd">
+		    <isEqual property="searchCnd" compareValue="1">
+		     <![CDATA[   
+				AND b.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="2">
+		     <![CDATA[   
+				AND e.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="3">
+		     <![CDATA[   
+				AND a.memto LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="4">
+		     <![CDATA[   
+				AND c.cd_name LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="5">
+		     <![CDATA[   
+				AND a.title LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+			<isEqual property="searchCnd" compareValue="6">
+		     <![CDATA[   
+				AND a.us_company LIKE CONCAT ('%', #searchWrd#,'%')
+			]]> 
+			</isEqual>
+		</isNotEmpty>
+    </select>
+    
+	<select id="memtoDAO.selectMemto" resultClass="MemtoVOs">
+		<![CDATA[
+			SELECT a.*, ifnull(b.us_phone,'') us_mobile, ifnull(c.cd_name,'') us_major11_nm, ifnull(d.cd_name,'') us_major12_nm
+        		, ifnull(e.us_name,'') memto_nm, ifnull(e.us_phone,'') memto_mobile, ifnull(b.us_name,'') us_name
+        		, ifnull(b.us_phone,'') us_mobile, ifnull(b.us_email,'') us_email, ifnull(b.us_saupno,'') us_saupno
+        		, ifnull(b.us_addrxx,'') us_addrxx, ifnull(b.us_addres,'') us_addres, ifnull(b.us_buss_gbn,'1') us_buss_gbn
+        		, ifnull(f.us_name,'') hope_memto_nm, ifnull(f.us_phone,'') hope_memto_mobile
+			FROM tb_memtocounsel a
+   			left join member b on b.us_id=a.us_id
+   			left join tb_code c on c.code=a.us_major11 and c.maxcod=0
+   			left join tb_code d on d.code=a.us_major12 and d.maxcod=a.us_major11
+   			left join member e on e.us_id=a.memto
+   			left join member f on f.us_id=a.hope_memto
+   			where 1=1
+   			AND a.idx = #idx#
+        ]]>
+	</select>
+	
+	<insert id="memtoDAO.insertMemto_info" parameterClass="MemtoVO">
+        <![CDATA[
+            INSERT INTO tb_memtocounsel 
+                  ( us_id
+                  , us_company
+                  , us_position
+                  , us_makeyear
+                  , us_uptaex
+                  , us_major11
+                  , us_major12
+                  , us_major1_etc
+                  , hope_memto
+                  , memto
+                  , memto_gbn
+                  , room_gbn
+                  , room_date
+                  , room_time1
+                  , room_time2
+                  , room_wdate
+                  , room_wtime1
+                  , room_wtime2
+                  , att_cnt
+                  , title
+                  , contentx
+                  , userfile1
+                  , userfile2
+                  , userfile3
+                  , link1
+                  , link2
+                  , link3
+                  , status
+                  , sys_id
+                  , com_ip
+                  , reg_date )
+           VALUES ( #us_id#
+                  , #us_company#
+                  , #us_position#
+                  , #us_makeyear#
+                  , #us_uptaex#
+                  , #us_major11#
+                  , #us_major12#
+                  , #us_major1_etc#
+                  , #hope_memto#
+                  , #memto#
+                  , #memto_gbn#
+                  , #room_gbn#
+                  , #room_date#
+                  , #room_time1#
+                  , #room_time2#
+                  , #room_wdate#
+                  , #room_wtime1#
+                  , #room_wtime2#
+                  , #att_cnt#
+                  , #title#
+                  , #contentx#
+                  , #userfile1#
+                  , #userfile2#
+                  , #userfile3#
+                  , #link1#
+                  , #link2#
+                  , #link3#
+                  , #status#
+                  , #sys_id#
+                  , #com_ip#
+                  , now() )
+        ]]>
+    </insert>
+    
+	<update id="memtoDAO.updateMemto_info" parameterClass="MemtoVO">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET us_major11 = #us_major11#, 
+               	   us_major12 = #us_major12#,
+               	   us_major1_etc = #us_major1_etc#,
+               	   hope_memto = #hope_memto#,
+               	   memto = #memto#,
+               	   memto_gbn = #memto_gbn#,
+               	   room_gbn = #room_gbn#,
+               	   att_cnt = #att_cnt#,
+               	   title = #title#,
+               	   contentx = #contentx#,
+               	   userfile1 = #userfile1#,
+               	   userfile2 = #userfile2#,
+               	   userfile3 = #userfile3#,
+               	   link1 = #link1#,
+               	   link2 = #link2#,
+               	   link3 = #link3#,
+		]]>
+		<isNotEmpty property="room_date">
+               	   room_date = #room_date#,
+        </isNotEmpty>
+		<isNotEmpty property="room_time1">
+               	   room_time1 = #room_time1#,
+        </isNotEmpty>
+		<isNotEmpty property="room_time2">
+               	   room_time2 = #room_time2#,
+        </isNotEmpty>
+		<isNotEmpty property="room_wdate">
+               	   room_wdate = #room_wdate#,
+        </isNotEmpty>
+		<isNotEmpty property="room_wtime1">
+               	   room_wtime1 = #room_wtime1#,
+        </isNotEmpty>
+		<isNotEmpty property="room_wtime2">
+               	   room_wtime2 = #room_wtime2#,
+        </isNotEmpty>
+		<isNotEmpty property="status">
+               	   status = #status#,
+        </isNotEmpty>
+		<isNotEmpty property="sys_id">
+               	   sys_id = #sys_id#,
+        </isNotEmpty>
+		<isNotEmpty property="sys_memo">
+               	   sys_memo = #sys_memo# 
+        </isNotEmpty>
+		<![CDATA[ 
+				   com_ip = #com_ip#
+             WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.updateMemto_gbn" parameterClass="MemtoVO">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET memto_gbn = #memto_gbn#,
+               	   room_gbn = #room_gbn#,
+               	   room_wdate = #room_wdate#,
+               	   room_wtime1 = #room_wtime1#,
+               	   room_wtime2 = #room_wtime2#,
+		]]>
+		<isNotEmpty property="sys_id">
+               	   sys_id = #sys_id#,
+        </isNotEmpty>
+		<![CDATA[ 
+				   com_ip = #com_ip#
+             WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.changeMemto_info" parameterClass="MemtoVO">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET status = #status#,
+        ]]>
+        <isNotEmpty property="sys_memo">
+                sys_memo  = #sys_memo#,
+        </isNotEmpty>
+        <isNotEmpty property="memto">
+                memto  = #memto#,
+        </isNotEmpty>
+        <isNotEmpty property="sys_id">
+           	   sys_id = #sys_id#,
+        </isNotEmpty>
+        <![CDATA[
+           	   com_ip = #com_ip# 
+           WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.changeMemto_hit">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET hit = hit+1
+            WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.changeMemto_coment">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET str_date = now(),
+               status='3'
+           WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.changeMemto_coment2">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET str_date = ''
+           WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.changeMemto_point">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET point = #point#
+               	, point2 = #point2#
+        ]]>
+		<isNotEmpty property="status">
+                , status  = #status#
+        </isNotEmpty>               
+        <![CDATA[
+			WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<delete id="memtoDAO.deleteMemto">
+        <![CDATA[
+            delete 
+            from tb_memtocounsel
+            WHERE idx = #idx#
+        ]]>
+    </delete>
+    
+	<update id="memtoDAO.changeMemto_info24">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET status = '4'
+           WHERE status = '3'
+           and TIMESTAMPDIFF(day, str_date, now()) >= 1
+        ]]>
+    </update>
+    
+	<update id="memtoDAO.changeMemto_info24sms">
+        <![CDATA[
+            UPDATE tb_memtocounsel 
+               SET sendsms = 'Y'
+           WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<select id="memtoDAO.selectMemtoList4" resultClass="MemtoVOs">
+	    <![CDATA[
+	    	SELECT 
+        		a.*, ifnull(b.us_phone,'') us_mobile, ifnull(c.cd_name,'') us_major11_nm, ifnull(d.cd_name,'') us_major12_nm
+        		, ifnull(e.us_name,'') memto_nm, ifnull(e.us_phone,'') memto_mobile, ifnull(b.us_buss_gbn,'1') us_buss_gbn
+        		, ifnull(b.us_name,'') us_name
+   			FROM   tb_memtocounsel a
+   			left join member b on b.us_id=a.us_id
+   			left join tb_code c on c.code=a.us_major11 and c.maxcod=0
+   			left join tb_code d on d.code=a.us_major12 and d.maxcod=a.us_major11
+   			left join member e on e.us_id=a.memto
+        	WHERE status = '4'
+            and TIMESTAMPDIFF(day, str_date, now()) >= 4
+            and b.us_smschk='Y'
+            and a.sendsms='N'
+			ORDER BY a.idx desc
+		]]>
+    </select>
+	
+	
+</sqlMap>	

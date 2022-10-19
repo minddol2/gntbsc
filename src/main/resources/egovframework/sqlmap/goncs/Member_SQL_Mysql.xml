@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Members">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="MemberVO" type="egovframework.goncs.member.service.MemberVO"/>
+	<typeAlias  alias="MemberVOs" type="egovframework.goncs.member.service.MemberVO"/>
+		
+	<select id="memberDAO.selectMemberList" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.*, ifnull(b.cd_name,'') us_major11_nm, ifnull(c.cd_name,'') us_major12_nm 
+				, ifnull(d.cd_name,'') us_major21_nm, ifnull(e.cd_name,'') us_major22_nm
+			FROM member a
+			left join tb_code b on b.code=a.us_major11 and b.maxcod=0
+			left join tb_code c on c.code=a.us_major12 and c.maxcod=a.us_major11
+			left join tb_code d on d.code=a.us_major21 and d.maxcod=0
+			left join tb_code e on e.code=a.us_major22 and e.maxcod=a.us_major21
+			WHERE 1=1 and a.us_id<>'mroot'
+		]]>
+		<isNotEmpty property="us_id">
+             AND a.us_id = #us_id#
+        </isNotEmpty>
+		<isNotEmpty property="us_name">
+             AND a.us_name LIKE CONCAT ('%', #us_name#,'%')
+        </isNotEmpty>
+		<isNotEqual property="us_level" compareValue="0">
+             AND a.us_level = #us_level#
+        </isNotEqual>
+        <isNotEmpty property="us_gbn">
+             AND a.us_gbn = #us_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+             AND a.us_buss_gbn = #us_buss_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_smschk">
+             AND a.us_smschk = #us_smschk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mailchk">
+             AND a.us_mailchk = #us_mailchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_workchk">
+             AND a.us_workchk = #us_workchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mentoyn">
+             AND a.us_mentoyn = #us_mentoyn#
+        </isNotEmpty>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                AND a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="2">
+                AND a.us_id LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="3">
+                AND ( (b.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) or (c.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (d.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))  or (e.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="4">
+                AND ( (b.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) or (c.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (d.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))  or (e.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (a.us_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.idx desc
+			LIMIT  #recordCountPerPage# OFFSET #firstIndex#
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMemberListm" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.*, ifnull(b.cd_name,'') us_major11_nm, ifnull(c.cd_name,'') us_major12_nm 
+				, ifnull(d.cd_name,'') us_major21_nm, ifnull(e.cd_name,'') us_major22_nm
+				, (select ifnull(count(f.idx),0) cnt from tb_memtocounsel f where f.memto=a.us_id and f.memto_gbn='2') cam_cnt
+				, (select ifnull(count(g.idx),0) cnt from tb_memtocounsel g where g.memto=a.us_id and g.memto_gbn='1') pap_cnt
+				, (select ifnull(count(h.idx),0) cnt from tb_memtocounsel h where h.memto=a.us_id and h.memto_gbn='3') man_cnt
+				, (select ifnull(count(i.idx),0) cnt from tb_memtocounsel i where i.memto=a.us_id) mento_cnt
+				, (select ifnull(count(j.idx),0) cnt from tb_memtocounsel j where j.memto=a.us_id and j.status='5' and j.point > 0) end_cnt
+				, (select ifnull(avg(k.point),0) cnt from tb_memtocounsel k where k.memto=a.us_id and k.status='5' and k.point > 0) avg_point
+			FROM member a
+			left join tb_code b on b.code=a.us_major11 and b.maxcod=0
+			left join tb_code c on c.code=a.us_major12 and c.maxcod=a.us_major11
+			left join tb_code d on d.code=a.us_major21 and d.maxcod=0
+			left join tb_code e on e.code=a.us_major22 and e.maxcod=a.us_major21
+			WHERE 1=1 and a.us_id<>'mroot'
+		]]>
+		<isNotEmpty property="us_id">
+             AND a.us_id = #us_id#
+        </isNotEmpty>
+		<isNotEmpty property="us_name">
+             AND a.us_name LIKE CONCAT ('%', #us_name#,'%')
+        </isNotEmpty>
+		<isNotEqual property="us_level" compareValue="0">
+             AND a.us_level = #us_level#
+        </isNotEqual>
+        <isNotEmpty property="us_gbn">
+             AND a.us_gbn = #us_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+             AND a.us_buss_gbn = #us_buss_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_smschk">
+             AND a.us_smschk = #us_smschk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mailchk">
+             AND a.us_mailchk = #us_mailchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_workchk">
+             AND a.us_workchk = #us_workchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mentoyn">
+             AND a.us_mentoyn = #us_mentoyn#
+        </isNotEmpty>
+        <isNotEmpty property="us_major11">
+            <isNotEqual property="us_major11" compareValue="0">
+            	<![CDATA[
+                	AND (a.us_major11 = #us_major11# or a.us_major21 = #us_major11#) 
+                ]]>
+            </isNotEqual>
+        </isNotEmpty>
+        <isNotEmpty property="us_major12">
+            <isNotEqual property="us_major12" compareValue="0">
+            	<![CDATA[
+                AND (a.us_major12 = #us_major12# or a.us_major22 = #us_major12#)
+                ]]>
+            </isNotEqual>
+        </isNotEmpty>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                AND a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="2">
+                AND a.us_id LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="3">
+                AND ( (b.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) or (c.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (d.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))  or (e.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="4">
+                AND ( (b.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) or (c.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (d.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))  or (e.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (a.us_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.us_mentoyn, a.us_name
+			LIMIT  #recordCountPerPage# OFFSET #firstIndex#
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMemberListm2" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.*, ifnull(b.cd_name,'') us_major11_nm, ifnull(c.cd_name,'') us_major12_nm 
+				, ifnull(d.cd_name,'') us_major21_nm, ifnull(e.cd_name,'') us_major22_nm
+				, (select ifnull(count(f.idx),0) cnt from tb_memtocounsel f where f.memto=a.us_id and f.status='2') cam_cnt
+				, (select ifnull(count(g.idx),0) cnt from tb_memtocounsel g where g.memto=a.us_id and g.status='3') pap_cnt
+				, (select ifnull(count(h.idx),0) cnt from tb_memtocounsel h where h.memto=a.us_id) mento_cnt
+				, (select ifnull(count(i.idx),0) cnt from tb_memtocounsel i where i.memto=a.us_id and i.status='5' and i.point > 0) end_cnt
+				, (select ifnull(avg(k.point),0) cnt from tb_memtocounsel k where k.memto=a.us_id and k.status='5' and k.point > 0) avg_point
+			FROM member a
+			left join tb_code b on b.code=a.us_major11 and b.maxcod=0
+			left join tb_code c on c.code=a.us_major12 and c.maxcod=a.us_major11
+			left join tb_code d on d.code=a.us_major21 and d.maxcod=0
+			left join tb_code e on e.code=a.us_major22 and e.maxcod=a.us_major21
+			WHERE 1=1 and a.us_id<>'mroot' and a.us_mentoyn='Y'
+		]]>
+        <isNotEmpty property="us_gbn">
+             AND a.us_gbn = #us_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_major11">
+            <isNotEqual property="us_major11" compareValue="0">
+            	<![CDATA[
+                	AND (a.us_major11 = #us_major11# or a.us_major21 = #us_major11#) 
+                ]]>
+            </isNotEqual>
+        </isNotEmpty>
+        <isNotEmpty property="us_major12">
+            <isNotEqual property="us_major12" compareValue="0">
+            	<![CDATA[
+                AND (a.us_major12 = #us_major12# or a.us_major22 = #us_major12#)
+                ]]>
+            </isNotEqual>
+        </isNotEmpty>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                AND a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="2">
+                AND a.us_id LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.us_name
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMemberListCnt" parameterClass="MemberVO" resultClass="int">
+		<![CDATA[ 
+			SELECT Count(a.idx) totcnt
+			FROM member a
+			left join tb_code b on b.code=a.us_major11 and b.maxcod=0
+			left join tb_code c on c.code=a.us_major12 and c.maxcod=a.us_major11
+			left join tb_code d on d.code=a.us_major21 and d.maxcod=0
+			left join tb_code e on e.code=a.us_major22 and e.maxcod=a.us_major21
+			WHERE 1=1 and a.us_id<>'mroot'
+		]]>
+		<isNotEmpty property="us_id">
+             AND a.us_id = #us_id#
+        </isNotEmpty>
+		<isNotEmpty property="us_name">
+             AND a.us_name LIKE CONCAT ('%', #us_name#,'%')
+        </isNotEmpty>
+		<isNotEqual property="us_level" compareValue="0">
+             AND a.us_level = #us_level#
+        </isNotEqual>
+        <isNotEmpty property="us_gbn">
+             AND a.us_gbn = #us_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+             AND a.us_buss_gbn = #us_buss_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_mentoyn">
+             AND a.us_mentoyn = #us_mentoyn#
+        </isNotEmpty>
+        <isNotEmpty property="us_major11">
+            <isNotEqual property="us_major11" compareValue="0">
+            	<![CDATA[
+                	AND (a.us_major11 = #us_major11# or a.us_major21 = #us_major11#) 
+                ]]>
+            </isNotEqual>
+        </isNotEmpty>
+        <isNotEmpty property="us_major12">
+            <isNotEqual property="us_major12" compareValue="0">
+            	<![CDATA[
+                AND (a.us_major12 = #us_major12# or a.us_major22 = #us_major12#)
+                ]]>
+            </isNotEqual>
+        </isNotEmpty>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                AND a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="2">
+                AND a.us_id LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="3">
+                AND ( (b.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) or (c.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (d.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))  or (e.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="4">
+                AND ( (b.cd_name LIKE CONCAT ('%', #searchWrd#,'%')) or (c.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (d.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))  or (e.cd_name LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (a.us_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+        </isNotEmpty>
+	</select>
+	
+	<select id="memberDAO.selectMember" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT ifnull(idx,0) idx, ifnull(us_id,'') us_id, ifnull(us_pw,'') us_pw, ifnull(us_name,'') us_name
+				, ifnull(us_position,'') us_position, ifnull(us_level,5) us_level, ifnull(us_phone,'') us_phone
+				, ifnull(us_regdate,'') us_regdate, ifnull(us_regip,'') us_regip
+				, ifnull(us_moddate,'') us_moddate, ifnull(us_modip,'') us_modip
+				, ifnull(us_email, '') us_email, ifnull(us_smschk,'N') us_smschk
+				, ifnull(us_mailchk,'N') us_mailchk, ifnull(us_gbn,'1') us_gbn
+				, ifnull(us_buss_gbn,'1') us_buss_gbn, ifnull(us_company,'') us_company
+				, ifnull(us_saupno,'') us_saupno, ifnull(us_makeyear,'') us_makeyear
+				, ifnull(us_uptaex,'') us_uptaex, ifnull(us_zipcod,'') us_zipcod
+				, ifnull(us_addrxx,'') us_addrxx, ifnull(us_addres,'') us_addres
+				, ifnull(us_major11,'') us_major11, ifnull(us_major12,'') us_major12
+				, ifnull(us_major1_etc,'') us_major1_etc, ifnull(us_major21,'') us_major21
+				, ifnull(us_major22,'') us_major22, ifnull(us_major2_etc,'') us_major2_etc
+				, ifnull(us_workchk,'N') us_workchk, ifnull(us_mentoyn,'N') us_mentoyn
+				, ifnull(us_mento_date,'') us_mento_date
+			FROM member
+			WHERE idx = #idx#
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMember1" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT ifnull(idx,0) idx, ifnull(us_id,'') us_id, ifnull(us_pw,'') us_pw, ifnull(us_name,'') us_name
+				, ifnull(us_position,'') us_position, ifnull(us_level,5) us_level, ifnull(us_phone,'') us_phone
+				, ifnull(us_regdate,'') us_regdate, ifnull(us_regip,'') us_regip
+				, ifnull(us_moddate,'') us_moddate, ifnull(us_modip,'') us_modip
+				, ifnull(us_email, '') us_email, ifnull(us_smschk,'N') us_smschk
+				, ifnull(us_mailchk,'N') us_mailchk, ifnull(us_gbn,'1') us_gbn
+				, ifnull(us_buss_gbn,'1') us_buss_gbn, ifnull(us_company,'') us_company
+				, ifnull(us_saupno,'') us_saupno, ifnull(us_makeyear,'') us_makeyear
+				, ifnull(us_uptaex,'') us_uptaex, ifnull(us_zipcod,'') us_zipcod
+				, ifnull(us_addrxx,'') us_addrxx, ifnull(us_addres,'') us_addres
+				, ifnull(us_major11,'') us_major11, ifnull(us_major12,'') us_major12
+				, ifnull(us_major1_etc,'') us_major1_etc, ifnull(us_major21,'') us_major21
+				, ifnull(us_major22,'') us_major22, ifnull(us_major2_etc,'') us_major2_etc
+				, ifnull(us_workchk,'N') us_workchk, ifnull(us_mentoyn,'N') us_mentoyn
+				, ifnull(us_mento_date,'') us_mento_date
+			FROM member
+			WHERE us_id = #us_id#
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMember_mento" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.*
+				, (select ifnull(count(f.idx),0) cnt from tb_memtocounsel f where f.memto=a.us_id and f.status='2') cam_cnt
+				, (select ifnull(count(g.idx),0) cnt from tb_memtocounsel g where g.memto=a.us_id and g.status='3') pap_cnt
+				, (select ifnull(count(h.idx),0) cnt from tb_memtocounsel h where h.memto=a.us_id and h.status='4') mento_cnt
+				, (select ifnull(count(i.idx),0) cnt from tb_memtocounsel i where i.memto=a.us_id and i.status='5' and i.point > 0) avg_point
+			FROM member a
+			WHERE a.us_id = #us_id#
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMember_mentos" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.*
+				, (select ifnull(count(f.idx),0) cnt from tb_memtocounsel f where f.memto=a.us_id and f.memto_gbn='2') cam_cnt
+				, (select ifnull(count(g.idx),0) cnt from tb_memtocounsel g where g.memto=a.us_id and g.memto_gbn='1') pap_cnt
+				, (select ifnull(count(h.idx),0) cnt from tb_memtocounsel h where h.memto=a.us_id and h.memto_gbn='3') man_cnt
+				, (select ifnull(count(i.idx),0) cnt from tb_memtocounsel i where i.memto=a.us_id ) mento_cnt
+				, (select ifnull(count(k.idx),0) cnt from tb_memtocounsel k where k.memto=a.us_id and k.status='5' and k.point > 0) end_cnt
+				, (select ifnull(avg(j.point),0) cnt from tb_memtocounsel j where j.memto=a.us_id and j.status='5' and j.point > 0) avg_point
+			FROM member a
+			WHERE a.idx = #idx#
+		]]>
+	</select>
+
+	
+	<insert id="memberDAO.insertMember">
+        <![CDATA[
+            INSERT INTO member 
+                (   
+                    us_gbn   ,
+                    us_id   ,
+                    us_pw   ,
+                    us_position   ,
+                    us_name   ,
+                    us_phone   ,
+                    us_email ,
+                    us_smschk ,
+                    us_mailchk ,
+                    us_workchk ,
+                    us_level  ,
+                    us_regdate  ,
+                    us_regip  )
+              VALUES(
+                    '1',
+                    #us_id#,
+                    #us_pw#,
+                    #us_position#,
+                    #us_name#,
+                    #us_phone#,
+                    #us_email#,
+                    #us_smschk#,
+                    #us_mailchk#,
+                    #us_workchk#,
+                    #us_level#,
+                    now(),
+                    #us_regip# )              
+        ]]>
+    </insert>
+    
+	<insert id="memberDAO.insertMember2">
+        <![CDATA[
+            INSERT INTO member 
+                (   
+                    us_gbn ,
+                    us_id   ,
+                    us_pw   ,
+                    us_position   ,
+                    us_name   ,
+                    us_phone   ,
+                    us_email ,
+                    us_smschk ,
+                    us_mailchk ,
+                    us_workchk ,
+                    us_level  ,
+                    us_regdate  ,
+                    us_buss_gbn,
+                    us_company,
+                    us_saupno,
+                    us_makeyear,
+                    us_uptaex,
+                    us_zipcod,
+                    us_addrxx,
+                    us_addres,
+                    us_regip  )
+              VALUES(
+                    '2',
+                    #us_id#,
+                    #us_pw#,
+                    #us_position#,
+                    #us_name#,
+                    #us_phone#,
+                    #us_email#,
+                    #us_smschk#,
+                    #us_mailchk#,
+                    #us_workchk#,
+                    #us_level#,
+                    now(),
+                    #us_buss_gbn#,
+                    #us_company#,
+                    #us_saupno#,
+                    #us_makeyear#,
+                    #us_uptaex#,
+                    #us_zipcod#,
+                    #us_addrxx#,
+                    #us_addres#,
+                    #us_regip# )              
+        ]]>
+    </insert>
+    
+	<insert id="memberDAO.insertMember3">
+        <![CDATA[
+            INSERT INTO member 
+                (   
+                    us_gbn ,
+                    us_id   ,
+                    us_pw   ,
+                    us_position   ,
+                    us_name   ,
+                    us_phone   ,
+                    us_email ,
+                    us_smschk ,
+                    us_mailchk ,
+                    us_workchk ,
+                    us_level  ,
+                    us_regdate  ,
+                    us_major11  ,
+                    us_major12  ,
+                    us_major1_etc  ,
+                    us_major21  ,
+                    us_major22  ,
+                    us_major2_etc  ,
+                    us_company  ,
+                    us_regip  )
+              VALUES(
+                    '3',
+                    #us_id#,
+                    #us_pw#,
+                    #us_position#,
+                    #us_name#,
+                    #us_phone#,
+                    #us_email#,
+                    #us_smschk#,
+                    #us_mailchk#,
+                    #us_workchk#,
+                    #us_level#,
+                    now(),
+                    #us_major11#,
+                    #us_major12#,
+                    #us_major1_etc#,
+                    #us_major21#,
+                    #us_major22#,
+                    #us_major2_etc#,
+                    #us_company#,
+                    #us_regip# )              
+        ]]>
+    </insert>
+    
+	<update id="memberDAO.updateMember">
+        <![CDATA[
+	   		UPDATE member 
+            	SET us_name = #us_name#,
+        ]]>
+        <isNotEmpty property="us_pw">
+            	<![CDATA[
+                us_pw     = #us_pw#,
+                ]]>
+        </isNotEmpty>
+        <![CDATA[
+                us_position  	= #us_position#,
+                us_phone  = #us_phone#,
+                us_email  = #us_email#,
+                us_smschk  = #us_smschk#,
+                us_mailchk  = #us_mailchk#,
+                us_workchk  = #us_workchk#,
+        ]]>
+        <isNotEmpty property="us_level">
+            	<![CDATA[
+                us_level  	= #us_level#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_gbn">
+            	<![CDATA[
+                us_gbn  	= #us_gbn#,
+                ]]>
+        </isNotEmpty>
+        <![CDATA[
+        		us_moddate  	= now(),
+                us_modip  		= #us_modip#
+            WHERE us_id = #us_id#
+        ]]>
+    </update>
+    
+	<update id="memberDAO.updateMember2">
+        <![CDATA[
+	   		UPDATE member 
+            	SET us_name = #us_name#,
+        ]]>
+        <isNotEmpty property="us_pw">
+            	<![CDATA[
+                us_pw     = #us_pw#,
+                ]]>
+        </isNotEmpty>
+        <![CDATA[
+                us_position  	= #us_position#,
+                us_phone  = #us_phone#,
+                us_email  = #us_email#,
+                us_smschk  = #us_smschk#,
+                us_mailchk  = #us_mailchk#,
+                us_workchk  = #us_workchk#,
+        ]]>
+        <isNotEmpty property="us_level">
+            	<![CDATA[
+                us_level  	= #us_level#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_gbn">
+            	<![CDATA[
+                us_gbn  	= #us_gbn#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+            	<![CDATA[
+                us_buss_gbn  	= #us_buss_gbn#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_company">
+            	<![CDATA[
+                us_company  	= #us_company#,
+                ]]>
+        </isNotEmpty>
+                <isNotEmpty property="us_saupno">
+            	<![CDATA[
+                us_saupno  	= #us_saupno#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_makeyear">
+            	<![CDATA[
+                us_makeyear  	= #us_makeyear#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_uptaex">
+            	<![CDATA[
+                us_uptaex  	= #us_uptaex#,
+                ]]>
+        </isNotEmpty>
+       <isNotEmpty property="us_zipcod">
+            	<![CDATA[
+                us_zipcod  	= #us_zipcod#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_addrxx">
+            	<![CDATA[
+                us_addrxx  	= #us_addrxx#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_addres">
+            	<![CDATA[
+                us_addres  	= #us_addres#,
+                ]]>
+        </isNotEmpty>
+        <![CDATA[
+        		us_moddate  	= now(),
+                us_modip  		= #us_modip#
+            WHERE us_id = #us_id#
+        ]]>
+    </update>
+    
+	<update id="memberDAO.updateMember3">
+        <![CDATA[
+	   		UPDATE member 
+            	SET us_name = #us_name#,
+        ]]>
+        <isNotEmpty property="us_pw">
+            	<![CDATA[
+                us_pw     = #us_pw#,
+                ]]>
+        </isNotEmpty>
+        <![CDATA[
+                us_position  	= #us_position#,
+                us_phone  = #us_phone#,
+                us_email  = #us_email#,
+                us_smschk  = #us_smschk#,
+                us_mailchk  = #us_mailchk#,
+                us_workchk  = #us_workchk#,
+        ]]>
+        <isNotEmpty property="us_level">
+            	<![CDATA[
+                us_level  	= #us_level#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_gbn">
+            	<![CDATA[
+                us_gbn  	= #us_gbn#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_major11">
+            	<![CDATA[
+                us_major11  	= #us_major11#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_major12">
+            	<![CDATA[
+                us_major12  	= #us_major12#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_major21">
+            	<![CDATA[
+                us_major21  	= #us_major21#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_major22">
+            	<![CDATA[
+                us_major22  	= #us_major22#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_company">
+            	<![CDATA[
+                us_company  	= #us_company#,
+                ]]>
+        </isNotEmpty>
+        <isNotEmpty property="us_mentoyn">
+            	<![CDATA[
+                us_mentoyn  	= #us_mentoyn#,
+                ]]>
+        </isNotEmpty>
+        <isEqual property="o_mentoyn" compareValue="N">
+            <isEqual property="us_mentoyn" compareValue="Y">
+                <![CDATA[
+                us_mento_date  	= now(),
+                ]]>
+            </isEqual>
+        </isEqual>
+        <![CDATA[
+                us_major1_etc  	= #us_major1_etc#,
+                us_major2_etc  	= #us_major2_etc#,
+        		us_moddate  	= now(),
+                us_modip  		= #us_modip#
+            WHERE us_id = #us_id#
+        ]]>
+    </update>
+    
+	<update id="memberDAO.updateMember_mento">
+        <![CDATA[
+	   		UPDATE member 
+            	SET us_mentoyn = 'Y',
+            	us_mento_date = now()
+            WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<update id="memberDAO.updateMember_mento1">
+        <![CDATA[
+	   		UPDATE member 
+            	SET us_gbn = '1',
+            	us_mentoyn = 'N',
+            	us_mento_date = now()
+            WHERE idx = #idx#
+        ]]>
+    </update>
+    
+	<delete id="memberDAO.deleteMember">
+        <![CDATA[
+            delete 
+            from member
+            WHERE us_id = #us_id#
+        ]]>
+    </delete>
+    
+	<select id="memberDAO.selectMemberListXls" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT *
+			FROM member
+			WHERE 1=1 and us_id<>'mroot'
+		]]>
+		<isNotEmpty property="us_id">
+             AND us_id = #us_id#
+        </isNotEmpty>
+		<isNotEmpty property="us_name">
+             AND us_name LIKE CONCAT ('%', #us_name#,'%')
+        </isNotEmpty>
+		<isNotEqual property="us_level" compareValue="0">
+             AND us_level = #us_level#
+        </isNotEqual>
+        <isNotEmpty property="us_gbn">
+             AND us_gbn = #us_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+             AND us_buss_gbn = #us_buss_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_smschk">
+             AND us_smschk = #us_smschk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mailchk">
+             AND us_mailchk = #us_mailchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_workchk">
+             AND us_workchk = #us_workchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_major11">
+             AND (us_major11 = #us_major11# or us_major21 = #us_major11#)
+        </isNotEmpty>
+        <isNotEmpty property="us_major12">
+             AND (us_major12 = #us_major12# or us_major22 = #us_major12#)
+        </isNotEmpty>
+        <isNotEmpty property="us_mentoyn">
+             AND us_mentoyn = #us_mentoyn#
+        </isNotEmpty>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                AND a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="2">
+                AND a.us_id LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+       		ORDER BY us_name
+		]]>
+	</select>
+	
+	<select id="memberDAO.selectMemberListXlsm" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.*, ifnull(b.cd_name,'') us_major11_nm, ifnull(c.cd_name,'') us_major12_nm 
+				, ifnull(d.cd_name,'') us_major21_nm, ifnull(e.cd_name,'') us_major22_nm
+				, (select ifnull(count(f.idx),0) cnt from tb_memtocounsel f where f.memto=a.us_id and f.memto_gbn='2') cam_cnt
+				, (select ifnull(count(g.idx),0) cnt from tb_memtocounsel g where g.memto=a.us_id and g.memto_gbn='1') pap_cnt
+				, (select ifnull(count(h.idx),0) cnt from tb_memtocounsel h where h.memto=a.us_id and h.memto_gbn='3') man_cnt
+				, (select ifnull(count(i.idx),0) cnt from tb_memtocounsel i where i.memto=a.us_id) mento_cnt
+				, (select ifnull(count(j.idx),0) cnt from tb_memtocounsel j where j.memto=a.us_id and j.point > 0) end_cnt
+				, (select ifnull(avg(k.point),0) cnt from tb_memtocounsel k where k.memto=a.us_id and k.point > 0) avg_point
+			FROM member a
+			left join tb_code b on b.code=a.us_major11 and b.maxcod=0
+			left join tb_code c on c.code=a.us_major12 and c.maxcod=a.us_major11
+			left join tb_code d on d.code=a.us_major21 and d.maxcod=0
+			left join tb_code e on e.code=a.us_major22 and e.maxcod=a.us_major21
+			WHERE 1=1 and a.us_id<>'mroot'
+		]]>
+		<isNotEmpty property="us_id">
+             AND a.us_id = #us_id#
+        </isNotEmpty>
+		<isNotEmpty property="us_name">
+             AND a.us_name LIKE CONCAT ('%', #us_name#,'%')
+        </isNotEmpty>
+		<isNotEqual property="us_level" compareValue="0">
+             AND a.us_level = #us_level#
+        </isNotEqual>
+        <isNotEmpty property="us_gbn">
+             AND a.us_gbn = #us_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+             AND a.us_buss_gbn = #us_buss_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_buss_gbn">
+             AND a.us_buss_gbn = #us_buss_gbn#
+        </isNotEmpty>
+        <isNotEmpty property="us_smschk">
+             AND a.us_smschk = #us_smschk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mailchk">
+             AND a.us_mailchk = #us_mailchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_workchk">
+             AND a.us_workchk = #us_workchk#
+        </isNotEmpty>
+        <isNotEmpty property="us_mentoyn">
+             AND a.us_mentoyn = #us_mentoyn#
+        </isNotEmpty>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                AND a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="2">
+                AND a.us_id LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.idx desc
+		]]>
+	</select>
+	
+	<select id="memberDAO.searchId" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[
+		SELECT *
+		FROM member
+		WHERE us_name = #us_name#
+		AND us_email = #us_email#
+		AND us_phone = #us_phone#
+		AND ( us_level=1 or us_level=2 or us_level=3)
+		order by idx desc
+		limit 1
+		]]>
+	</select>
+	
+	<select id="memberDAO.searchPassword" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[
+		SELECT *
+		FROM member
+		WHERE us_name = #us_name#
+		AND us_email = #us_email#
+		AND us_id = #us_id#
+		AND ( us_level=1 or us_level=2 or us_level=3)
+		order by idx desc
+		limit 1
+		]]>
+	</select>
+	
+	<update id="memberDAO.updatePassword">
+            UPDATE member 
+            SET us_pw   = #us_newpw#
+            WHERE us_id = #us_id#
+    </update>
+    
+	<select id="memberDAO.selectMemberList_Mento" parameterClass="MemberVO" resultClass="MemberVOs">
+		<![CDATA[ 
+			SELECT a.us_major11, (SELECT COUNT(m1.us_major11) FROM v_memto m1 WHERE m1.us_major11=a.us_major11) us_major11_cnt
+				, a.us_major12, (SELECT COUNT(m2.us_major12) FROM v_memto m2 WHERE m2.us_major11=a.us_major11 AND m2.us_major12=a.us_major12) us_major12_cnt
+				, a.us_major11_nm, a.us_major12_nm, a.us_name, a.us_company
+			FROM v_memto a
+		]]>
+        <isNotEmpty property="searchWrd">
+            <isEqual property="searchCnd" compareValue="1">
+                WHERE a.us_name LIKE CONCAT ('%', #searchWrd#,'%')
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="3">
+                WHERE ( (a.us_major11_nm LIKE CONCAT ('%', #searchWrd#,'%')) or (a.us_major12_nm LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+            <isEqual property="searchCnd" compareValue="4">
+                WHERE ( (a.us_major11_nm LIKE CONCAT ('%', #searchWrd#,'%')) or (a.us_major12_nm LIKE CONCAT ('%', #searchWrd#,'%'))
+                      or (a.us_name LIKE CONCAT ('%', #searchWrd#,'%')) ) 
+            </isEqual>
+        </isNotEmpty>
+	</select>
+    
+	
+</sqlMap>
