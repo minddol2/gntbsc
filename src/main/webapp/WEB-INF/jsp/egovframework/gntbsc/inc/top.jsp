@@ -61,9 +61,9 @@ String is_main = request.getParameter("is_main");
 <![endif]-->
 
 <script type="text/javascript">
-if (document.location.protocol == 'http:') {
+/*if (document.location.protocol == 'http:') {
     document.location.href = document.location.href.replace('http:', 'https:');
-}
+}*/
 </script>
 </head>
 <body class="<% if(is_main.equals("")) out.println("subWrap"); else out.println("mainWrap");   %>">
