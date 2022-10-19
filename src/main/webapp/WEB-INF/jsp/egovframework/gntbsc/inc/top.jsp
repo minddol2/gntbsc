@@ -63,6 +63,7 @@ String is_main = request.getParameter("is_main");
 <script type="text/javascript">
 /*if (document.location.protocol == 'http:') {
     document.location.href = document.location.href.replace('http:', 'https:');
+    console.log('');
 }*/
 </script>
 </head>
