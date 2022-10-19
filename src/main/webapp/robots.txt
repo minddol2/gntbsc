@@ -1,0 +1,4 @@
+User-agent: *
+Allow:/
+Disallow:/wssm/
+Disallow: /members/

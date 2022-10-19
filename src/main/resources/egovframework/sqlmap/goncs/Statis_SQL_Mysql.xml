@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Statiss">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="StatisVO" type="egovframework.goncs.memto.service.StatisVO"/>
+	<typeAlias  alias="StatisVOs" type="egovframework.goncs.memto.service.StatisVO"/>
+	
+	<select id="statisDAO.selectStatis1" parameterClass="StatisVO" resultClass="StatisVOs">
+		<![CDATA[
+			SELECT 
+				 IFNULL(sum(case when us_major11 = 1 then 1 else 0 end),0) as s_item1,
+				 IFNULL(sum(case when us_major11 = 2 then 1 else 0 end),0) as s_item2,
+				 IFNULL(sum(case when us_major11 = 3 then 1 else 0 end),0) as s_item3,
+				 IFNULL(sum(case when us_major11 = 4 then 1 else 0 end),0) as s_item4,
+				 IFNULL(sum(case when us_major11 = 5 then 1 else 0 end),0) as s_item5,
+				 IFNULL(COUNT(idx),0) s_item6,
+				 IFNULL(sum(case when us_major11 = 6 then 1 else 0 end),0) as s_item7
+			FROM tb_memtocounsel
+        ]]>
+        <isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	WHERE DATE_FORMAT(reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+	</select>
+	
+	<select id="statisDAO.selectStatis2List" parameterClass="StatisVO" resultClass="StatisVOs">
+	    <!--<![CDATA[
+	    	SELECT a.code us_major12, ifnull(a.cd_name,'') us_major12_nm,
+	    	       IFNULL(COUNT(b.idx),0) as s_item1,
+					IFNULL(sum(case when c.us_buss_gbn = 1 then 1 else 0 end),0) as s_item2,
+					IFNULL(sum(case when c.us_buss_gbn = 3 then 1 else 0 end),0) as s_item3,
+					IFNULL(sum(case when c.us_buss_gbn = 2 then 1 else 0 end),0) as s_item4,
+					IFNULL(sum(case when b.memto_gbn = 1 then 1 else 0 end),0) as s_item5,
+					IFNULL(sum(case when b.memto_gbn = 2 then 1 else 0 end),0) as s_item6,
+					IFNULL(sum(case when b.memto_gbn = 3 then 1 else 0 end),0) as s_item7
+   			FROM tb_code a
+   			LEFT join tb_memtocounsel b on b.us_major11=a.code AND b.us_major11 = #us_major11#
+   			left join member c on c.us_id=b.us_id
+        	WHERE 1=1
+        	AND a.maxcod=#us_major11#
+        ]]>
+		<isNotEmpty property="sdate">
+			<isNotEmpty property="edate">
+				AND DATE_FORMAT(b.reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+			</isNotEmpty>
+		</isNotEmpty>
+		 <![CDATA[
+			GROUP BY us_major12, us_major12_nm
+			ORDER BY us_major12
+        ]]>
+		-->
+		SELECT a.us_major11,a.us_major12,b.us_buss_gbn,c.cd_name us_major12_nm,
+		IFNULL(COUNT(a.idx),0) as s_item1,
+		case when us_buss_gbn = 1 then count(a.idx) else 0 end as s_item2,
+		case when us_buss_gbn = 2 then count(a.idx) else 0 end as s_item3,
+		case when us_buss_gbn = 3 then count(a.idx) else 0 end as s_item4,
+		case when a.memto_gbn = 1 then count(a.idx) else 0 end as s_item5,
+		case when a.memto_gbn = 2 then count(a.idx) else 0 end as s_item6,
+		case when a.memto_gbn = 3 then count(a.idx) else 0 end as s_item7
+		FROM tb_memtocounsel as a
+		LEFT JOIN member as b ON b.us_id = a.us_id
+		LEFT JOIN tb_code as c ON c.maxcod = a.us_major11 and c.code = a.us_major12
+		WHERE a.us_major11 = #us_major11# and c.cd_name !=''
+        <isNotEmpty property="sdate">
+            <isNotEmpty property="edate">
+            	AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #sdate# AND #edate#
+            </isNotEmpty>
+        </isNotEmpty>
+		group BY c.code, a.us_major12, a.us_major11
+		ORDER BY a.us_major12, a.us_major11
+	</select>
+</sqlMap>

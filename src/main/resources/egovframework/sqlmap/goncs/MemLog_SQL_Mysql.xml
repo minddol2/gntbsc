@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="Memlogs">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="MemlogVO" type="egovframework.goncs.member.service.MemlogVO"/>
+	<typeAlias  alias="MemlogVOs" type="egovframework.goncs.member.service.MemlogVO"/>
+
+	<select id="memlogDAO.selectMemlogList" parameterClass="MemlogVO" resultClass="MemlogVOs">
+		<![CDATA[ 
+			SELECT a.*, b.us_name
+			FROM tb_mem_log a
+			LEFT OUTER JOIN member b ON b.us_id = a.m_id
+			WHERE 1=1
+		]]>
+		<isNotEmpty property="us_name">
+             AND b.us_name LIKE CONCAT ('%', #us_name#,'%')
+         </isNotEmpty>
+		<isNotEmpty property="strdat">
+             AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #strdat# AND #enddat#
+        </isNotEmpty>
+		<![CDATA[ 
+			ORDER BY a.idx desc
+			LIMIT  #recordCountPerPage# OFFSET #firstIndex#
+		]]>
+	</select>
+	
+	<select id="memlogDAO.selectMemlogListCnt" parameterClass="MemlogVO" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(a.idx) AS totcnt
+			FROM tb_mem_log a
+			LEFT OUTER JOIN member b ON b.us_id = a.m_id
+			WHERE 1=1
+		]]>
+		<isNotEmpty property="us_name">
+             AND b.us_name LIKE CONCAT ('%', #us_name#,'%')
+        </isNotEmpty>
+		<isNotEmpty property="strdat">
+             AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #strdat# AND #enddat#
+        </isNotEmpty>
+	</select>
+	
+	<insert id="memlogDAO.insertMemlog">
+        <![CDATA[
+            INSERT INTO tb_mem_log 
+                (   
+                    gubunx   ,
+                    subject  ,
+                    m_id  ,
+                    com_ip  ,
+                    reg_date  )
+              VALUES(
+                    #gubunx#,
+                    #subject#,
+                    #m_id#,
+                    #com_ip#,
+                    now()  )              
+        ]]>
+    </insert>
+    
+	<delete id="memlogDAO.deleteMemlog">
+        <![CDATA[
+            delete 
+            from tb_mem_log
+            WHERE idx = #idx#
+        ]]>
+    </delete>
+    
+	<select id="memlogDAO.selectMemlogListXls" parameterClass="MemlogVO" resultClass="MemlogVOs">
+		<![CDATA[ 
+			SELECT a.*, b.us_name
+			FROM tb_mem_log a
+			LEFT OUTER JOIN member b ON b.us_id = a.m_id
+			WHERE 1=1
+		]]>
+		<isNotEmpty property="us_name">
+             AND b.us_name LIKE CONCAT ('%', #us_name#,'%')
+         </isNotEmpty>
+		<isNotEmpty property="strdat">
+             AND DATE_FORMAT(a.reg_date,'%Y-%m-%d') BETWEEN #strdat# AND #enddat#
+        </isNotEmpty>
+		ORDER BY a.reg_date desc
+	</select>
+	
+
+</sqlMap>
+    
+	
+	
+    
+	
+	
+	

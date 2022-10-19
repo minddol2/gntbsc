@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="Ids">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="IdsVo" type="egovframework.goncs.cmn.service.IdsVo"/>
+
+	
+	<select id="idsDAO.selectIdsInfo" resultClass="IdsVo">
+		<![CDATA[ 
+			SELECT *
+			FROM ids
+			WHERE 1=1
+			AND TABLE_NAME = #tsnm#
+		]]>
+	</select>
+	
+	
+	<insert id="idsDAO.insertIds_I">
+        <![CDATA[
+            INSERT INTO ids 
+                (   
+                    TABLE_NAME   ,
+                    NEXT_ID   )
+              VALUES(
+                    #TABLE_NAME#,
+                    #NEXT_ID#  )              
+        ]]>
+    </insert>
+    
+	<update id="idsDAO.updateIds_I">
+        <![CDATA[
+	    UPDATE ids 
+            SET NEXT_ID    		  = #NEXT_ID#
+            WHERE TABLE_NAME = #TABLE_NAME#
+        ]]>
+    </update>
+
+
+</sqlMap>  
