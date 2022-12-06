@@ -12,23 +12,44 @@
   <jsp:param name="is_main" value="<%=is_main%>"/>
 </jsp:include>
 
-<div class="mainvisual">
-  <ul class="visualslider">
+<div class="new_mainvisual">
+  <ul class="visualslider2">
     <li class="main main01">
-      <div class="inner">
+    
         <div class="txt">
-          <p>경남의 관광산업은<br/>
-            <b>경남관광기업지원센터</b>와 <span>함께 성장합니다.</span></p>
+          <p>
+			<span class="ani_txt">경남의 관광산업은</span><br/>
+            <span class="ani_txt2"><b class="slide_animation"><span class="tt">경남관광기업지원센터</span></b>와 <em class="mEnter">함께 성장합니다.</em></span></p>
         </div>
-      </div>
+     
     </li>
     <li class="main main02">
-      <div class="inner">
+   
         <div class="txt">
-          <p>경남의 관광산업은<br/>
-            <b>경남관광기업지원센터</b>와 <span>함께 성장합니다.</span></p>
+          <p>
+			<span class="ani_txt">경남관광기업지원센터는</span><br/>
+            <span class="ani_txt2"><b class="slide_animation"><span class="tt">관광스타트업 발굴 및 육성</span></b>에 <em class="mEnter">힘씁니다.</em></span></p>
         </div>
-      </div>
+  
+    </li>
+	<li class="main main03">
+    
+        <div class="txt">
+          <p>
+			<span class="ani_txt">경남관광기업지원센터는</span><br/>
+            <span class="ani_txt2"><b class="slide_animation"><span class="tt">도내 관광기업 역량강화</span></b>를 <em class="mEnter">지원합니다.</em></span></p>
+        </div>
+     
+    </li>
+
+	<li class="main main04">
+    
+        <div class="txt">
+          <p>
+			<span class="ani_txt">경남관광기업지원센터는</span><br/>
+            <span class="ani_txt2"><b class="slide_animation"><span class="tt">관광일자리 허브 구축</span></b>을 통해 <em class="mEnter">지역일자리를 창출합니다.</em></span></p>
+        </div>
+     
     </li>
   </ul>
 </div>
@@ -43,13 +64,16 @@
 
   });
 
-  $('.visualslider').slick({
+  $('.visualslider2').slick({
     infinite: true,
     arrows:true,
     dots:false,
     fade:true,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 4000,
+	pauseOnHover:false,
+			pauseOnFocus:false,
+			pauseOnDotsHover:false,
   });
 
   function fn_egov_inqire_Notice(nttId, bbsId) {
