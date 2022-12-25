@@ -119,6 +119,9 @@ public class Board implements Serializable {
 	private int reply_cnt = 0;
 	/* 카테고리 */
 	private String category = "";
+	private String category2 = "";
+	private String classfication = "";
+	private String classfication2 = "";
 	private String link_url = "";
 	public String fileSn = "";
 	public String file_Extsn = "";
@@ -638,6 +641,30 @@ public class Board implements Serializable {
 
 	public void setTopx(String topx) {
 		this.topx = topx;
+	}
+
+	public String getCategory2() {
+		return category2;
+	}
+
+	public void setCategory2(String category2) {
+		this.category2 = category2;
+	}
+
+	public String getClassfication() {
+		return classfication;
+	}
+
+	public void setClassfication(String classfication) {
+		this.classfication = classfication;
+	}
+
+	public String getClassfication2() {
+		return classfication2;
+	}
+
+	public void setClassfication2(String classfication2) {
+		this.classfication2 = classfication2;
 	}
 
 	/**

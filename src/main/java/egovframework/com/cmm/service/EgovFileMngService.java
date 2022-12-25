@@ -114,5 +114,14 @@ public interface EgovFileMngService {
     public List<FileVO> selectImageFileList(FileVO vo) throws Exception;
     
     public List<FileVO> selectImageFileListone(FileVO vo) throws Exception;
-    
+
+    /**
+    * 기타파일 업로드 삭제
+    * */
+    public void deleteEtcFiles(EtcFileVO etcFVO) throws Exception;
+
+    /**
+     * 기타파일 업로드
+     * */
+    public void insertEtcFiles(EtcFileVO etcFVO) throws Exception;
 }

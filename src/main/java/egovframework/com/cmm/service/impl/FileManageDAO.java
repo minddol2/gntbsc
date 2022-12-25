@@ -3,6 +3,7 @@ package egovframework.com.cmm.service.impl;
 import java.util.Iterator;
 import java.util.List;
 
+import egovframework.com.cmm.service.EtcFileVO;
 import egovframework.com.cmm.service.FileVO;
 
 import org.springframework.stereotype.Repository;
@@ -182,5 +183,13 @@ public class FileManageDAO extends EgovComAbstractDAO {
 	@SuppressWarnings("unchecked")
 	public List<FileVO> selectImageFileListone(FileVO vo) throws Exception {
 		return (List<FileVO>) list("FileManageDAO.selectImageFileone", vo);
+	}
+
+	public void deleteEtcFiles(EtcFileVO etcFVO) {
+		delete("FileManageDAO.deleteEtcFiles", etcFVO);
+	}
+
+	public void insertEtcFiles(EtcFileVO etcFVO) {
+		insert("FileManageDAO.insertEtcFiles", etcFVO);
 	}
 }

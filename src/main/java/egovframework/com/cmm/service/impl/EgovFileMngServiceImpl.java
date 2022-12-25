@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import egovframework.com.cmm.service.EgovFileMngService;
+import egovframework.com.cmm.service.EtcFileVO;
 import egovframework.com.cmm.service.FileVO;
 
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
@@ -157,4 +158,15 @@ public class EgovFileMngServiceImpl extends EgovAbstractServiceImpl implements E
 	public List<FileVO> selectImageFileListone(FileVO vo) throws Exception {
 		return fileMngDAO.selectImageFileListone(vo);
 	}
+
+	@Override
+	public void deleteEtcFiles(EtcFileVO etcFVO) throws Exception {
+		fileMngDAO.deleteEtcFiles(etcFVO);
+	}
+
+	@Override
+	public void insertEtcFiles(EtcFileVO etcFVO) throws Exception {
+		fileMngDAO.insertEtcFiles(etcFVO);
+	}
+
 }

@@ -5,6 +5,7 @@
 
 	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 	<typeAlias  alias="FileVO" type="egovframework.com.cmm.service.FileVO"/>
+	<typeAlias  alias="EtcFileVO" type="egovframework.com.cmm.service.EtcFileVO"/>
 
 	<resultMap id="fileList" class="egovframework.com.cmm.service.FileVO">
 		<result property="atchFileId" column="ATCH_FILE_ID" columnIndex="1"/>
@@ -27,8 +28,18 @@
 		<result property="fileStreCours" column="FILE_STRE_COURS" columnIndex="6"/>
 		<result property="orignlFileNm" column="ORIGNL_FILE_NM" columnIndex="7"/>
 		<result property="streFileNm" column="STRE_FILE_NM" columnIndex="8"/>
-	</resultMap>	
+	</resultMap>
 
+	<!--<resultMap id="EtcFileList" class="egovframework.com.cmm.service.EtcFileVO">
+		<result property="idx" column="IDX" columnIndex="1"/>
+		<result property="file_name" column="FILE_NAME" columnIndex="2"/>
+		<result property="file_ori" column="FILE_ORI" columnIndex="3"/>
+		<result property="file_length" column="FILE_LENGTH" columnIndex="4"/>
+		<result property="file_type" column="FILE_TYPE" columnIndex="5"/>
+		<result property="bbs_id" column="BBS_ID" columnIndex="6"/>
+		<result property="file_idx" column="FILE_IDX" columnIndex="7"/>
+		<result property="bbs_idx" column="BBS_IDX" columnIndex="8"/>
+	</resultMap>-->
 
  	<select id="FileManageDAO.selectFileList" parameterClass="FileVO" resultMap="fileList" >
  		<![CDATA[
@@ -187,6 +198,37 @@
 			ORDER BY b.FILE_SN	
 			Limit 1
  		]]>
- 	</select>	
- 	
+ 	</select>
+
+	<delete id="FileManageDAO.deleteEtcFiles" parameterClass="EtcFileVO">
+		<![CDATA[
+		DELETE FROM etcFile
+		WHERE(1)
+			AND BBS_ID = #bbs_id#
+			AND FILE_IDX = #file_idx#
+		]]>
+	</delete>
+
+	<insert id="FileManageDAO.insertEtcFiles" parameterClass="EtcFileVO" >
+		<![CDATA[
+			INSERT INTO etcFile SET
+			file_name = #file_name#,
+			file_ori = #file_ori#,
+			file_length = #file_length#,
+			file_idx = #file_idx#,
+			file_type = #file_type#,
+			bbs_id = #bbs_id#,
+			bbs_idx = #bbs_idx#
+		]]>
+	</insert>
+
+	<!--<select id="FileManageDAO.selectEtcFileOne" parameterClass="EtcFileVO" resultMap="EtcFileList" >
+		<![CDATA[
+			SELECT IDX, FILE_NAME, FILE_ORI, FILE_LENGTH, FILE_TYPE, BBS_ID, FILE_IDX, BBS_IDX FROM etcFile
+			WHERE(1)
+			AND BBS_ID = #bbs_id#
+			AND FILE_IDX = #file_idx#
+			AND BBS_IDX = #bbs_idx#
+ 		]]>
+	</select>-->
 </sqlMap>

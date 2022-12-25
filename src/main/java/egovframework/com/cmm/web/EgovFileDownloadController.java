@@ -1,15 +1,11 @@
 package egovframework.com.cmm.web;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URLEncoder;
 import java.util.Map;
 
 import egovframework.com.cmm.service.EgovFileMngService;
+import egovframework.com.cmm.service.EtcFileVO;
 import egovframework.com.cmm.service.FileVO;
 import egovframework.com.cmm.util.EgovBasicLogger;
 import egovframework.com.cmm.util.EgovResourceCloseHelper;
@@ -23,6 +19,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 파일 다운로드를 위한 컨트롤러 클래스
@@ -47,6 +45,9 @@ public class EgovFileDownloadController {
 
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileService;
+
+	@Resource(name = "EgovFileMngService")
+	private EgovFileMngService fileMngService;
 
 	/**
 	 * 브라우저 구분 얻기.
@@ -184,5 +185,55 @@ public class EgovFileDownloadController {
 				printwriter.close();
 			}
 		//}
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/cmm/fms/downloadEtcFile.do")
+	public void downloadEtcFile(HttpServletResponse response, HttpServletRequest request) throws Exception{
+		//String file_name = request.getParameter("file");
+		//String name = request.getParameter("name");
+
+		String bbsId = request.getParameter("bbsId");
+		String fileIdx = request.getParameter("fileIdx");
+		String bbsIdx = request.getParameter("bbsIdx");
+
+		EtcFileVO etcFileVO = new EtcFileVO();
+		etcFileVO.setBbs_id(bbsId);
+		etcFileVO.setFile_idx(fileIdx);
+		//etcFileVO.setBbs_idx();
+		//List<etcFile> sflieList = fileMngService.selectEtcFiles(etcFileVO);
+
+		/*try{
+			String file_Path = request.getServletContext().getRealPath("/egovframework/upload/");
+			String _file = file_Path + file_name;
+			File file = new File(_file);
+
+			System.out.println("--file download start--");
+			System.out.println(file);
+			System.out.println("--file download end--");
+
+
+			// 파일 인코딩
+			String browser = request.getHeader("User-Agent");
+			if (browser.contains("MSIE") || browser.contains("Trident") || browser.contains("Chrome")) {
+				name = URLEncoder.encode(name, "UTF-8").replaceAll("\\+", "%20");
+			} else {
+				name = new String(name.getBytes("UTF-8"), "ISO-8859-1");
+			}
+
+			//response.setHeader("Content-Disposition", "attachment;filename=" + file.getName()); // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지를 알려주는 헤더
+			response.setHeader("Content-Disposition", "attachment;filename=" + name); // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지를 알려주는 헤더
+
+			FileInputStream fileInputStream = new FileInputStream(file); // 파일 읽어오기
+			OutputStream out = response.getOutputStream();
+
+			int read = 0;
+			byte[] buffer = new byte[1024];
+			while ((read = fileInputStream.read(buffer)) != -1) { // 1024바이트씩 계속 읽으면서 outputStream에 저장, -1이 나오면 더이상 읽을 파일이 없음
+				out.write(buffer, 0, read);
+			}
+		} catch (Exception e){
+			throw new Exception("download error");
+		}*/
 	}
 }
