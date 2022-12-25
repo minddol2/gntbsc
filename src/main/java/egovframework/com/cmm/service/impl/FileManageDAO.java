@@ -2,6 +2,7 @@ package egovframework.com.cmm.service.impl;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import egovframework.com.cmm.service.EtcFileVO;
 import egovframework.com.cmm.service.FileVO;
@@ -191,5 +192,9 @@ public class FileManageDAO extends EgovComAbstractDAO {
 
 	public void insertEtcFiles(EtcFileVO etcFVO) {
 		insert("FileManageDAO.insertEtcFiles", etcFVO);
+	}
+
+	public List<EtcFileVO> selectEtcFiles(EtcFileVO vo) {
+		return (List<EtcFileVO>) list("FileManageDAO.selectEtcFiles", vo);
 	}
 }

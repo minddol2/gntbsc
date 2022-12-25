@@ -69,13 +69,13 @@
 		}
 		if (confirm('저장하시겠습니까?')) {
 			//document.board.onsubmit();
-			document.board.action = "<c:url value='/sb02/sub02_08_Add_test.do'/>";
+			document.board.action = "<c:url value='/sb02/sub02_08_Add.do'/>";
 			document.board.submit();
 		}
 	}
 
 	function fn_egov_select_BBSList() {
-		document.board.action = "<c:url value='/sb02/sub02_08_test.do'/>";
+		document.board.action = "<c:url value='/sb02/sub02_08.do'/>";
 		document.board.submit();
 	}
 

@@ -362,6 +362,38 @@ public class Sb0208Controller {
                 atchFileId = fileMngService.insertFileInfs(result);
             }
 
+            //회사소개서 파일업로드
+            List<MultipartFile> etcFile = multiRequest.getFiles("etcFile");
+            EtcFileVO etcFVO = new EtcFileVO();
+
+            if (etcFile.size() > 0) {
+                for (int i = 0; i < etcFile.size(); i++) {
+                    if(etcFile.get(i).getSize() > 0){
+                        String file_Path = request.getServletContext().getRealPath("/egovframework/upload/");
+                        String genID = "";
+                        genID = UUID.randomUUID().toString();
+                        String oriFileName = etcFile.get(i).getOriginalFilename();
+                        String extension = getExtension(oriFileName);
+                        String saveFileName = genID + "." + extension;
+                        String savePath = file_Path + saveFileName;
+                        long fileSize = etcFile.get(i).getSize();
+                        String sFileSize = String.valueOf(fileSize);
+                        File file = new File(savePath);
+                        etcFile.get(i).transferTo(file);
+
+                        etcFVO.setFile_idx(String.valueOf(i));
+                        etcFVO.setFile_name(saveFileName);
+                        etcFVO.setFile_ori(oriFileName);
+                        etcFVO.setFile_length(String.valueOf(fileSize));
+                        etcFVO.setFile_type("etcFile");
+                        etcFVO.setBbs_id(board.getBbsId());
+                        etcFVO.setBbs_idx(atchFileId);
+
+                        fileMngService.insertEtcFiles(etcFVO);
+                    }
+                }
+            }
+
             board.setAtchFileId(atchFileId);
             board.setFrstRegisterId(user.getUs_id());
             board.setBbsId(board.getBbsId());

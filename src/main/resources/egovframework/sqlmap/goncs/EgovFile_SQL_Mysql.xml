@@ -30,7 +30,7 @@
 		<result property="streFileNm" column="STRE_FILE_NM" columnIndex="8"/>
 	</resultMap>
 
-	<!--<resultMap id="EtcFileList" class="egovframework.com.cmm.service.EtcFileVO">
+	<resultMap id="EtcFileList" class="egovframework.com.cmm.service.EtcFileVO">
 		<result property="idx" column="IDX" columnIndex="1"/>
 		<result property="file_name" column="FILE_NAME" columnIndex="2"/>
 		<result property="file_ori" column="FILE_ORI" columnIndex="3"/>
@@ -39,7 +39,7 @@
 		<result property="bbs_id" column="BBS_ID" columnIndex="6"/>
 		<result property="file_idx" column="FILE_IDX" columnIndex="7"/>
 		<result property="bbs_idx" column="BBS_IDX" columnIndex="8"/>
-	</resultMap>-->
+	</resultMap>
 
  	<select id="FileManageDAO.selectFileList" parameterClass="FileVO" resultMap="fileList" >
  		<![CDATA[
@@ -206,6 +206,7 @@
 		WHERE(1)
 			AND BBS_ID = #bbs_id#
 			AND FILE_IDX = #file_idx#
+			AND BBS_IDX = #bbs_idx#
 		]]>
 	</delete>
 
@@ -222,13 +223,14 @@
 		]]>
 	</insert>
 
-	<!--<select id="FileManageDAO.selectEtcFileOne" parameterClass="EtcFileVO" resultMap="EtcFileList" >
+	<select id="FileManageDAO.selectEtcFiles" parameterClass="EtcFileVO" resultMap="EtcFileList">
 		<![CDATA[
 			SELECT IDX, FILE_NAME, FILE_ORI, FILE_LENGTH, FILE_TYPE, BBS_ID, FILE_IDX, BBS_IDX FROM etcFile
 			WHERE(1)
 			AND BBS_ID = #bbs_id#
 			AND FILE_IDX = #file_idx#
 			AND BBS_IDX = #bbs_idx#
+			LIMIT 1
  		]]>
-	</select>-->
+	</select>
 </sqlMap>

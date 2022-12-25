@@ -169,4 +169,8 @@ public class EgovFileMngServiceImpl extends EgovAbstractServiceImpl implements E
 		fileMngDAO.insertEtcFiles(etcFVO);
 	}
 
+	public List<EtcFileVO> selectEtcFiles(EtcFileVO vo) throws Exception {
+		return fileMngDAO.selectEtcFiles(vo);
+	}
+
 }

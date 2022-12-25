@@ -124,4 +124,6 @@ public interface EgovFileMngService {
      * 기타파일 업로드
      * */
     public void insertEtcFiles(EtcFileVO etcFVO) throws Exception;
+
+    public List<EtcFileVO> selectEtcFiles(EtcFileVO etcFileVO) throws Exception;
 }
