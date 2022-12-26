@@ -47,9 +47,10 @@
 	}
 
 	function fn_egov_select_BBSList(pageNo) {
-		document.frm.pageIndex.value = pageNo;
-		document.frm.action = "<c:url value='/sb02/sub02_08.do'/>";
-		document.frm.submit();
+		let frm = document.frm
+		frm.pageIndex.value = pageNo;
+		frm.action = "<c:url value='/sb02/sub02_08.do'/>";
+		frm.submit();
 	}
 	//-->
 </script>
@@ -60,16 +61,12 @@
 
 <form name="frm" action="<c:url value='/sb02/sub02_08.do'/>"
 	  method="post">
-	<input type="hidden" name="bbsId"
-		   value="<c:out value='${boardVO.bbsId}'/>" /> <input type="hidden"
-															   name="nttId" value="0" /> <input type="hidden" name="bbsTyCode"
-																								value="<c:out value='${brdMstrVO.bbsTyCode}'/>" /> <input
-		type="hidden" name="bbsAttrbCode"
-		value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" /> <input
-		type="hidden" name="authFlag"
-		value="<c:out value='${brdMstrVO.authFlag}'/>" /> <input
-		name="pageIndex" type="hidden"
-		value="<c:out value='${searchVO.pageIndex}'/>" />
+	<input type="hidden" name="bbsId" value="<c:out value='${boardVO.bbsId}'/>" />
+	<input type="hidden" name="nttId" value="0" />
+	<input type="hidden" name="bbsTyCode" value="<c:out value='${brdMstrVO.bbsTyCode}'/>" />
+	<input type="hidden" name="bbsAttrbCode" value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" />
+	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" />
+	<input type="hidden" name="pageIndex" value="<c:out value='${searchVO.pageIndex}'/>" />
 
 	<div class="searchTop">
 		<div class="searchBox">
@@ -170,14 +167,14 @@
 	<input type="hidden" name="nttId" />
 </form>
 
-<form name="frm" action ="<c:url value='/sb02/sub02_08.do'/>" method="post">
+<%--<form name="frm" action ="<c:url value='/sb02/sub02_08.do'/>" method="post">
 	<input type="hidden" name="bbsId" value="<c:out value='${boardVO.bbsId}'/>" />
 	<input type="hidden" name="nttId"  value="0" />
 	<input type="hidden" name="bbsTyCode" value="<c:out value='${brdMstrVO.bbsTyCode}'/>" />
 	<input type="hidden" name="bbsAttrbCode" value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" />
 	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" />
 	<input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>"/>
-</form>
+</form>--%>
 
 <!-- 게시판 list end -->
 
