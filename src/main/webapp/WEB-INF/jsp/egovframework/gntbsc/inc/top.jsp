@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%
 String is_main = request.getParameter("is_main");
 %>
+
+<c:set var="now" value="<%=new java.util.Date()%>" />
+<c:set var="sysYear"><fmt:formatDate value="${now}" pattern="yyyyMMdd" /></c:set>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -27,13 +31,13 @@ String is_main = request.getParameter("is_main");
 
 <link rel="canonical" href="http://gyeongnam.tourbiz.or.kr" />
 <link rel="shortcut icon" href="<c:url value='/img/favicon.png'/>" type="image/x-icon" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/font.css'/>" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/style.css'/>" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/layout.css'/>" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/menu.css'/>" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/contents.css'/>" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/program.css'/>" />
-<link rel="stylesheet" media="all" href="<c:url value='/css/board.css'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/font.css?v=${sysYear}'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/style.css?v=${sysYear}'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/layout.css?v=${sysYear}'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/menu.css?v=${sysYear}'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/contents.css?v=${sysYear}'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/program.css?v=${sysYear}'/>" />
+<link rel="stylesheet" media="all" href="<c:url value='/css/board.css?v=${sysYear}'/>" />
 
 <script src="//code.jquery.com/jquery-2.2.0.min.js" ></script>
 
