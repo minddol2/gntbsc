@@ -38,6 +38,7 @@ String mLink[][][] = new String[12][11][10];
 	mTitle[3][0][0] = "입주기업안내"; mLink[3][0][0] = "sub03/sub01_01.do"; 
 		mTitle[3][1][0] = "기업소개"; mLink[3][1][0] = "sub03/sub01_01.do"; 
 		mTitle[3][2][0] = "기업홍보"; mLink[3][2][0] = "sub03/sub02_01.do"; 
+		mTitle[3][3][0] = "경남관광스타트업"; mLink[3][3][0] = "sub03/sub03_01.do";
 
 
 

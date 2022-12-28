@@ -419,4 +419,54 @@ public class Sub03Controller {
 
         return "egovframework/gntbsc/sub03/sub02_01_view";
     }
+
+    @RequestMapping(value = "/sub03/sub03_01.do")
+    public String get_sub03_page_03(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
+
+        /*int us_level = 5;
+        LoginVO user = (LoginVO) EgovUserDetailsHelper.getAuthenticatedUser();
+        if (user == null) {
+            us_level = 5;
+        } else {
+            us_level = user.getUs_level();
+        }
+        model.addAttribute("us_level", us_level);
+
+        boardVO.setBbsId("BBSMSTR_000000000307");
+
+        BoardMasterVO vo = new BoardMasterVO();
+        vo.setBbsId(boardVO.getBbsId());
+        //vo.setUniqId(user.getUniqId());
+        System.out.println("boardVO.getBbsId() : " + boardVO.getBbsId());
+
+        BoardMasterVO master = bbsAttrbService.selectBBSMasterInf(vo);
+
+        boardVO.setPageUnit(12);
+        boardVO.setPageSize(10);
+
+        PaginationInfo paginationInfo = new PaginationInfo();
+
+        paginationInfo.setCurrentPageNo(boardVO.getPageIndex());
+        paginationInfo.setRecordCountPerPage(12);
+        paginationInfo.setPageSize(boardVO.getPageSize());
+
+        boardVO.setFirstIndex(paginationInfo.getFirstRecordIndex());
+        boardVO.setLastIndex(paginationInfo.getLastRecordIndex());
+        boardVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
+
+        Map<String, Object> map = bbsMngService.selectBoardArticles(boardVO, master.getBbsAttrbCode());//2011.09.07
+        int totCnt = Integer.parseInt((String) map.get("resultCnt"));
+
+        paginationInfo.setTotalRecordCount(totCnt);
+
+        model.addAttribute("user", user);
+        model.addAttribute("resultList", map.get("resultList"));
+        model.addAttribute("resultCnt", map.get("resultCnt"));
+        model.addAttribute("boardVO", boardVO);
+        model.addAttribute("brdMstrVO", master);
+        model.addAttribute("paginationInfo", paginationInfo);
+        model.addAttribute("totCnt", totCnt);*/
+
+        return "egovframework/gntbsc/sub03/sub03_01";
+    }
 }

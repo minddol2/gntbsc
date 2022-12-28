@@ -109,6 +109,14 @@ public class Sb0208Controller {
         //vo.setUniqId(user.getUniqId());
         System.out.println("boardVO.getBbsId() : " + boardVO.getBbsId());
 
+        //reuqest
+        String searchCnd = request.getParameter("searchCnd");
+        String searchWrd = request.getParameter("searchWrd");
+        System.out.println("request start");
+        System.out.println(searchCnd);
+        System.out.println(searchWrd);
+        System.out.println("request end");
+
         BoardMasterVO master = bbsAttrbService.selectBBSMasterInf(vo);
 
         boardVO.setPageUnit(propertyService.getInt("pageUnit"));

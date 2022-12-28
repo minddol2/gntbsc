@@ -89,6 +89,7 @@ LoginVO loginVO  = (LoginVO)session.getAttribute("loginVO");
 								<dl>
 									<dd><a href="<c:url value='/'/><%=mLink[3][1][0]%>"><%=mTitle[3][1][0]%></a></dd>							
 									<dd><a href="<c:url value='/'/><%=mLink[3][2][0]%>"><%=mTitle[3][2][0]%></a></dd>							
+									<dd><a href="<c:url value='/'/><%=mLink[3][3][0]%>"><%=mTitle[3][3][0]%></a></dd>
 								</dl>
 							</div>
 						</li>
