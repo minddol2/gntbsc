@@ -266,10 +266,10 @@
 			</isEqual>	
 			<isEqual prepend="AND" property="searchCnd" compareValue="2">
 				<![CDATA[	b.USER_NM LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
-			</isEqual>	
+			</isEqual>
 			<isNotEmpty property="category">
-            	AND a.CATEGORY = #category#
-        	</isNotEmpty>
+				AND (a.CATEGORY = #category# or a.CATEGORY2 = #category#)
+			</isNotEmpty>
 		<![CDATA[			
 			ORDER BY a.TOPX DESC, a.SORT_ORDR DESC, NTT_NO ASC
 			LIMIT #recordCountPerPage# OFFSET #firstIndex#

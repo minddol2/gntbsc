@@ -105,13 +105,13 @@
 				<span class="none"><c:out value="${totCnt - ((searchVO.pageIndex-1) * 20 + status.count -1)}"/></span>
 				<span class="counter">
 							<c:choose>
-								<c:when test="${result.category eq 1}">
+								<c:when test="${result.classfication eq 1}">
 									예비관광
 								</c:when>
-								<c:when test="${result.category eq 2}">
+								<c:when test="${result.classfication eq 2}">
 									지역혁신
 								</c:when>
-								<c:when test="${result.category eq 3}">
+								<c:when test="${result.classfication eq 3}">
 									지역상생
 								</c:when>
 								<c:otherwise>

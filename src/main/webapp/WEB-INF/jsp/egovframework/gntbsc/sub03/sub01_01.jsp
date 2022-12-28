@@ -45,6 +45,7 @@
 	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" />
 	<input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>" />
 	<input name="category" type="hidden" value="<c:out value='${searchVO.category}'/>" />
+	<input name="category2" type="hidden" value="<c:out value='${searchVO.category2}'/>" />
 
 	<div class="searchTop">
 		<p class="list_info">기업이름 혹은 기업정보로 검색하세요.</p>
@@ -149,6 +150,7 @@
 	function egov_select_category(category) {
 		document.frm.pageIndex.value = 1;
 		document.frm.category.value = category;
+		document.frm.category2.value = category;
 		document.frm.action = "<c:url value='/sub03/sub01_01.do'/>";
 		document.frm.submit();
 	}
