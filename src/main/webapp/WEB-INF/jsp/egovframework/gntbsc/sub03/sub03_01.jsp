@@ -32,7 +32,43 @@
     <jsp:param name="m3" value="<%=m3%>"/>
 </jsp:include>
 
+<%--<c:forEach var="result" items="${resultList}" varStatus="status">
+    ${result.classfication2} ${result.nttSj} <br>
+</c:forEach>--%>
+
 <div class="start_list">
+    <div class="box">
+        <p class="tlt">
+            2020년도 입주기업
+        </p>
+        <ul>
+            <c:forEach var="result" items="${resultList}" varStatus="status">
+                <c:if test="${result.classfication2 eq '2' || result.classfication2 eq '5'}">
+                    <li><a href="javascript: void(0);"
+                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
+                    </li>
+                </c:if>
+            </c:forEach>
+            <li><a href="<c:url value="/img/pdf/1. 괭이그리스(예비관광스타트업).pdf"/>">괭이그리스</a></li>
+            <li><a href="<c:url value="/img/pdf/4. KinK(예비관광스타트업).pdf"/>">KinK</a></li>
+            <li><a href="<c:url value="/img/pdf/2. Kn-투어사피엔스(예비관광스타트업).pdf"/>">Kn-투어사피엔스</a></li>
+            <li><a href="<c:url value="/img/pdf/3. 디지털노마드닷컴(예비관광스타트업).pdf"/>">디지털노마드닷컴</a></li>
+        </ul>
+    </div>
+    <div class="box">
+        <p class="tlt">
+            2021년도 입주기업
+        </p>
+        <ul>
+            <c:forEach var="result" items="${resultList}" varStatus="status">
+                <c:if test="${result.classfication2 eq '3' || result.classfication2 eq '6'}">
+                    <li><a href="javascript: void(0);"
+                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
+                    </li>
+                </c:if>
+            </c:forEach>
+        </ul>
+    </div>
     <div class="box">
         <p class="tlt">
             2022년도 입주기업
@@ -45,34 +81,7 @@
                     </li>
                 </c:if>
             </c:forEach>
-        </ul>
-    </div>
-    <div class="box">
-        <p class="tlt">
-            2021년도 입주기업
-        </p>
-        <ul>
-            <c:forEach var="result" items="${resultList}" varStatus="status">
-                <c:if test="${result.classfication2 eq '3'}">
-                    <li><a href="javascript: void(0);"
-                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
-                    </li>
-                </c:if>
-            </c:forEach>
-        </ul>
-    </div>
-    <div class="box">
-        <p class="tlt">
-            2020년도 입주기업
-        </p>
-        <ul>
-            <c:forEach var="result" items="${resultList}" varStatus="status">
-                <c:if test="${result.classfication2 eq '2'}">
-                    <li><a href="javascript: void(0);"
-                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
-                    </li>
-                </c:if>
-            </c:forEach>
+            <li><a href="javascript: alert('준비중입니다.');">KBF</a></li>
         </ul>
     </div>
 

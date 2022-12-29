@@ -49,69 +49,65 @@
                         <span class="cate cate04">비상주 협력기업</span>
                     </c:when>
                 </c:choose>
-                <span>
-                    <c:choose>
-                        <c:when test="${result.classfication2 eq 1}">
-                            비상주 협력기업
-                        </c:when>
-                        <c:when test="${result.classfication2 eq 2}">
-                            2020년 입주기업
-                        </c:when>
-                        <c:when test="${result.classfication2 eq 3}">
-                            2021년 입주기업
-                        </c:when>
-                        <c:when test="${result.classfication2 eq 4}">
-                            2022년 입주기업
-                        </c:when>
-                    </c:choose>
-                </span>
+                <c:choose>
+                    <c:when test="${result.classfication2 eq 1}">
+                        <span>비상주 협력기업</span>
+                    </c:when>
+                    <c:when test="${result.classfication2 eq 2}">
+                        <span>2020년 입주기업</span>
+                    </c:when>
+                    <c:when test="${result.classfication2 eq 3}">
+                        <span>2021년 입주기업</span>
+                    </c:when>
+                    <c:when test="${result.classfication2 eq 4}">
+                        <span>2022년 입주기업</span>
+                    </c:when>
+                    <c:when test="${result.classfication2 eq 5}">
+                        <span>2020년 졸업기업</span>
+                    </c:when>
+                    <c:when test="${result.classfication2 eq 6}">
+                        <span>2021년 졸업기업</span>
+                    </c:when>
+                </c:choose>
             </h4>
             <dl>
                 <dt><c:out value="${result.nttSj}"/></dt>
                 <dd class="tag"><c:out value="${result.ssWords}"/></dd>
                 <dd class="cate_line">
-                    <span>
-                        <c:choose>
-                            <c:when test="${result.category eq 1}">
-                                ICT/플랫폼
-                            </c:when>
-                            <c:when test="${result.category eq 2}">
-                                로컬푸드
-                            </c:when>
-                            <c:when test="${result.category eq 3}">
-                                관광상품
-                            </c:when>
-                            <c:when test="${result.category eq 4}">
-                                관광체험•레저
-                            </c:when>
-                            <c:when test="${result.category eq 5}">
-                                관광콘텐츠
-                            </c:when>
-                            <c:otherwise>
-                            </c:otherwise>
-                        </c:choose>
-                    </span>
-                    <span>
-                        <c:choose>
-                            <c:when test="${result.category2 eq 1}">
-                                ICT/플랫폼
-                            </c:when>
-                            <c:when test="${result.category2 eq 2}">
-                                로컬푸드
-                            </c:when>
-                            <c:when test="${result.category2 eq 3}">
-                                관광상품
-                            </c:when>
-                            <c:when test="${result.category2 eq 4}">
-                                관광체험·레저
-                            </c:when>
-                            <c:when test="${result.category2 eq 5}">
-                                관광콘텐츠
-                            </c:when>
-                            <c:otherwise>
-                            </c:otherwise>
-                        </c:choose>
-                    </span>
+                    <c:choose>
+                        <c:when test="${result.category eq 1}">
+                            <span>ICT/플랫폼</span>
+                        </c:when>
+                        <c:when test="${result.category eq 2}">
+                            <span>로컬푸드</span>
+                        </c:when>
+                        <c:when test="${result.category eq 3}">
+                            <span>관광상품</span>
+                        </c:when>
+                        <c:when test="${result.category eq 4}">
+                            <span>관광체험•레저</span>
+                        </c:when>
+                        <c:when test="${result.category eq 5}">
+                            <span>관광콘텐츠</span>
+                        </c:when>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${result.category2 eq 1}">
+                            <span>ICT/플랫폼</span>
+                        </c:when>
+                        <c:when test="${result.category2 eq 2}">
+                            <span>로컬푸드</span>
+                        </c:when>
+                        <c:when test="${result.category2 eq 3}">
+                            <span>관광상품</span>
+                        </c:when>
+                        <c:when test="${result.category2 eq 4}">
+                            <span>관광체험·레저</span>
+                        </c:when>
+                        <c:when test="${result.category2 eq 5}">
+                            <span>관광콘텐츠</span>
+                        </c:when>
+                    </c:choose>
                 </dd>
             </dl>
             <table class="no_table">
