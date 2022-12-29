@@ -49,7 +49,7 @@
 			return;
 		}
 
-		if (frm.category.value == '') {
+		/*if (frm.category.value == '') {
 			alert('1차 카테고리를 선택해주세요.');
 			return;
 		}
@@ -57,7 +57,7 @@
 		if (frm.category2.value == '') {
 			alert('2차 카테고리를 선택해주세요.');
 			return;
-		}
+		}*/
 
 		if (frm.ntcrNm.value == "") {
 			alert('작성자를 입력하세요');
@@ -170,6 +170,8 @@
 						<option value="2">2020년 입주기업</option>
 						<option value="3">2021년 입주기업</option>
 						<option value="4">2022년 입주기업</option>
+						<option value="5">2020년 졸업기업</option>
+						<option value="6">2021년 졸업기업</option>
 					</select>
 				</li>
 				<li>

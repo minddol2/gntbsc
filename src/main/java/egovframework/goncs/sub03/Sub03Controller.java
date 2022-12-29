@@ -423,7 +423,7 @@ public class Sub03Controller {
     @RequestMapping(value = "/sub03/sub03_01.do")
     public String get_sub03_page_03(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
 
-        /*int us_level = 5;
+        int us_level = 5;
         LoginVO user = (LoginVO) EgovUserDetailsHelper.getAuthenticatedUser();
         if (user == null) {
             us_level = 5;
@@ -432,7 +432,7 @@ public class Sub03Controller {
         }
         model.addAttribute("us_level", us_level);
 
-        boardVO.setBbsId("BBSMSTR_000000000307");
+        boardVO.setBbsId("BBSMSTR_000000000309");
 
         BoardMasterVO vo = new BoardMasterVO();
         vo.setBbsId(boardVO.getBbsId());
@@ -441,31 +441,26 @@ public class Sub03Controller {
 
         BoardMasterVO master = bbsAttrbService.selectBBSMasterInf(vo);
 
-        boardVO.setPageUnit(12);
-        boardVO.setPageSize(10);
-
         PaginationInfo paginationInfo = new PaginationInfo();
-
-        paginationInfo.setCurrentPageNo(boardVO.getPageIndex());
         paginationInfo.setRecordCountPerPage(12);
-        paginationInfo.setPageSize(boardVO.getPageSize());
-
         boardVO.setFirstIndex(paginationInfo.getFirstRecordIndex());
-        boardVO.setLastIndex(paginationInfo.getLastRecordIndex());
-        boardVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
+
+        boardVO.setNoPaging(true); //페이징처리x
+
+        System.out.println("boardVO.isNoPaging() start");
+        System.out.println(boardVO.isNoPaging());
+        System.out.println("boardVO.isNoPaging() end");
 
         Map<String, Object> map = bbsMngService.selectBoardArticles(boardVO, master.getBbsAttrbCode());//2011.09.07
         int totCnt = Integer.parseInt((String) map.get("resultCnt"));
 
-        paginationInfo.setTotalRecordCount(totCnt);
 
         model.addAttribute("user", user);
         model.addAttribute("resultList", map.get("resultList"));
         model.addAttribute("resultCnt", map.get("resultCnt"));
         model.addAttribute("boardVO", boardVO);
         model.addAttribute("brdMstrVO", master);
-        model.addAttribute("paginationInfo", paginationInfo);
-        model.addAttribute("totCnt", totCnt);*/
+        model.addAttribute("totCnt", totCnt);
 
         return "egovframework/gntbsc/sub03/sub03_01";
     }

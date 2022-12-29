@@ -98,6 +98,9 @@ public class BoardVO extends Board implements Serializable {
     
     /** 조회 수 증가 여부 */
     private boolean plusCount = false;
+
+    /** 221228 페이징 처리 x */
+    private boolean noPaging = false;
     
     //---------------------------------
     // 2009.06.29 : 2단계 기능 추가
@@ -600,4 +603,13 @@ public class BoardVO extends Board implements Serializable {
     public String toString() {
 	return ToStringBuilder.reflectionToString(this);
     }
+
+    public boolean isNoPaging() {
+        return noPaging;
+    }
+
+    public void setNoPaging(boolean noPaging) {
+        this.noPaging = noPaging;
+    }
+
 }

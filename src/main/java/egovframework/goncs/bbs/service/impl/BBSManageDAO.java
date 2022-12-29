@@ -90,6 +90,10 @@ public class BBSManageDAO extends EgovComAbstractDAO {
     public List<BoardVO> selectBoardArticleList(BoardVO boardVO) throws Exception {
     	return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleList", boardVO);
     }
+
+    public List<BoardVO> selectBoardArticleListNoPaging(BoardVO boardVO) throws Exception{
+        return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleListNoPaging", boardVO);
+    }
     
     @SuppressWarnings("unchecked")
     public List<BoardVO> selectBoardArticleList_qna(BoardVO boardVO) throws Exception {
@@ -264,4 +268,6 @@ public class BBSManageDAO extends EgovComAbstractDAO {
     public String getPasswordInf(Board board) throws Exception {
     	return (String)select("BBSManageDAO.getPasswordInf", board);
     }
+
+
 }
