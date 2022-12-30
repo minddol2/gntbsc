@@ -49,10 +49,10 @@
                     </li>
                 </c:if>
             </c:forEach>
-            <li><a href="<c:url value="/img/pdf/1. 괭이그리스(예비관광스타트업).pdf"/>">괭이그리스</a></li>
-            <li><a href="<c:url value="/img/pdf/4. KinK(예비관광스타트업).pdf"/>">KinK</a></li>
-            <li><a href="<c:url value="/img/pdf/2. Kn-투어사피엔스(예비관광스타트업).pdf"/>">Kn-투어사피엔스</a></li>
-            <li><a href="<c:url value="/img/pdf/3. 디지털노마드닷컴(예비관광스타트업).pdf"/>">디지털노마드닷컴</a></li>
+            <li><a href="<c:url value="/img/pdf/1. 괭이그리스(예비관광스타트업).pdf"/>" download>괭이그리스</a></li>
+            <li><a href="<c:url value="/img/pdf/4. KinK(예비관광스타트업).pdf"/>" download>KinK</a></li>
+            <li><a href="<c:url value="/img/pdf/2. Kn-투어사피엔스(예비관광스타트업).pdf"/>" download>Kn-투어사피엔스</a></li>
+            <li><a href="<c:url value="/img/pdf/3. 디지털노마드닷컴(예비관광스타트업).pdf"/>" download>디지털노마드닷컴</a></li>
         </ul>
     </div>
     <div class="box">
@@ -81,7 +81,7 @@
                     </li>
                 </c:if>
             </c:forEach>
-            <li><a href="javascript: alert('준비중입니다.');">KBF</a></li>
+            <li><a href="javascript: alert('준비중입니다.');" download>KBF</a></li>
         </ul>
     </div>
 
