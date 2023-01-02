@@ -240,4 +240,64 @@ public class EgovFileDownloadController {
 			}
 		}
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/cmm/fms/viewEtcFile.do")
+    public void viewEtcFile(HttpServletResponse response, HttpServletRequest request) throws Exception {
+        String bbsId = request.getParameter("bbsId");
+        String fileIdx = request.getParameter("fileIdx");
+        String bbsIdx = request.getParameter("bbsIdx");
+
+        EtcFileVO etcFileVO = new EtcFileVO();
+        etcFileVO.setBbs_id(bbsId);
+        etcFileVO.setFile_idx(fileIdx);
+        etcFileVO.setBbs_idx(bbsIdx);
+        List<EtcFileVO> fList = fileMngService.selectEtcFiles(etcFileVO);
+
+        System.out.println("fList start");
+        //System.out.println(fList);
+        for (int i = 0; i < fList.size(); i++) {
+            System.out.println(fList.get(i));
+            System.out.println(fList.get(i).getFile_name());
+        }
+        System.out.println("fList end");
+
+        String result = "";
+
+        if(fList != null){
+            try{
+                String file_name = String.valueOf(fList.get(0).getFile_name());
+                String name = String.valueOf(fList.get(0).getFile_ori());
+                String file_Path = request.getServletContext().getRealPath("/egovframework/upload/");
+                String _file = file_Path + file_name;
+
+                result = _file;
+                File file = new File(_file);
+
+                // 파일 인코딩
+                String browser = request.getHeader("User-Agent");
+                if (browser.contains("MSIE") || browser.contains("Trident") || browser.contains("Chrome")) {
+                    name = URLEncoder.encode(name, "UTF-8").replaceAll("\\+", "%20");
+                } else {
+                    name = new String(name.getBytes("UTF-8"), "ISO-8859-1");
+                }
+
+                //response.setHeader("Content-Disposition", "attachment;filename=" + name); // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지를 알려주는 헤더
+                //response.setHeader("Content-Disposition", "inline"); // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지를 알려주는 헤더
+
+                FileInputStream fileInputStream = new FileInputStream(file); // 파일 읽어오기
+                OutputStream out = response.getOutputStream();
+
+                int read = 0;
+                byte[] buffer = new byte[1024];
+                while ((read = fileInputStream.read(buffer)) != -1) { // 1024바이트씩 계속 읽으면서 outputStream에 저장, -1이 나오면 더이상 읽을 파일이 없음
+                    out.write(buffer, 0, read);
+                }
+            } catch (Exception e){
+                throw new Exception(e.getMessage());
+            }
+        }
+
+        //return result;
+    }
 }

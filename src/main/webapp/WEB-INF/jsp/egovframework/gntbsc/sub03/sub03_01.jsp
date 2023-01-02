@@ -45,14 +45,14 @@
             <c:forEach var="result" items="${resultList}" varStatus="status">
                 <c:if test="${result.classfication2 eq '2' || result.classfication2 eq '5'}">
                     <li><a href="javascript: void(0);"
-                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
+                           onclick="fn_egov_viewFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
                     </li>
                 </c:if>
             </c:forEach>
-            <li><a href="<c:url value="/img/pdf/1. 괭이그리스(예비관광스타트업).pdf"/>" download>괭이그리스</a></li>
-            <li><a href="<c:url value="/img/pdf/4. KinK(예비관광스타트업).pdf"/>" download>KinK</a></li>
-            <li><a href="<c:url value="/img/pdf/2. Kn-투어사피엔스(예비관광스타트업).pdf"/>" download>Kn-투어사피엔스</a></li>
-            <li><a href="<c:url value="/img/pdf/3. 디지털노마드닷컴(예비관광스타트업).pdf"/>" download>디지털노마드닷컴</a></li>
+            <li><a href="<c:url value="/img/pdf/1. 괭이그리스(예비관광스타트업).pdf"/>" target="_blank">괭이그리스</a></li>
+            <li><a href="<c:url value="/img/pdf/4. KinK(예비관광스타트업).pdf"/>" target="_blank">KinK</a></li>
+            <li><a href="<c:url value="/img/pdf/2. Kn-투어사피엔스(예비관광스타트업).pdf"/>" target="_blank">Kn-투어사피엔스</a></li>
+            <li><a href="<c:url value="/img/pdf/3. 디지털노마드닷컴(예비관광스타트업).pdf"/>" target="_blank">디지털노마드닷컴</a></li>
         </ul>
     </div>
     <div class="box">
@@ -63,7 +63,7 @@
             <c:forEach var="result" items="${resultList}" varStatus="status">
                 <c:if test="${result.classfication2 eq '3' || result.classfication2 eq '6'}">
                     <li><a href="javascript: void(0);"
-                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
+                           onclick="fn_egov_viewFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
                     </li>
                 </c:if>
             </c:forEach>
@@ -77,7 +77,7 @@
             <c:forEach var="result" items="${resultList}" varStatus="status">
                 <c:if test="${result.classfication2 eq '4'}">
                     <li><a href="javascript: void(0);"
-                           onclick="fn_egov_downFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
+                           onclick="fn_egov_viewFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
                     </li>
                 </c:if>
             </c:forEach>
@@ -94,6 +94,10 @@
 <script>
     function fn_egov_downFile_etc(bbsId, fileIdx, bbsIdx) {
         window.open("<c:url value='/cmm/fms/downloadEtcFile.do?bbsId="+bbsId+"&fileIdx="+fileIdx+"&bbsIdx="+bbsIdx+"'/>");
+    }
+
+    function fn_egov_viewFile_etc(bbsId, fileIdx, bbsIdx) {
+        window.open("<c:url value='/cmm/fms/viewEtcFile.do?bbsId="+bbsId+"&fileIdx="+fileIdx+"&bbsIdx="+bbsIdx+"'/>");
     }
 </script>
 
