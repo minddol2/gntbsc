@@ -37,11 +37,11 @@ if(loginVO != null) {
 	<ul class="tabs list03">				
 		<li class="current"><a href="<c:url value='/sub04/sub01_01.do'/>">상담신청안내</a></li>
 		<li><a href="<c:url value='/sub04/sub01_02.do'/>">전문 멘토단</a></li>
-		<li><a href="<c:url value='/sub04/sub01_03.do'/>">상담신청</a></li>
+		<!--li><a href="<c:url value='/sub04/sub01_03.do'/>">상담신청</a></li-->
 	</ul>
 </div>
-<!--p style="color:red; margin-bottom:10px;font-size: 20px; font-weight: bold;">멘토링 프로그램은 일시적으로 운영이 중단됩니다. (2021. 12. 3. ~ 2022. 3월까지 중단 예정)</p>
--->
+<!--p style="color:red; margin-bottom:10px;font-size: 20px; font-weight: bold;">멘토링 프로그램은 일시적으로 운영이 중단됩니다. (2022. 12. 12. ~ 2023. 3월까지 중단 예정)</p-->
+
 <h4 class="tit_dot mb20">기업상담 신청방법</h4>
 <div class="mentor_process mb">
 	<ul>
@@ -67,7 +67,7 @@ if(loginVO != null) {
 	<div class="time">
 		<dl class="time02">
 			<dt>문의</dt>
-			<dd>담당자 이유민 Tel. 055-277-8417</dd>
+			<dd>담당자 김윤정 Tel. 055-277-8417</dd>
 		</dl>
 	</div>	
 </div>
@@ -78,15 +78,15 @@ if(loginVO != null) {
 		<li>로그인을 하셔야 작성한 글이 확인 가능합니다. <span class="ppTxt fwb">(타인이 작성한 글은 확인 불가)</span></li>
 		<li>화상 멘토링 선택 시 댓글로 화상 멘토링 일정을  안내해드리며, 희망 시간에 진행이 불가할 경우 대체 시간으로 안내 드립니다. </li>		
 		<li><span class="ppTxt fwb">화상 멘토링 진행 시 시간을 꼭 준수</span> 해주시기 바랍니다. </li>
-		<li><span class="ppTxt fwb">화상회의는 '구루미' 시스템으로 진행</span>되며, 사용이 불가한 경우 경남관광기업지원센터에 예약 후 센터에서 화상회의 시스템 사용이 가능합니다. </li>
+		<li><span class="ppTxt fwb">화상회의는 ‘구글미팅’(Google Meet)으로 진행</span>되며, 사용이 불가한 경우 경남관광기업지원센터에 예약 후 센터에서 화상회의 시스템 사용이 가능합니다. </li>
 		<li><span class="redTxt fwb">화상멘토링은 신청글 작성 후 이틀 뒤 부터 가능합니다. (신청 당일 진행 불가)</span></li>		
 		<li><span class="redTxt fwb">작성한 글은 수정 및 삭제가 불가하므로 신중히 작성하여 주시기를 바랍니다.</span></li>
 		<li>서면 멘토링 진행 시, <span class="ppTxt fwb">멘토 댓글 확인 후 이에 대한 추가문의가 있을 경우 24시간 안에 대댓글을 작성해야 추가 문의 진행이 가능</span>합니다. (24시간 후 댓글 창 닫힘) </li>
 	</ul>
 </div>
-<!--div class="tac mb">
+<div class="tac mb">
 	<a href="<c:url value='/sub04/sub01_03_write.do'/>" class="btn_rd btn_big">기업상담신청</a>
-</div-->
+</div>
 
 
 			</div><!--con-->

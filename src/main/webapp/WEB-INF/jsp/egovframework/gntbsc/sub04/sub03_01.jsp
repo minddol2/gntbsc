@@ -46,13 +46,13 @@ int m3 = 1;
 			<dt>운영시간</dt>
 			<dd>예약 09:00 ~ 18:00 (평일) </dd>
 			<dd>전화 09:00 ~ 18:00 (평일) </dd>
+			<dd class="fss">※18시 이후 사용이 필요하신 분들은 유선으로 문의 부탁드립니다.</dd>
 		</dl>
 	</div>
 	<div class="time">
 		<dl class="time02">
 			<dt>문의</dt>
-			<dd>경남관광기업지원센터 055-277-8416</dd>
-			<dd class="fss">※18시 이후 사용이 필요하신 분들은 유선으로 문의 부탁드립니다.</dd>
+			<dd>경남관광기업지원센터 055-277-8413 김민주 매니저</dd>
 		</dl>
 	</div>	
 </div>
@@ -61,7 +61,7 @@ int m3 = 1;
 <div class="pointbox mb">
 	<ul class="dot_li">
 		<li>사전승인 가능시간 : 월~금, 9:00 ~ 18:00 <span class="ppTxt fwb">(최소 3일 전 예약 필수)</span></li>
-		<li>당일대관 예약은 온라인 예약 후 <span class="ppTxt fwb">055-277-8416로 확인전화</span> 부탁드립니다.</li>
+		<li>당일대관 예약은 온라인 예약 후 <span class="ppTxt fwb">055-277-8413로 확인전화</span> 부탁드립니다.</li>
 	</ul>
 </div>
 
@@ -133,21 +133,22 @@ $('.photo_list').slick({
 			<td class="tal">
 				<ul class="dot_li">
 					<li>TV </li>
-					<li>노트북 개인지참 및 <span class="mEnter">마이크 사용불가</span></li>
 				</ul>
+				<p><span class="ppTxt">※노트북 개인지참</span></p>
 			</td>
 		</tr>
 		<tr>
 			<td class="bgc tac">대회의실</td>
 			<td>대회의실</td>
-			<td>54명</td>
+			<td>50명</td>
 			<td class="tal">
 				<ul class="dot_li">
-					<li>빔 프로젝터  <span class="mEnter">(노트북 개인지참)</span></li>
+					<li>빔 프로젝터</li>
 					<li>스크린</li>
 					<li>무선 마이크(2)</li>
 					<li>유선 마이크(1)</li>
 				</ul>
+				<p><span class="ppTxt">※노트북 개인지참</span></p>
 			</td>
 		</tr>
 		
@@ -167,8 +168,8 @@ $('.photo_list').slick({
 </div>
 
 <div class="tac mb">
-<!--	<a href="<c:url value='/sub04/rental.do'/>" class="btn_rd btn_big">회의실 대관신청</a>-->
-<a href="#" class="btn_rd btn_big">센터내부사정으로 <span class="mEnter">회의실 대관신청이 불가합니다.</span></a>
+<a href="<c:url value='/sub04/rental.do'/>" class="btn_rd btn_big">회의실 대관신청</a>
+<!--<a href="#" class="btn_rd btn_big">센터내부사정으로 <span class="mEnter">회의실 대관신청이 불가합니다.</span></a>-->
 </div>
 
 
