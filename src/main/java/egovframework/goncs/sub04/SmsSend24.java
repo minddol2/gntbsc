@@ -49,7 +49,8 @@ public class SmsSend24 {
         String rphone = Base64.encodeBase64String(tomobile.getBytes());
         String sphone1 = Base64.encodeBase64String("055".getBytes());
         String sphone2 = Base64.encodeBase64String("277".getBytes());
-        String sphone3 = Base64.encodeBase64String("8416".getBytes());
+        //String sphone3 = Base64.encodeBase64String("8416".getBytes());
+        String sphone3 = Base64.encodeBase64String("8413".getBytes());
         String rdate = Base64.encodeBase64String("".getBytes());
         String rtime = Base64.encodeBase64String("".getBytes());
         String mode = Base64.encodeBase64String("1".getBytes());
