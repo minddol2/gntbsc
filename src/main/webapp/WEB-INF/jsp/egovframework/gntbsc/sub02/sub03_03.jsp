@@ -32,7 +32,7 @@ int m3 = 3;
 
 
 
-<h4 class="tit_dot mb20">지역인재 채용 관광기업 지원</h4>
+<h4 class="tit_dot mb20">관광기업 지역인재 채용 활성화</h4>
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">도내 관광기업의 경영 부담을 완화하여 지역인재 고용 촉진</p>
 </div>
@@ -48,7 +48,7 @@ int m3 = 3;
 		</tr>
 		<tr>
 			<th class="bgc">모집기간</th>
-			<td>2022. 4. ~ 예산소진시까지</td>
+			<td>2023. 3. 20. ~ 예산소진시까지</td>
 		</tr>
 		<tr>
 			<th class="bgc">지원규모</th>
@@ -56,21 +56,21 @@ int m3 = 3;
 		</tr>
 		<tr>
 			<th class="bgc">지원기간</th>
-			<td>신규 채용일로부터 사업종료일(2022.10.31.)까지</td>
+			<td>신규채용일로부터 사업종료일(‘23.11월)까지</td>
 		</tr>
 		<tr>
 			<th class="bgc">지원내용</th>
 			<td>
 				<ul class="dot_li">
-					<li>최대 3개월간 월 180만원 지원</li>
-					<li>정규직 전환 시 1개월간 월 100만원 지원</li>
+					<li>최대 2개월간 월 180만원 지원</li>
+					<li>5개월 이상 근속자 중 정규직, 300만원 추가 지원</li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
 			<th class="bgc">세부내용</th>
 			<td>
-				<a href="/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=361&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank" target="_blank">공고문 참조</a>
+				<a href="/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=559&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank" target="_blank">공고문 참조</a>
 			</td>
 		</tr>
 	</tbody>
@@ -78,7 +78,7 @@ int m3 = 3;
 <p class="mb">※ 상기 일정 및 내용은 상황에 따라 변동 가능</p>
 <div class="business_img bdbt mb">
 	<ul class="list01">
-		<li><img src="<c:url value='/img/b_hirepay2022.png'/>" alt="" /></li>
+		<li><img src="<c:url value='/img/b_hirepay2023.jpg'/>" alt="" /></li>
 	</ul>
 </div>
 
@@ -95,7 +95,7 @@ int m3 = 3;
 	<tbody>
 		<tr>
 			<th class="bgc">개최일시</th>
-			<td>2022. 6. 30.(목) ~ 7. 1.(금) 10:00 ~ 17:00</td>
+			<td>2023. 6. 1. (목) ~ 6. 2.(금) </td>
 		</tr>
 		<tr>
 			<th class="bgc">개최장소</th>
@@ -124,8 +124,10 @@ int m3 = 3;
 </table>
 <p class="mb">※ 상기 일정 및 내용은 상황에 따라 변동 가능</p>
 <div class="business_img bdbt mb">
-	<ul class="list01">
-		<li><img src="<c:url value='/img/b_jobfair_img01.jpg'/>" alt="잡페어카드뉴스01" /></li>
+	<ul class="list02">
+		<li><img src="<c:url value='/img/b_jobfair2022_1.jpg'/>" alt="잡페어2022년 현장" /></li>
+		<li><img src="<c:url value='/img/b_jobfair2022_2.jpg'/>" alt="잡페어2022년 현장" /></li>
+		<li><img src="<c:url value='/img/b_jobfair2022_3.jpg'/>" alt="잡페어2022년 현장" /></li>
 	</ul>
 </div>
 

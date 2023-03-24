@@ -569,7 +569,7 @@ int m3 = 2;
 
 <h4 class="tit_dot mb20">관광기업 상설컨설팅 지원</h4>
 <div class="pointbox mb20">
-	<p class="fsb fwb tac">지역기반 관광기업 및 예비 관광업 창업자의 자립경영 제고 지원</p>
+	<p class="fsb fwb tac">도내 관광기업 및 예비 창업자의 경영 개선 및 애로사항 해결 </p>
 </div>
 <table class="comm_table mb20">	
 	<colgroup>
@@ -579,11 +579,11 @@ int m3 = 2;
 	<tbody>	
 		<tr>
 			<th class="bgc">추진대상</th>
-			<td>도내 관광업 종사자 또는 도내 예비 창업자</td>
+			<td>도내 관광업 종사자 및 예비 창업자 등</td>
 		</tr>
 		<tr>
 			<th class="bgc">지원내용</th>
-			<td>관련분야 전문가 (창업, 홍보 및 마케팅, 투자, 법률, 노무, 특허, 관광 등) 무료 멘토링 매칭 </td>
+			<td>6개 분야(창업, 마케팅/홍보, 투자, 경영심화, 관광, 제품디자인) 무료 멘토링 지원 </td>
 		</tr>
 	</tbody>
 </table>
