@@ -36,7 +36,7 @@ int m3 = 3;
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">도내 관광기업의 경영 부담을 완화하여 지역인재 고용 촉진</p>
 </div>
-<table class="comm_table m10">
+<table class="comm_table mb10">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
@@ -132,7 +132,7 @@ int m3 = 3;
 </div>
 
 
-
+<!--
 <h4 class="tit_dot mb20">디지털 관광마케터 양성 교육 운영</h4>
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">관광산업의 디지털화에 맞춘 디지털마케팅 전문 인력 양성</p>
@@ -394,9 +394,9 @@ int m3 = 3;
 		<li><img src="<c:url value='/img/b_digital_img02.jpg'/>" alt="디지털 관광마케터 양성 교육_심화" /></li>
 	</ul>
 </div>
+-->
 
-
-
+<!--
 <h4 class="tit_dot mb20">2022 경남 관광 창업 아이디어톤</h4>
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">경남 관광자원을 활용한 혁신적인 아이디어를 보유한 창업팀 발굴</p>
@@ -439,6 +439,7 @@ int m3 = 3;
 		<li><img src="<c:url value='/img/b_idea_poster01.jpg'/>" alt="관광 창업 아이디어톤 포스터" /></li>
 	</ul>
 </div>
+-->
 
 
 			</div><!--con-->

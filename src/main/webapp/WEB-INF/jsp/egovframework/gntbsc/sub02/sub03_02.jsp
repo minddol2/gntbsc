@@ -35,7 +35,7 @@ int m3 = 2;
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">도내 관광업 종사자 및 예비창업자를 위한 관광 아카데미</p>
 </div>
-<table class="comm_table mb">
+<table class="comm_table">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
@@ -47,29 +47,29 @@ int m3 = 2;
 		</tr>
 		<tr>
 			<th class="bgc">신청기간 </th>
-			<td>2022. 9. 5.(월) ~ 10. 5. (수) 18:00까지 </td>
+			<td>2023. 상반기 중 모집 예정 </td>
 		</tr>
 		<tr>
 			<th class="bgc">모집인원 </th>
-			<td>100여 명 내외</td>
+			<td>총 120여명 내외</td>
 		</tr>
 		<tr>
 			<th class="bgc">교육장소 </th>
 			<td>
 				<ul class="dot_li">
-					<li>오프라인 – 경남관광기업지원센터 대회의실</li>
-					<li> 온라인 – 화상 회의 시스템(유튜브 실시간 송출)</li>
+					<li>오프라인: 경남관광기업지원센터 대회의실</li>
+					<li>온라인 : 화상회의 시스템</li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
 			<th class="bgc">교육시간</th>
 			<td>
-				<ul class="dot_li">
+				<!--ul class="dot_li">
 					<li>기초반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오전(10:00~13:00)</li>
 					<li>심화반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오후(14:00~17:00)</li>
 					<li>창업반 : 기초/심화 수료 후 11월 2일~ 11월 5일 오후(14:00~17:00)</li>
-				</ul>
+				</ul-->미정
 			</td>
 		</tr>
 		<tr>
@@ -85,7 +85,7 @@ int m3 = 2;
 	</tbody>
 </table>
 
-
+<!--
 <h5 class="tit_nm mb20">회차별 교육내용</h5>
         <table class="time_table tac mb20">
             <thead>
@@ -306,7 +306,7 @@ int m3 = 2;
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>-->
 <!--
 <table class="time_table tac mb20">
 	<thead>
@@ -541,7 +541,7 @@ int m3 = 2;
 		</tr>
 	</tbody>
 </table>-->
-<div class="pointbox mb bdbt">
+<!--<div class="pointbox mb bdbt">
 	<ul class="dot_li">
 		<li>일정, 장소, 교육 내용 및 방법, 강사진 등은 사정에 따라 변경될 수 있으며, 코로나19로
                   상황에 따라 변경 가능 </li>
@@ -555,7 +555,7 @@ int m3 = 2;
 		<li><a href="#img3" class="litebox"><img src="<c:url value='/img/new-pos20220919-1.png'/>" alt="관광아카데미포스터 01" /></a></li>
 		<li><a href="#img4" class="litebox"><img src="<c:url value='/img/new-pos20220919-2.jpg'/>" alt="관광아카데미포스터 02" /></a></li>
 	</ul>
-</div>
+</div>-->
 <!--
 <div class="business_img bdbt">
 	<ul>
@@ -566,6 +566,7 @@ int m3 = 2;
 -->
 
 
+<div class="bdbt"></div>
 
 <h4 class="tit_dot mb20">관광기업 상설컨설팅 지원</h4>
 <div class="pointbox mb20">
@@ -703,7 +704,7 @@ int m3 = 2;
 </div>-->
 
 
-
+<!--
 
 <h4 class="tit_dot mb20">관광기업 온라인 마케팅 지원</h4>
 <div class="pointbox mb20">
@@ -732,6 +733,26 @@ int m3 = 2;
 </div>
 
 
+-->
+
+<h4 class="tit_dot mb20">경남 관광 청년창업 사관학교 운영</h4>
+<div class="pointbox">
+	<p class="fsb fwb tac"> 경남 관광 청년창업 사관학교 운영</p>
+</div>
+<div class="bdbt"></div>
+<h4 class="tit_dot mb20">경남 관광스타트업 팝업스토어 운영</h4>
+<table class="comm_table mb20">
+	<colgroup>
+		<col width="20%"/>
+		<col width="*"/>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th class="bgc">운영기간</th>
+			<td>하반기 운영 예정 </td>
+		</tr>
+	</tbody>
+</table>
 
 
 <div id="img1" class="program-img-box no-display">

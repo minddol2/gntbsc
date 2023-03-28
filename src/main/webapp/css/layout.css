@@ -304,6 +304,120 @@
 
 }
 
+/*메인슬라이드변경*/
+
+.new_mainvisual{margin-top:60px;}
+.new_mainvisual ul li{background:#000000; position:relative;}
+.new_mainvisual ul li .txt{min-height:500px; position:relative; display:flex; align-items:center; justify-content:center; text-align:center; letter-spacing:-2px}
+.new_mainvisual ul li .txt p{font-size: 1.8em; color:#ffffff; font-weight:600; text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -3px 20px rgba(0,0,0,0.4);}
+.new_mainvisual ul li .txt p span{display:inline-block}
+.new_mainvisual ul li .txt p b{ font-weight:800;}
+
+.new_mainvisual ul li:before{content:''; display:block; position:absolute; left:0; top:0; bottom:0; right:0; margin:auto; background-size:cover !Important; z-index:0;}
+.new_mainvisual ul li.slick-active:before{animation: zoomout2 1s ease-in-out infinite alternate;    -webkit-animation: zoomout2 0.8s ease-in-out infinite alternate; animation-iteration-count:1; 	-webkit-animation-iteration-count:1;}
+
+.new_mainvisual ul li.main01:before{background:url(../img/main_vis01.jpg) no-repeat center center;   transform: scale(1.05); }
+.new_mainvisual ul li.main02:before{background:url(../img/main_vis02.jpg) no-repeat center center;  transform: scale(1.05); }
+.new_mainvisual ul li.main03:before{background:url(../img/main_vis03.jpg) no-repeat center center;  transform: scale(1.05);  }
+.new_mainvisual ul li.main04:before{background:url(../img/main_vis04.jpg) no-repeat center center;  transform: scale(1.05);  }
+.new_mainvisual ul li.main05:before{background:url(../img/main_vis_new.png) no-repeat center center;  transform: scale(1.05);  }
+
+.slick-active .ani_txt {animation-name:ani_txt; animation-duration:1s; animation-fill-mode:both; animation-delay:1.1s;}
+.slick-active .ani_txt2 {animation-name:ani_txt2; animation-duration:1s; animation-fill-mode:both; animation-delay:1.6s;}
+
+.new_mainvisual ul li .txt p b:before {animation-timing-function:ease}
+.new_mainvisual ul li .txt p b span{position:relative; z-index:1;}
+.slide_animation {
+    position: relative;
+    padding: 0.1rem 0.3rem;
+    overflow: hidden;
+}
+.slick-active .slide_animation:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 0;
+    height: 60%;
+    background:#f39800; background:linear-gradient(120deg, #f39800 60% , #ef7d00 100%);
+    animation: slide 1.2s 2s forwards;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+
+}
+
+@keyframes slide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes ani_txt {
+    0% {opacity:0; transform:translateY(30px);}
+    100% {transform:translateY(0); opacity:1;}
+}
+@-webkit-keyframes ani_txt {
+    0% {opacity:0; transform:translateY(30px);}
+    100% {transform:translateY(0); opacity:1; }
+}
+
+@keyframes ani_txt2 {
+    0% {opacity:0; transform:translateY(-30px);}
+    100% {transform:translateY(0); opacity:1;}
+}
+@-webkit-keyframes ani_txt2 {
+    0% {opacity:0; transform:translateY(-30px);}
+    100% {transform:translateY(0); opacity:1;}
+}
+
+
+@keyframes zoomout2 {
+    0% { transform: scale(1); }
+    100% {        transform: scale(1.05);    }
+}
+
+
+
+.visualslider2 .slick-dots{ bottom:30px; width:94%; left:0; right:0; margin:auto; text-align:right}
+.visualslider2 .slick-dots li{width:15px; height:15px; margin:0 3px;}
+.visualslider2 .slick-dots button{border:0px; width:100%; height:100%; border-radius:500px; background:#ffffff}
+.visualslider2 .slick-dots li.slick-active button{background:#ecee35}
+
+.visualslider2 .slick-arrow{background:#808080;background:rgba(50,50,50,0.3);border-radius:0 5px;top:auto;bottom:30px;left:5%;display: none !important;}
+.visualslider2 .slick-arrow.slick-next{right:auto; left:calc(5% + 55px);}
+.visualslider2 .slick-arrow:before{color:#ffffff}
+
+
+@media all and (min-width:840px) {
+    .new_mainvisual ul li .txt p{position:relative; top:-20px; font-size:2.5em}
+    .visualslider2 .slick-arrow{bottom:150px}
+
+}
+
+@media all and (min-width:1200px) {
+    .new_mainvisual{margin-top:135px;}
+    .new_mainvisual ul li .txt{min-height:700px}
+    .new_mainvisual ul li .txt p{ top:-70px; font-size:3em}
+
+    .visualslider2 .slick-arrow{bottom:300px; width:60px; height:60px;}
+    .visualslider2 .slick-arrow.slick-prev{left:3%}
+    .visualslider2 .slick-arrow.slick-next{left:calc(3% + 70px)}
+
+
+}
+
+@media all and (min-width:1400px) {
+    .visualslider2 .slick-arrow{bottom:260px}
+    .visualslider2 .slick-arrow.slick-next{left:50%; margin-left:-625px}
+    .visualslider2 .slick-arrow.slick-prev{left:50%; margin-left:-700px}
+
+
+
+}
 
 
 /*공통*/

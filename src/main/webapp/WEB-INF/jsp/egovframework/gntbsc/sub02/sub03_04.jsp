@@ -30,11 +30,11 @@ int m3 = 4;
 		<jsp:param name="m3" value="<%=m3%>"/>
 </jsp:include>
 
-<h4 class="tit_dot mb20">경남관광 인플루언서 양성교육</h4>
+<h4 class="tit_dot mb20">경남 관광 디지털 전문인력 양성교육</h4>
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">경남지역 관광콘텐츠 활용 전문가 육성을 위한 관광 콘텐츠 제작 실습 교육 지원</p>
 </div>
-<table class="comm_table mb">
+<table class="comm_table">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
@@ -42,8 +42,8 @@ int m3 = 4;
 	<tbody>
 		
 		<tr>
-			<th class="bgc">교육기간</th>
-			<td>2022.9.17. ~ 10.2.(매주 토•일요일)</td>
+			<th class="bgc">모집기간</th>
+			<td>상반기 중 모집 예정</td>
 		</tr>
 		<tr>
 			<th class="bgc">참여혜택</th>
@@ -56,7 +56,7 @@ int m3 = 4;
 		</tr>
 	</tbody>
 </table>
-
+<!--
 <h5 class="tit_nm mb20">세부 교육내용-실전반</h5>
 <table class="time_table tac">
 	<thead>
@@ -251,7 +251,7 @@ int m3 = 4;
 		
 	</tbody>
 </table>
-<p class="fss mb">※ 상기 일정 및 내용은 변경될 수 있으며, 코로나19로 상황에 따라 온·오프라인 교차 수업 가능</p>
+<p class="fss">※ 상기 일정 및 내용은 변경될 수 있으며, 코로나19로 상황에 따라 온·오프라인 교차 수업 가능</p>
 
 <div class="business_img mb bdbt">
 	<ul class="list02">
@@ -259,9 +259,10 @@ int m3 = 4;
 		<li><img src="<c:url value='/img/b_influ_img02.jpg'/>" alt="지역관광 인플루언서 포스터" /></li>
 	</ul>
 </div>
+-->
 
-
-<h4 class="tit_dot mb20">2022경남관광 협업 프로젝트</h4>
+<div class="bdbt"></div>
+<h4 class="tit_dot mb20">지역 기반 관광스타트업 협업 프로젝트</h4>
 
 <table class="comm_table mb">
 	<colgroup>
@@ -271,7 +272,7 @@ int m3 = 4;
 	<tbody>
 		<tr>
 			<th class="bgc">공모기간</th>
-			<td>2022. 5. 18.(수) ~ 6. 10.(금)</td>
+			<td>상반기 중 모집 예정</td>
 		</tr>
 		<tr>
 			<th class="bgc">공모내용</th>
@@ -298,14 +299,14 @@ int m3 = 4;
 	</tbody>
 </table>
 
-<h5 class="tit_nm mb20">사업설명회</h5>
+<!--h5 class="tit_nm mb20">사업설명회</h5>
 <div class="business_img mb bdbt">
 	<ul class="list02">
-		<li><img src="<c:url value='/img/b_collabo_img01.jpg'/>" alt="사업설명회 사진자료" /></li>
-		<!--<li><img src="<c:url value='/img/b_collabo_img02.jpg'/>" alt="사업설명회 사진자료2" /></li>-->
+		<li><img src="<c:url value='/img/b_collabo_img01.jpg'/>" alt="사업설명회 사진자료" /></li>-->
+		<!--<li><img src="<c:url value='/img/b_collabo_img02.jpg'/>" alt="사업설명회 사진자료2" /></li>
 		<li><img src="<c:url value='/img/b_collabo_img03.jpg'/>" alt="경남관광 협업프로젝트 포스터" /></li>
 	</ul>
-</div>
+</div-->
 
 			</div><!--con-->
 		</div><!--subcon-->
