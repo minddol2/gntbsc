@@ -553,7 +553,7 @@ function rent_Sendit() {
 	<ul class="dot_li">
 		<li>내부 행사 및 기타 이유로 인해 부득이하게 예약 취소될 경우가 있으니 <span class="ppTxt fwb">최소 3일전까지 예약</span>부탁드립니다.</li>
 		<li><span class="ppTxt fwb">소회의실 1+2+3 / 소회의실 4+5+6으로 중복선택하여 확장사용 가능</span> 하며 예약일시를 선택하시면 대관가능장소가 표기됩니다.</li>
-		<li><span class="ppTxt fwb">당일대관 예약은 온라인 예약 후 055-277-8416로 확인전화</span> 부탁드립니다.</li>
+		<li><span class="ppTxt fwb">당일대관 예약은 온라인 예약 후 055-277-8413로 확인전화</span> 부탁드립니다.</li>
 		<li><span class="ppTxt fwb">개인정보 수집이용약관 및 시설대관지침을 반드시 확인</span>해주세요.</li>
 	</ul>
 </div>
@@ -762,7 +762,7 @@ function rent_Sendit() {
 		</div>
 		<div class="pointbox pointbox_w">
 			<ul class="dot_li">
-				<li>당일대관 예약은 온라인 예약 후 센터 사무실이나 055-277-8416로 확인전화 부탁드립니다.<br/> 
+				<li>당일대관 예약은 온라인 예약 후 센터 사무실이나 055-277-8413로 확인전화 부탁드립니다.<br/>
 					<span class="redTxt fss">※사전승인 필수 사전승인 가능시간(월~금, 9:00~18:00) 온라인 승인은 전일까지 가능</span></li>
 				<li>사전 예약취소는 전일까지 가능합니다. </li>
 				<li>승인이 완료된 후 이용 가능하며 관련 안내 문자로 발송 예정입니다. </li>
