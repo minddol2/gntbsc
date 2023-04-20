@@ -1,5 +1,7 @@
 package egovframework.goncs.sub05;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -112,7 +114,7 @@ public class Sub0504Controller {
 
     	Map<String, Object> map = bbsMngService.selectBoardArticles(boardVO, master.getBbsAttrbCode());//2011.09.07
     	int totCnt = Integer.parseInt((String)map.get("resultCnt"));
-    	
+
     	paginationInfo.setTotalRecordCount(totCnt);
 
     	model.addAttribute("user", user);

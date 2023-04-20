@@ -13,6 +13,7 @@ int m2 = 9;
 int m3 = 0;
 %>
 
+
 <jsp:include page="/WEB-INF/jsp/egovframework/gntbsc/wssms/top.jsp" flush="true" >
 		<jsp:param name="bodyckey" value="<%=bodyckey%>"/>
 </jsp:include>
@@ -22,6 +23,9 @@ int m3 = 0;
 		<jsp:param name="m2" value="<%=m2%>"/>
 		<jsp:param name="m3" value="<%=m3%>"/>
 </jsp:include>
+
+<jsp:useBean id="now" class="java.util.Date" />
+<fmt:formatDate value="${now}" pattern="yyyy" var="yearStart"/>
 
 <script type="text/javascript">
 <!--
@@ -96,6 +100,19 @@ function fn_egov_select_BBSList() {
 						type="text" name="nttSj" class="input_txt w-col01"
 						style="ime-mode: active;" id="nttSj" hname="제목"
 						value="<c:out value="${result.nttSj}" />" option="" required="required" title="제목 입력" /></span></span></li>
+				<li>
+					<span class="w_txt">연도</span> <span class="inputTxt">
+						<select name="category">
+							<option value="">선택</option>
+							<c:forEach begin="0" end="${yearStart - 2022}" var="yResult" step="1">
+								<option value="<c:out value="${yearStart-yResult}" />"
+										<c:if test="${yearStart-yResult == result.category}"> selected="selected"</c:if>>
+									<c:out value="${yearStart-yResult}" />
+								</option>
+							</c:forEach>
+						</select>
+					</span>
+				</li>
 			</ul>
 	</div>
 	<div class="writeCon">

@@ -120,7 +120,7 @@ function fn_egov_select_BBSList(pageNo) {
 				    				</span>
 				    			</c:if>
 			    				<span class="link">
-			    					<a href="#"  onclick="fn_egov_inqire_BBS('${result.nttId}', '${result.bbsId }');"><c:out value="${result.nttSj}"/></a>
+			    					<a href="#"  onclick="fn_egov_inqire_BBS('${result.nttId}', '${result.bbsId }');">[${result.category}] <c:out value="${result.nttSj}"/></a>
 			    				</span>
 			    			</form>
 						</span>

@@ -23,6 +23,9 @@ int m3 = 0;
 		<jsp:param name="m3" value="<%=m3%>"/>
 </jsp:include>
 
+<jsp:useBean id="now" class="java.util.Date" />
+<fmt:formatDate value="${now}" pattern="yyyy" var="yearStart"/>
+
 <script type="text/javascript">
 <!--
 $(document).ready(function(){	
@@ -115,6 +118,18 @@ function pasteImage(img_url,target){
 						type="text" name="ntcrNm" class="input_txt"
 						style="ime-mode: active;" id="ntcrNm" hname="이름"
 						value="<c:out value='${user.us_name}'/>" option="" required="required" title="이름 입력" /></span></li>
+				<li>
+					<span class="w_txt">연도</span> <span class="inputTxt">
+						<select name="category">
+							<option value="">선택</option>
+							<c:forEach begin="0" end="${yearStart - 2022}" var="yResult" step="1">
+								<option value="<c:out value="${yearStart-yResult}" />">
+									<c:out value="${yearStart-yResult}" />
+								</option>
+							</c:forEach>
+						</select>
+					</span>
+				</li>
 			</ul>
 		</div>
 		<div class="writeCon">

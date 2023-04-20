@@ -56,7 +56,8 @@ if(loginVO != null) {
 	<input type="hidden" name="bbsAttrbCode" value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" /> 
 	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" /> 
 	<input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>" />
-			
+	<input name="category" type="hidden" value="<c:out value='${searchVO.category}'/>" />
+
 <div class="searchTop">
 	<p class="list_info"><span><c:out value="${totCnt}"/></span>개의 게시물이 등록되어 있습니다</p>
 	<div class="searchBox">				
@@ -74,6 +75,14 @@ if(loginVO != null) {
 </div>
 
 </form>
+
+<div class="typebox mb">
+	<ul class="tabs list04 long">
+		<li class="<c:if test="${searchVO.category eq ''}">current</c:if>"><a href="javascript: egov_select_category('')">전체</a></li>
+		<li class="<c:if test="${searchVO.category eq '2023'}">current</c:if>"><a href="javascript: egov_select_category('2023')">2023</a></li>
+		<li class="<c:if test="${searchVO.category eq '2022'}">current</c:if>"><a href="javascript: egov_select_category('2022')">2022</a></li>
+	</ul>
+</div>
 
 <div class="boardType01">
 	<ul class="board_ul">
@@ -137,6 +146,13 @@ function fn_egov_inqire_BBS(nttId, bbsId) {
 
 function fn_egov_select_BBSList(pageNo) {
 	document.frm.pageIndex.value = pageNo;
+	document.frm.action = "<c:url value='/sub05/sub04_01.do'/>";
+	document.frm.submit();
+}
+
+function egov_select_category(category) {
+	document.frm.pageIndex.value = 1;
+	document.frm.category.value = category;
 	document.frm.action = "<c:url value='/sub05/sub04_01.do'/>";
 	document.frm.submit();
 }
