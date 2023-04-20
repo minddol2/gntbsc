@@ -78,7 +78,7 @@ if(loginVO != null) {
 
 <div class="typebox mb">
 	<ul class="tabs list04 long">
-		<li class="<c:if test="${searchVO.category eq ''}">current</c:if>"><a href="javascript: egov_select_category('')">전체</a></li>
+		<%--<li class="<c:if test="${searchVO.category eq ''}">current</c:if>"><a href="javascript: egov_select_category('')">전체</a></li>--%>
 		<li class="<c:if test="${searchVO.category eq '2023'}">current</c:if>"><a href="javascript: egov_select_category('2023')">2023</a></li>
 		<li class="<c:if test="${searchVO.category eq '2022'}">current</c:if>"><a href="javascript: egov_select_category('2022')">2022</a></li>
 	</ul>

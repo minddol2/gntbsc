@@ -56,7 +56,7 @@ String mLink[][][] = new String[12][11][10];
 		mTitle[5][5][0] = "센터소식"; mLink[5][5][0] = "sub05/sub05_01.do";
 		mTitle[5][2][0] = "보도자료"; mLink[5][2][0] = "sub05/sub02_01.do"; 
 		mTitle[5][3][0] = "FAQ"; mLink[5][3][0] = "sub05/sub03_01.do"; 
-		mTitle[5][4][0] = "JOB Fair 일자리정보"; mLink[5][4][0] = "sub05/sub04_01.do"; 
+		mTitle[5][4][0] = "JOB Fair 일자리정보"; mLink[5][4][0] = "sub05/sub04_01.do?category=2023";
 		mTitle[5][6][0] = "관광in 일자리현황"; mLink[5][6][0] = "https://academy.visitkorea.or.kr/job/recruit/list.do"; 
 		
 
