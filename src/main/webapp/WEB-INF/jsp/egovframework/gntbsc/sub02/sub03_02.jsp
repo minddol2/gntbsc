@@ -31,59 +31,6 @@ int m3 = 2;
 </jsp:include>
 
 
-<h4 class="tit_dot mb20">관광 아카데미</h4>
-<div class="pointbox mb20">
-	<p class="fsb fwb tac">도내 관광업 종사자 및 예비창업자를 위한 관광 아카데미</p>
-</div>
-<table class="comm_table">
-	<colgroup>
-		<col width="20%"/>
-		<col width="*"/>
-	</colgroup>
-	<tbody>
-		<tr>
-			<th class="bgc">신청자격</th>
-			<td>관광업 관련자 또는 관광 창업에 관심있는 경남도민</td>
-		</tr>
-		<tr>
-			<th class="bgc">신청기간 </th>
-			<td>2023. 상반기 중 모집 예정 </td>
-		</tr>
-		<tr>
-			<th class="bgc">모집인원 </th>
-			<td>총 120여명 내외</td>
-		</tr>
-		<tr>
-			<th class="bgc">교육장소 </th>
-			<td>
-				<ul class="dot_li">
-					<li>오프라인: 경남관광기업지원센터 대회의실</li>
-					<li>온라인 : 화상회의 시스템</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<th class="bgc">교육시간</th>
-			<td>
-				<!--ul class="dot_li">
-					<li>기초반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오전(10:00~13:00)</li>
-					<li>심화반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오후(14:00~17:00)</li>
-					<li>창업반 : 기초/심화 수료 후 11월 2일~ 11월 5일 오후(14:00~17:00)</li>
-				</ul-->미정
-			</td>
-		</tr>
-		<tr>
-			<th class="bgc">참여혜택</th>
-			<td>전 과정 무료 교육, 출석률 80% 이상인 자에 한하여 경남관광재단 대표이사 명의 수료증 발급, 수료자 대상 희망자 중 협력파트너 모집,<br>
-                		  기초·심화반 수료자에 한해 <관광 아카데미> 창업 과정 참가 기회 제공</td>
-		</tr>
-		<!--
-		<tr>
-			<th class="bgc">교육신청</th>
-			<td><a href="https://gyeongnam.tourbiz.or.kr/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=275&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank" target="_blank">교육신청안내</a></td>
-		</tr>-->
-	</tbody>
-</table>
 
 <!--
 <h5 class="tit_nm mb20">회차별 교육내용</h5>
@@ -566,18 +513,17 @@ int m3 = 2;
 -->
 
 
-<div class="bdbt"></div>
 
 <h4 class="tit_dot mb20">관광기업 상설컨설팅 지원</h4>
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">도내 관광기업 및 예비 창업자의 경영 개선 및 애로사항 해결 </p>
 </div>
-<table class="comm_table mb20">	
+<table class="comm_table mb20">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
 	</colgroup>
-	<tbody>	
+	<tbody>
 		<tr>
 			<th class="bgc">추진대상</th>
 			<td>도내 관광업 종사자 및 예비 창업자 등</td>
@@ -596,6 +542,61 @@ int m3 = 2;
 	</ul>
 </div>
 
+<h4 class="tit_dot mb20">관광 아카데미</h4>
+<div class="pointbox mb20">
+	<p class="fsb fwb tac">도내 관광업 종사자 및 예비창업자를 위한 관광 아카데미</p>
+</div>
+<table class="comm_table">
+	<colgroup>
+		<col width="20%"/>
+		<col width="*"/>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th class="bgc">신청자격</th>
+			<td>관광업 관련자 또는 관광 창업에 관심있는 경남도민</td>
+		</tr>
+		<tr>
+			<th class="bgc">신청기간 </th>
+			<td>2023. 상반기 중 모집 예정 </td>
+		</tr>
+		<tr>
+			<th class="bgc">모집인원 </th>
+			<td>총 120여명 내외</td>
+		</tr>
+		<tr>
+			<th class="bgc">교육장소 </th>
+			<td>
+				<ul class="dot_li">
+					<li>오프라인: 경남관광기업지원센터 대회의실</li>
+					<li>온라인 : 화상회의 시스템</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th class="bgc">교육시간</th>
+			<td>
+				<!--ul class="dot_li">
+					<li>기초반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오전(10:00~13:00)</li>
+					<li>심화반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오후(14:00~17:00)</li>
+					<li>창업반 : 기초/심화 수료 후 11월 2일~ 11월 5일 오후(14:00~17:00)</li>
+				</ul-->미정
+			</td>
+		</tr>
+		<tr>
+			<th class="bgc">참여혜택</th>
+			<td>전 과정 무료 교육, 출석률 80% 이상인 자에 한하여 경남관광재단 대표이사 명의 수료증 발급, 수료자 대상 희망자 중 협력파트너 모집,<br>
+                		  기초·심화반 수료자에 한해 <관광 아카데미> 창업 과정 참가 기회 제공</td>
+		</tr>
+		<!--
+		<tr>
+			<th class="bgc">교육신청</th>
+			<td><a href="https://gyeongnam.tourbiz.or.kr/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=275&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank" target="_blank">교육신청안내</a></td>
+		</tr>-->
+	</tbody>
+</table>
+
+<div class="bdbt"></div>
 <!--
 <h4 class="tit_dot mb20">경남 관광 크리에이터 발굴 및 콘텐츠 제작 </h4>
 <div class="pointbox mb20">
@@ -736,9 +737,22 @@ int m3 = 2;
 -->
 
 <h4 class="tit_dot mb20">경남 관광 청년창업 사관학교 운영</h4>
-<div class="pointbox">
-	<p class="fsb fwb tac"> 경남 관광 청년창업 사관학교 운영</p>
-</div>
+<table class="comm_table mb20">
+	<colgroup>
+		<col width="20%"/>
+		<col width="*"/>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th class="bgc">신청기간</th>
+			<td>6월 중 모집 예정 </td>
+		</tr>
+		<tr>
+			<th class="bgc">교육기간</th>
+			<td>7월 중순 ~ 8월까지</td>
+		</tr>
+	</tbody>
+</table>
 <div class="bdbt"></div>
 <h4 class="tit_dot mb20">경남 관광스타트업 팝업스토어 운영</h4>
 <table class="comm_table mb20">

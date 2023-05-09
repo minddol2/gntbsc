@@ -125,9 +125,8 @@ int m3 = 3;
 <p class="mb">※ 상기 일정 및 내용은 상황에 따라 변동 가능</p>
 <div class="business_img bdbt mb">
 	<ul class="list02">
-		<li><img src="<c:url value='/img/b_jobfair2022_1.jpg'/>" alt="잡페어2022년 현장" /></li>
-		<li><img src="<c:url value='/img/b_jobfair2022_2.jpg'/>" alt="잡페어2022년 현장" /></li>
-		<li><img src="<c:url value='/img/b_jobfair2022_3.jpg'/>" alt="잡페어2022년 현장" /></li>
+		<li><img src="<c:url value='/img/b_jobfair2023_01.jpg'/>" alt="잡페어2023년 현장" /></li>
+		<li><img src="<c:url value='/img/b_jobfair2023_02.jpg'/>" alt="잡페어2023년 현장" /></li>
 	</ul>
 </div>
 

@@ -34,7 +34,7 @@ int m3 = 4;
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">경남지역 관광콘텐츠 활용 전문가 육성을 위한 관광 콘텐츠 제작 실습 교육 지원</p>
 </div>
-<table class="comm_table">
+<!--table class="comm_table">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
@@ -55,7 +55,72 @@ int m3 = 4;
 			<td><a href="https://gyeongnam.tourbiz.or.kr/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=472&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank">교육신청안내</a></td>
 		</tr>
 	</tbody>
+</table-->
+
+<table class="comm_table">
+	<colgroup>
+		<col width="20%"/>
+		<col width="40%"/>
+		<col width="40%"/>
+	</colgroup>
+  <tr>
+    <th>구분</th>
+    <th>관광마케터 양성교육</th>
+    <th>인플루언서 양성교육</th>
+  </tr>
+  <tr>
+    <th>교육기간</th>
+    <td>2023. 5. 13~ 6. 15</td>
+    <td>2023. 5. 13~ 6. 23</td>
+  </tr>
+  <tr>
+    <th>교육대상</th>
+    <td>관광 기업 취업을 희망하는 만 19세 이상 만 39세 이하 <span class="pEnter">경남도민 및 도내 재학·재직자<span></td>
+    <td>관광콘텐츠 제작·개발에 관심 있는 만 19세 이상 경남도민</td>
+  </tr>
+  <tr>
+    <th>교육인원</th>
+    <td>20명</td>
+    <td>실전반 90명, 마스터반 40명</td>
+  </tr>
+  <tr>
+    <th>교육내용</th>
+    <td>관광 마케팅 실무 중심 취업 연계 교육</td>
+    <td>경남 관광 활용 SNS 콘텐츠 제작, 영상 편집 등 이론/실무 교육</td>
+  </tr>
+  <tr>
+    <th>교육장소</th>
+    <td colspan="2">경남관광기업지원센터 대회의실</td>
+  </tr>
+  <tr>
+    <th>특강자</th>
+    <td>54만 유튜버 &lt;사내뷰공업&gt;
+      야놀자 커뮤니케이션실 &lt;송민규 실장&gt;<br>
+      &lsquo;여행을 바꾸는 여행 트렌드&rsquo; 저자 &lt;김다영 작가&gt;
+    </td>
+    <td>1. 54만 유튜버 &lt;사내뷰공업&gt;<br />
+      2. &lsquo;엄마, 내친김에 남미까지!&rsquo; 저자 &lt;태원준 여행작가&gt;</td>
+  </tr>
+  <tr>
+    <th>참여혜택</th>
+    <td>관광 마케팅 전문가 멘토링 및 교육 참여 장려 지원금 지급<br />
+      실무자 초청 강연 및 스튜디오 실습을 통한 수강생의 업무 능력 제고<br />
+      취업 멘토링 및 포트폴리오 제작 지원을 통한 취업연계 지원<br />
+      수료증 및 수료 기념품 지급<br />
+      김다영 작가의 [여행을 바꾸는 여행 트렌드] 저서 지급
+    </td>
+    <td>교육 수료시 제작 지원금 지급 *출석 및 과제 제출 시 지급<br />
+      우수 수료생에 한해 경남관광재단 홍보단 참여 기회 부여 *5만원 월 2회, 최대 10만원 지급<br />
+      수료증 및 수료 기념품 지급
+    </td>
+  </tr>
+		<tr>
+			<th class="bgc">교육신청</th>
+			<td colspan="2"><a href="https://gyeongnam.tourbiz.or.kr/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=584&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank">교육신청안내</a></td>
+		</tr>
 </table>
+
+
 <!--
 <h5 class="tit_nm mb20">세부 교육내용-실전반</h5>
 <table class="time_table tac">
