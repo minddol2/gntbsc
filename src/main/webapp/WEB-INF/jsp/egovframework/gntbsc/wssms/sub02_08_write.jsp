@@ -170,6 +170,7 @@
 						<option value="2">2020년 입주기업</option>
 						<option value="3">2021년 입주기업</option>
 						<option value="4">2022년 입주기업</option>
+						<option value="7">2023년 입주기업</option>
 						<option value="5">2020년 졸업기업</option>
 						<option value="6">2021년 졸업기업</option>
 					</select>

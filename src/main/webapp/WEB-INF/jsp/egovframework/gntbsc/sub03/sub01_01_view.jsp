@@ -62,6 +62,9 @@
                     <c:when test="${result.classfication2 eq 4}">
                         <span>2022년 입주기업</span>
                     </c:when>
+                    <c:when test="${result.classfication2 eq 7}">
+                        <span>2023년 입주기업</span>
+                    </c:when>
                     <c:when test="${result.classfication2 eq 5}">
                         <span>2020년 졸업기업</span>
                     </c:when>

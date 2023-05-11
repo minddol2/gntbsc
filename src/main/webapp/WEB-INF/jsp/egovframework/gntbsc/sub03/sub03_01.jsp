@@ -84,6 +84,20 @@
             <li><a href="javascript: alert('준비중입니다.');" download>KBF</a></li>
         </ul>
     </div>
+    <div class="box">
+        <p class="tlt">
+            2023년도 입주기업
+        </p>
+        <ul>
+            <c:forEach var="result" items="${resultList}" varStatus="status">
+                <c:if test="${result.classfication2 eq '7'}">
+                    <li><a href="javascript: void(0);"
+                           onclick="fn_egov_viewFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
+                    </li>
+                </c:if>
+            </c:forEach>
+        </ul>
+    </div>
 
 </div>
 

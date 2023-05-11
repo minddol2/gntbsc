@@ -150,6 +150,8 @@
                                     <c:if test="${result.classfication2 eq '3'}">selected</c:if>>2021년 입주기업</option>
                             <option value="4"
                                     <c:if test="${result.classfication2 eq '4'}">selected</c:if>>2022년 입주기업</option>
+                            <option value="7"
+                                    <c:if test="${result.classfication2 eq '7'}">selected</c:if>>2023년 입주기업</option>
 							<option value="5"
                                     <c:if test="${result.classfication2 eq '5'}">selected</c:if>>2020년 졸업기업</option>
 							<option value="6"
