@@ -1123,7 +1123,7 @@
 .center_board2{position:relative}
 .center_board2 .photo{margin-bottom:10px}
 .center_board2 .photo .cate{position:absolute; left:0px; top:0px; line-height:25px; padding:0 5px; background:#808080; color:#ffffff; font-size:0.85em; z-index:5}
-.center_board2 .photo .cate01{background:#232cb0; display: none;}
+.center_board2 .photo .cate01{background:#232cb0;/* display: none; */}
 .center_board2 .photo .cate02{background:#ec7a01}
 .center_board2 .photo .cate03{background:#74aa34}
 .center_board2 .photo .cate04{background:#019fec}
