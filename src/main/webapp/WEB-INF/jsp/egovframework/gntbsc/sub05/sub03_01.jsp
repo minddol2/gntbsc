@@ -75,7 +75,6 @@ if(loginVO != null) {
 			<h4><b class="cate"></b> <c:out value="${result.nttSj}"/><i></i></h4>
 			<div class="qna_answer">
 				<c:out value="${result.nttCn}" escapeXml="false" />
-			</div>
 			<!--첨부파일 view start-->
 			<c:if test="${not empty result.atchFileId}">
 				<div class="v_file_lay">
@@ -87,6 +86,7 @@ if(loginVO != null) {
 				</div>
 			</c:if>
 			<!--첨부파일 view end-->
+			</div>
 		</c:forEach>
 		<c:if test="${fn:length(resultList) == 0}">
 			<div class="tac pdbox mb">게시물이 없습니다.</div>
