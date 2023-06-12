@@ -868,15 +868,32 @@
 .responsive-tabs__heading--active i:before{background:#ffffff}
 .responsive-tabs__heading--active i:after{display:none; transition:0.3s}
 
-.responsive-tabs__panel{padding:20px 3%; background:#f9f9f9}
+.responsive-tabs__panel{padding:20px 3%;background:#f9f9f9;}
 .responsive-tabs h5:last-child{border-bottom:1px solid #dcdcdc}
-
+.v_file_lay{display: block !important;}
+.v_file_lay table{
+  width: 100%;
+}
+.v_file_lay td{
+  /* border-top: 1px solid #dedede; */
+  padding: 10px;
+  background: #f9f9f9;
+}
+.v_file_lay .file_each{
+  margin-bottom: 10px;
+  padding-left: 20px;
+  background: url(../img/ic_attemp.png) 0 3px no-repeat;
+  background-size: 12px;
+}
 
 @media all and (min-width:768px) {
   .responsive-tabs__heading {padding: 20px 15px;}
   .responsive-tabs__heading:after{top:0;  bottom:0; margin:auto}
   .acco_info .qna_answer{font-size:1em}
   .responsive-tabs__panel{padding:20px 20px}
+  .v_file_lay{}
+  .v_file_lay td{}
+  .v_file_lay .file_each{}
 }
 
 

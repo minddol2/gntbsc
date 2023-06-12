@@ -78,7 +78,7 @@ if(loginVO != null) {
 			</div>
 			<!--첨부파일 view start-->
 			<c:if test="${not empty result.atchFileId}">
-				<div class="v_attem">
+				<div class="v_file_lay">
 					<ul>
 						<c:import url="/cmm/fms/selectFileInfs.do" charEncoding="utf-8">
 							<c:param name="param_atchFileId" value="${result.atchFileId}" />
