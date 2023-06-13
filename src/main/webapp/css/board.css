@@ -868,7 +868,7 @@
 .responsive-tabs__heading--active i:before{background:#ffffff}
 .responsive-tabs__heading--active i:after{display:none; transition:0.3s}
 
-.responsive-tabs__panel{padding:20px 3%;background:#f9f9f9;}
+.responsive-tabs__panel{padding:20px 3%;/* background:#f9f9f9; */border-top: 1px solid #dedede;}
 .responsive-tabs h5:last-child{border-bottom:1px solid #dcdcdc}
 .v_file_lay{display: block !important;}
 .v_file_lay table{
@@ -877,7 +877,7 @@
 .v_file_lay td{
   /* border-top: 1px solid #dedede; */
   padding: 10px;
-  background: #f9f9f9;
+  /* background: #f9f9f9; */
 }
 .v_file_lay .file_each{
   margin-bottom: 10px;
