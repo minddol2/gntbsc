@@ -38,26 +38,26 @@ if(loginVO != null) {
 	<input type="hidden" name="bbsAttrbCode" value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" />
 	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" />
 	<input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>"/>
-</form>								
+</form>
 
 
 <form name="frm" action="<c:url value='/sub03/sub02_01.do'/>" method="post">
-	<input type="hidden" name="bbsId" value="<c:out value='${boardVO.bbsId}'/>" /> 
-	<input type="hidden"	name="nttId" value="0" /> 
-	<input type="hidden" name="bbsTyCode" value="<c:out value='${brdMstrVO.bbsTyCode}'/>" /> 
-	<input type="hidden" name="bbsAttrbCode" value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" /> 
-	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" /> 
+	<input type="hidden" name="bbsId" value="<c:out value='${boardVO.bbsId}'/>" />
+	<input type="hidden"	name="nttId" value="0" />
+	<input type="hidden" name="bbsTyCode" value="<c:out value='${brdMstrVO.bbsTyCode}'/>" />
+	<input type="hidden" name="bbsAttrbCode" value="<c:out value='${brdMstrVO.bbsAttrbCode}'/>" />
+	<input type="hidden" name="authFlag" value="<c:out value='${brdMstrVO.authFlag}'/>" />
 	<input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>" />
-	
+
 <div class="searchTop">
 	<p class="list_info"><span><c:out value="${totCnt}"/></span>개의 게시물이 등록되어 있습니다</p>
-	<div class="searchBox">				
+	<div class="searchBox">
 		<select id="searchCnd" name="searchCnd" title="검색 분류 목록">
 			<option value="">선택</option>
 			<option value="0" <c:if test="${searchVO.searchCnd == '0'}">selected="selected"</c:if>>제목</option>
 			<option value="1" <c:if test="${searchVO.searchCnd == '1'}">selected="selected"</c:if>>글내용</option>
-		</select> 
-		<span>					
+		</select>
+		<span>
 		<label for="searchWrd" class="all-hidden"><span>검색어 입력</span></label>
 		<input type="text" placeholder="검색어를 입력하세요" id="searchWrd" name="searchWrd" style="ime-mode:active;" title="검색어를 입력해주세요" value="<c:out value="${searchVO.searchWrd}"/>" />
 		<button type="button" onclick="fn_egov_select_BBSList('1');">검색</button>
@@ -67,11 +67,19 @@ if(loginVO != null) {
 </form>
 
 
-<div class="gallery_board">	
+<div class="gallery_board">
 	<ul>
 		<c:forEach var="result" items="${resultList}" varStatus="status">
 		<li>
-			<a href="#" onclick="fn_egov_inqire_BBS('${result.nttId}', '${result.bbsId }');">
+			<c:choose>
+				<c:when test="${empty result.link_url}">
+					<a href="#" onclick="fn_egov_inqire_BBS('${result.nttId}', '${result.bbsId }');">
+				</c:when>
+				<c:otherwise>
+					<a href="${result.link_url}" target="_blank">
+				</c:otherwise>
+			</c:choose>
+					<%--<a href="#" onclick="fn_egov_inqire_BBS('${result.nttId}', '${result.bbsId }');">--%>
 				<div class="photo">
 					<c:choose>
 						<c:when test="${result.fileSn ge 0}">
@@ -106,7 +114,7 @@ if(loginVO != null) {
 <!--갤러리 리스트 e-->
 
 <form name="submitParam" method="post">
-	<input type="hidden" name="bbsId" /> 
+	<input type="hidden" name="bbsId" />
 	<input type="hidden" name="nttId" />
 </form>
 
