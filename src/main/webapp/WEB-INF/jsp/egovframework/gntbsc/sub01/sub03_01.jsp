@@ -82,7 +82,7 @@ int m3 = 1;
 		</tr>
 		<tr>
 			<td class="bgc">대리</td>
-			<td>김유리</td>
+			<td>김희정</td>
 			<td class="tal">
 				<ul class="dot_li">
 					<li>경남관광기업지원센터 사업 예산 집행 및 정산</li>
