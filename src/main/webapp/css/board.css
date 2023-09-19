@@ -1183,13 +1183,14 @@
 
 
 @media all and (min-width:540px) {
-  .center_board2 ul{display:flex; flex-wrap:wrap; justify-content:space-between;}
+  .center_board2 ul{display:flex; flex-wrap:wrap; gap:4%}
   .center_board2 ul li{width:48%;  margin-bottom:20px;}
 
 }
 
 
 @media all and (min-width:768px) {
+  .center_board2 ul{gap:3%}
   .center_board2 ul li{width:31.33%; }
 
 

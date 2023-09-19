@@ -69,7 +69,92 @@ int m3 = 1;
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
+
+
+
+  <tr>
+    <td class="bgc">센터장</td>
+    <td>최소연</td>
+    <td class="tal"><ul class="dot_li">
+                    					<li> 경남관광기업지원센터 사업기획 및 운영 총괄</li>
+      <li> 경상남도 및 한국관광공사 등 유관기관 대외협력 총괄</li><ul></td>
+    <td>055-277-8411</td>
+  </tr>
+  <tr>
+    <td class="bgc">대리</td>
+    <td>박진욱</td>
+    <td class="tal">
+		<ul class="dot_li">
+          <li> 경남관광기업지원센터 사업 예산 집행 및 정산</li>
+		  <li> 경남관광기업지원센터 운영위원회 운영</li>
+		  <li> 경상남도 및 한국관광공사 등 유관기관 대외협력</li>
+		  <li> 센터 자산·물품 관리 및 일반행정</li>
+		  <li> 센터 기록물 관리</li>
+		<ul>
+	  </td>
+    <td>055-277-8412</td>
+  </tr>
+  <tr>
+    <td class="bgc">매니저</td>
+    <td>김초아</td>
+    <td class="tal">
+		<ul class="dot_li">
+			<li> 관광스타트업 발굴 및 창업 육성 지원<br>
+       - 우수 입주기업 사업화자금 지원 사업 운영</li>
+		  <li>관광일자리 허브 구축<br/>
+		  - 관광기업 지역인재 채용지원 사업 운영</li>
+		  <li>관광일자리 잡페어 개최</li>
+		  <li> e-나라도움 예산 집행 및 정산(국비)</li>
+		<ul>
+	</td>
+    <td>055-277-8416</td>
+  </tr>
+  <tr>
+    <td class="bgc">매니저</td>
+    <td>송지선</td>
+    <td class="tal">
+		<ul class="dot_li">
+                    					<li> 관광스타트업 발굴 및 창업 육성 지원<br>
+       - 입주기업 공모 및 역량강화 교육 운영</li>
+      <li> 지역관광 활성화 지원<br>
+       - 지역 기반 관광스타트업 협업 프로젝트 운영</li>
+	   <li> 관광일자리 허브 구축<br>
+       - 경남 관광 청년 창업 사관학교 운영</li>
+      <li>  센터 시설 및 자산 관리(기자재)</li><ul></td>
+    <td>055-277-8414</td>
+  </tr>
+ 
+  <tr>
+    <td class="bgc">매니저</td>
+    <td>김민주</td>
+    <td class="tal">
+		<ul class="dot_li">
+           <li> 도내 관광기업 역량강화<br>
+       - 경남관광기업 팝업스토어 운영</li>
+		 <li>  지역관광 활성화 지원<br>
+       - 경남 관광 디지털 전문인력 양성 교육운영</li>
+		 <li>센터 대관 업무 및 투어프로그램 운영</li>
+		 <li>사무용품, 창고(사무실 용품 재고 관리), 기념품 관리</li>
+	  <ul>
+	</td>
+    <td>055-277-8413</td>
+  </tr>
+  <tr>
+    <td class="bgc">매니저</td>
+    <td>김윤정</td>
+    <td class="tal"><ul class="dot_li">
+                    					<li> 도내 관광기업 역량강화<br>
+       - 도내 관광기업 상설컨설팅 운영<br>
+       - 관광아카데미 교육 운영</li>
+      <li>센터 홍보 채널 및 홈페이지 관리</li>
+      <li>근로생, 비즈니스센터, 의약품 관리</li>
+      <ul></td>
+    <td>055-277-8417</td>
+  </tr>
+
+
+
+		<!--tr>
 			<td class="bgc">센터장</td>
 			<td>황은희</td>
 			<td class="tal">
@@ -79,10 +164,10 @@ int m3 = 1;
 				</ul>
 			</td>
 			<td>055-277-8411</td>
-		</tr>
-		<tr>
+		</tr-->
+		<!--tr>
 			<td class="bgc">대리</td>
-			<td>김희정</td>
+			<td>김유리</td>
 			<td class="tal">
 				<ul class="dot_li">
 					<li>경남관광기업지원센터 사업 예산 집행 및 정산</li>
@@ -92,8 +177,8 @@ int m3 = 1;
 				</ul>
 			</td>
 			<td>055-277-8412</td>
-		</tr>
-		<tr>
+		</tr-->
+		<!--tr>
 			<td class="bgc">매니저</td>
 			<td>오혜리</td>
 			<td class="tal">
@@ -164,7 +249,10 @@ int m3 = 1;
 				</ul>
 			</td>
 			<td>055-277-8417</td>
-		</tr>
+		</tr-->
+	</tbody>
+</table>
+
 <!--
 		<tr>
 			<td class="bgc">매니저</td>
@@ -230,8 +318,6 @@ int m3 = 1;
 			</td>
 			<td>055-277-8417</td>
 		</tr>-->
-	</tbody>
-</table>
 <!--
 <table class="comm_table bd_table tac bmb">
 	<colgroup>

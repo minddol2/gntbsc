@@ -546,7 +546,7 @@ int m3 = 2;
 <div class="pointbox mb20">
 	<p class="fsb fwb tac">도내 관광업 종사자 및 예비창업자를 위한 관광 아카데미</p>
 </div>
-<table class="comm_table">
+<table class="comm_table mb20">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
@@ -554,15 +554,15 @@ int m3 = 2;
 	<tbody>
 		<tr>
 			<th class="bgc">신청자격</th>
-			<td>관광업 관련자 또는 관광 창업에 관심있는 경남도민</td>
+			<td>경남 관광 창업에 관심있는 사람이라면 누구나!</td>
 		</tr>
 		<tr>
 			<th class="bgc">신청기간 </th>
-			<td>2023. 상반기 중 모집 예정 </td>
+			<td>2023. 9. 1(금) ~ 9. 27(수) 24:00까지</td>
 		</tr>
 		<tr>
 			<th class="bgc">모집인원 </th>
-			<td>총 120여명 내외</td>
+			<td>기초·심화과정 100명, 창업과정 20명 <span class="fss redTxt">( ※창업과정 : 기초·심화과정 수료자 중 조건을 충족하는 자)</span></td>
 		</tr>
 		<tr>
 			<th class="bgc">교육장소 </th>
@@ -576,17 +576,15 @@ int m3 = 2;
 		<tr>
 			<th class="bgc">교육시간</th>
 			<td>
-				<!--ul class="dot_li">
-					<li>기초반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오전(10:00~13:00)</li>
-					<li>심화반 : 10월 14일 ~ 10월 29일(매주 금, 토) 오후(14:00~17:00)</li>
-					<li>창업반 : 기초/심화 수료 후 11월 2일~ 11월 5일 오후(14:00~17:00)</li>
-				</ul-->미정
+				<ul class="dot_li">
+					<li>기초·심화과정 : 10. 6(금) ~ 10.28(토) 13:00 ~ 17:00</li>
+					<li>창업과정 : 11. 10(금) ~ 11.18(토) 13:00 ~ 17:00 (예정)</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
 			<th class="bgc">참여혜택</th>
-			<td>전 과정 무료 교육, 출석률 80% 이상인 자에 한하여 경남관광재단 대표이사 명의 수료증 발급, 수료자 대상 희망자 중 협력파트너 모집,<br>
-                		  기초·심화반 수료자에 한해 <관광 아카데미> 창업 과정 참가 기회 제공</td>
+			<td>전 과정 무료 교육, 경남 관광재단 대표이사 명의 수료증 발급, 창업과정 참여 기회 제공, 협력 파트너 지원 가능(전문 컨설팅, 관광스타트업 지원 시 가산점 부여 등)</td>
 		</tr>
 		<!--
 		<tr>
@@ -595,8 +593,13 @@ int m3 = 2;
 		</tr>-->
 	</tbody>
 </table>
+<div class="business_img bdbt">
+	<ul class="list01">
+		<li><img src="<c:url value='/img/b_academy_2309.jpg'/>" alt="관광아카데미 포스터" /></li>
+	</ul>
+</div>
 
-<div class="bdbt"></div>
+
 <!--
 <h4 class="tit_dot mb20">경남 관광 크리에이터 발굴 및 콘텐츠 제작 </h4>
 <div class="pointbox mb20">
@@ -744,15 +747,64 @@ int m3 = 2;
 	</colgroup>
 	<tbody>
 		<tr>
-			<th class="bgc">신청기간</th>
-			<td>6월 중 모집 예정 </td>
+			<th class="bgc">신청자격</th>
+			<td>19세 이상 39세 이하 경남도 청년 대상</td>
 		</tr>
 		<tr>
-			<th class="bgc">교육기간</th>
-			<td>7월 중순 ~ 8월까지</td>
+			<th class="bgc">신청기간</th>
+			<td>2023. 6. 5(월) ~ 7. 16(일)까지</td>
+		</tr>
+		<tr>
+			<th class="bgc">모집인원</th>
+			<td>
+				<ul class="dot_li">
+					<li>창업 스타트 과정(10개팀)</li>
+					<li>엑셀러레이션 과정(10개팀)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th class="bgc">모집유형</th>
+			<td>경남기반의 관광체험 서비스, 관광인프라 등</td>
+		</tr>
+		<tr>
+			<th class="bgc">참여혜택</th>
+			<td>관광창업 맞춤 교육 및 컨설팅 제공, 졸업증 및 기념품 지급,    멘토링 등 후속지원</td>
+		</tr>
+
+	</tbody>
+</table>
+<h5 class="tit_nm mb20">프로그램 일정</h5>
+<table class="time_table tac mb20">
+	<thead>
+		<tr>
+			<th>프로그램</th>
+			<th>일시</th>
+			<th>장소</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="bgc">교 육</td>
+			<td>23.7.20(목) ~ 8.29(화)</td>
+			<td>경남관광기업지원센터</td>				
+		</tr>
+		<tr>
+			<td class="bgc">집중캠프</td>
+			<td>23.8.24(목) ~ 8.25(금)</td>
+			<td>통영 동원리조트</td>				
+		</tr>
+		<tr>
+			<td class="bgc">공모전</td>
+			<td>23.8.31(목) 09:00~ 17:00</td>
+			<td>창원컨벤션센터</td>				
 		</tr>
 	</tbody>
 </table>
+
+
+
+
 <div class="bdbt"></div>
 <h4 class="tit_dot mb20">경남 관광스타트업 팝업스토어 운영</h4>
 <table class="comm_table mb20">

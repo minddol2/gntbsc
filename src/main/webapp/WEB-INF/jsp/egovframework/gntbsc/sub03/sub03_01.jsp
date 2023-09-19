@@ -64,9 +64,11 @@
                 <c:if test="${result.classfication2 eq '3' || result.classfication2 eq '6'}">
                     <li><a href="javascript: void(0);"
                            onclick="fn_egov_viewFile_etc('${result.bbsId}','0','${result.atchFileId}')">${result.nttSj}</a>
-                    </li>
+                    </li>					
                 </c:if>
             </c:forEach>
+					<li><a href="<c:url value="/img/pdf/5. 어거스트클라우드.pdf"/>" target="_blank">어거스트램</a></li>
+					<li><a href="javascript: alert('준비중입니다.');" download>인절미투어</a></li>
         </ul>
     </div>
     <div class="box">
