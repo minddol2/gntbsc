@@ -20,6 +20,7 @@ LoginVO loginVO = (LoginVO)session.getAttribute("loginVO");
 if(loginVO != null) {
 	us_level = loginVO.getUs_level();
 }
+
 %>	
 
 <jsp:include page="/WEB-INF/jsp/egovframework/gntbsc/inc/top.jsp" flush="true" >
@@ -37,10 +38,12 @@ if(loginVO != null) {
 	<ul class="tabs list03">				
 		<li class="current"><a href="<c:url value='/sub04/sub01_01.do'/>">상담신청안내</a></li>
 		<li><a href="<c:url value='/sub04/sub01_02.do'/>">전문 멘토단</a></li>
-		<!--li><a href="<c:url value='/sub04/sub01_03.do'/>">상담신청</a></li-->
+		<c:if test="${applicationFlag}">
+		    <li><a href="<c:url value='/sub04/sub01_03.do'/>">상담신청</a></li>
+		</c:if>
 	</ul>
 </div>
-<!--p style="color:red; margin-bottom:10px;font-size: 20px; font-weight: bold;">멘토링 프로그램은 일시적으로 운영이 중단됩니다. (2022. 12. 12. ~ 2023. 3월까지 중단 예정)</p-->
+<p style="color:red; margin-bottom:10px;font-size: 20px; font-weight: bold;">멘토링 프로그램은 일시적으로 운영이 중단됩니다.</p>
 
 <h4 class="tit_dot mb20">기업상담 신청방법</h4>
 <div class="mentor_process mb">
@@ -85,7 +88,8 @@ if(loginVO != null) {
 	</ul>
 </div>
 <div class="tac mb">
-	<a href="<c:url value='/sub04/sub01_03_write.do'/>" class="btn_rd btn_big">기업상담신청</a>
+	<!--<a href="<c:url value='/sub04/sub01_03_write.do'/>" class="btn_rd btn_big">기업상담신청</a>-->
+	<a href="javascript: void(0);" class="btn_rd btn_big" onclick="javascript: alert('기업상담신청기간이 아닙니다.');">기업상담신청</a>
 </div>
 
 

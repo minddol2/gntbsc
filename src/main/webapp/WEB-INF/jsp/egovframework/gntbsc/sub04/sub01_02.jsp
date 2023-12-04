@@ -57,7 +57,9 @@ function fn_egov_select_List(pageNo) {
 	<ul class="tabs list03">				
 		<li><a href="<c:url value='/sub04/sub01_01.do'/>">상담신청안내</a></li>
 		<li class="current"><a href="<c:url value='/sub04/sub01_02.do'/>">전문 멘토단</a></li>
-		<li><a href="<c:url value='/sub04/sub01_03.do'/>">상담신청</a></li>
+		<c:if test="${applicationFlag}">
+            <li><a href="<c:url value='/sub04/sub01_03.do'/>">상담신청</a></li>
+        </c:if>
 	</ul>
 </div>
 

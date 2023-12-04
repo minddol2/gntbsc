@@ -164,7 +164,8 @@ function fn_egov_select_List(pageNo) {
 <div class="boardButton">
 	<ul>
 		<li><span><a href="#" onclick="fn_egov_select_List('1');">목록</a></span></li>
-		<li><span><a href="#" onclick="fn_egov_write('0');">글쓰기</a></span></li>
+		<!--<li><span><a href="#" onclick="fn_egov_write('0');">글쓰기</a></span></li>-->
+		<li><span><a href="javascript: void(0);" onclick="javascript: alert('기업상담신청기간이 아닙니다.');">글쓰기</a></span></li>
 	</ul>
 </div>
 

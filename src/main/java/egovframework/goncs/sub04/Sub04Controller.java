@@ -132,6 +132,18 @@ public class Sub04Controller {
 	
 	@RequestMapping(value = "/sub04/sub01_01.do")
 	public String get_sub04_page_01(ModelMap model, Locale locale) throws Exception{
+		// 로그인 레벨 체크
+		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+		LoginVO user = (LoginVO) EgovUserDetailsHelper.getAuthenticatedUser();
+		boolean applicationFlag = false;
+		if(isAuthenticated) {
+			String userGubun = user.getUs_gbn();
+			if(isAuthenticated && (userGubun.equals("2"))) { // 기업/예비창업자만
+				applicationFlag = true;
+			}
+		}
+		model.addAttribute("user", user);
+		model.addAttribute("applicationFlag", applicationFlag);
 
 		String lang_temp = (String) locale.getLanguage();
 		model.addAttribute("lang_temp", lang_temp);
@@ -142,6 +154,18 @@ public class Sub04Controller {
 	//멘토단
 	@RequestMapping(value = "/sub04/sub01_02.do")
 	public String get_sub04_page_01_02(@ModelAttribute("searchVO") MemberVO searchVO, HttpServletRequest request, ModelMap model, Locale locale) throws Exception{
+		// 로그인 레벨 체크
+		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+		LoginVO user = (LoginVO) EgovUserDetailsHelper.getAuthenticatedUser();
+		boolean applicationFlag = false;
+		if(isAuthenticated) {
+			String userGubun = user.getUs_gbn();
+			if(isAuthenticated && (userGubun.equals("2"))) { // 기업/예비창업자만
+				applicationFlag = true;
+			}
+		}
+		model.addAttribute("user", user);
+		model.addAttribute("applicationFlag", applicationFlag);
 
 		String lang_temp = (String) locale.getLanguage();
 		model.addAttribute("lang_temp", lang_temp);
@@ -171,6 +195,17 @@ public class Sub04Controller {
 		
 		searchVO.setPageUnit(propertyService.getInt("pageUnit"));
 		searchVO.setPageSize(propertyService.getInt("pageSize"));
+
+		// 로그인 레벨 체크
+		boolean applicationFlag = false;
+		if(isAuthenticated) {
+			String userGubun = user.getUs_gbn();
+			if(isAuthenticated && (userGubun.equals("2"))) { // 기업/예비창업자만
+				applicationFlag = true;
+			}
+		}
+		model.addAttribute("user", user);
+		model.addAttribute("applicationFlag", applicationFlag);
 		
 		PaginationInfo paginationInfo = new PaginationInfo();
 		
