@@ -70,7 +70,7 @@ if(loginVO != null) {
 	<div class="time">
 		<dl class="time02">
 			<dt>문의</dt>
-			<dd>담당자 김윤정 Tel. 055-277-8417</dd>
+			<dd>담당자 이승철 Tel. 055-277-8417</dd>
 		</dl>
 	</div>	
 </div>
