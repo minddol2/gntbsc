@@ -5,7 +5,7 @@ String mLink[][][] = new String[12][11][10];
 
 	mTitle[0][0][0] = "gnb메뉴"; mLink[0][0][0] = "";
 			mTitle[0][1][0] = "페이스북"; mLink[0][1][0] = "#ready";
-			mTitle[0][2][0] = "인스타"; mLink[0][2][0] = "#ready";
+			mTitle[0][2][0] = "인스타"; mLink[0][2][0] = "https://www.instagram.com/gyeongnam_tourbiz/";
 			mTitle[0][3][0] = "블로그"; mLink[0][3][0] = "https://blog.naver.com/gyeongnam_tourbiz";
 			mTitle[0][4][0] = "유튜브"; mLink[0][4][0] = "https://www.youtube.com/channel/UCMuDjR1e1iVS-akcGEAEjkA";
 		
