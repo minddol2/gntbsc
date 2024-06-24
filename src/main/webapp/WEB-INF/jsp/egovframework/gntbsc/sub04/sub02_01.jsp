@@ -56,8 +56,8 @@ int m3 = 1;
 	<div class="time">
 		<dl class="time02">
 			<dt>문의</dt>
-			<dd>담당자 김초아</dd>
-			<dd>Tel. 055-277-8416</dd>
+			<dd>담당자 전봉규 매니저</dd>
+			<dd>Tel. 055-277-8415</dd>
 		</dl>
 	</div>	
 </div>

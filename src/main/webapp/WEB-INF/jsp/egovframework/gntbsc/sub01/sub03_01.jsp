@@ -64,6 +64,93 @@ int m3 = 1;
 		<col width="*"/>
 		<col width="20%"/>
 	</colgroup>
+  <tr>
+    <th>직 위</th>
+    <th>성 명</th>
+    <th>분   장   사   무</th>
+    <th>비 고<br>
+      (업무대행자)</th>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td>센터장</td>
+    <td>최소연</td>
+    <td class="tal"><ul class="dot_li"><li> 경남관광기업지원센터 사업기획 및 운영 총괄</li>
+      <li> 경상남도 및 한국관광공사 등 유관기관 대외협력 총괄</li>
+      <li> 경남관광기업지원센터 물품출납(물품출납원)</li>
+      <li> 2024 경남관광기업 페스타 &amp; 어워드 개최</li></ul></td>
+    <td>김민정</td>
+  </tr>
+  <tr>
+    <td>대리</td>
+    <td>김민정</td>
+    <td class="tal"><ul class="dot_li"><li> 경남관광기업지원센터 사업 예산 관리 및 정산 총괄</li>
+      <li> 경남관광기업지원센터 운영위원회 운영</li>
+      <li> 경남관광기업지원센터 직원 복무 및 근태 등 관리</li>
+      <li> 경상남도 및 한국관광공사 등 유관기관 대외협력 지원</li>
+      <li> 센터 자산·물품 관리(물품운용자) 및 일반행정·자료 작성 등 총괄</li>
+      <li> 센터 기록물 관리(기록물관리자)</li></ul></td>
+    <td>송지선</td>
+  </tr>
+  <tr>
+    <td>매니저</td>
+    <td>송지선</td>
+    <td class="tal"><ul class="dot_li"><li> 입주기업 공모 운영</li>
+      <li> 입주기업 액셀러레이팅 프로그램 운영</li>
+      <li> e-나라도움 예산 집행 및 정산(국, 도비)</li>
+      <li> 센터 운영 정기 지출(임차기기, 무인경비 등)</li>
+      <li> 팀내 서무업무(여비, 급량비 관리)</li></ul></td>
+    <td>김민정</td>
+  </tr>
+  <tr>
+    <td>매니저</td>
+    <td>전봉규</td>
+    <td class="tal"><ul class="dot_li"><li> 도내 관광기업 지역인재 채용 지원 사업 운영</li>
+      <li> 경남 관광 콘텐츠 크리에이터 양성 사업 운영</li>
+      <li> 경남 관광일자리 잡페어 운영</li>
+      <li> 입주기업 연장평가 운영</li>
+      <li> 센터 시설 및 자산 관리(수선유지, 물품총괄관리대장 관리 등)</li>
+      <li> 근로생, 비즈니스센터(커피머신 등) 관리</li></ul></td>
+    <td>김민주</td>
+  </tr>
+  <tr>
+    <td>매니저</td>
+    <td>김민주</td>
+    <td class="tal"><ul class="dot_li"><li> 지역기반 경남관광 협업 프로젝트 운영</li>
+      <li> 경남 관광기업 팝업스토어 운영</li>
+      <li> 센터 SNS 관리</li>
+      <li> 사무용품(복사용지, 의약품 포함) 구매·관리</li>
+      <li> 센터 기념품 관리</li></ul></td>
+    <td>전봉규</td>
+  </tr>
+  <tr>
+    <td>매니저</td>
+    <td>이승철</td>
+    <td class="tal"><ul class="dot_li"><li> 경남 관광스타트업 사업화자금 지원 사업 운영</li>
+      <li> 도내 관광기업 상설 컨설팅 운영</li>
+      <li> 센터 대관 업무 및 투어 프로그램 운영</li></ul></td>
+    <td>정지영</td>
+  </tr>
+  <tr>
+    <td>매니저</td>
+    <td>정지영</td>
+    <td class="tal"><ul class="dot_li"><li> 경남 관광 아카데미 운영</li>
+      <li> 센터 홈페이지 관리</li>
+      <li> 센터 홍보물 제작 및 관리</li>
+      <li> 센터 창고, 출력실 등 공유공간 관리</li></ul></td>
+    <td>이승철</td>
+  </tr>
+</table>
+
+<!--
+<table class="comm_table bd_table tac bmb">
+	<colgroup>
+		<col width="20%"/>
+		<col width="20%"/>
+		<col width="*"/>
+		<col width="20%"/>
+	</colgroup>
 	<thead>
 		<tr>
 			<th>직위</th>
@@ -154,7 +241,7 @@ int m3 = 1;
     <td>055-277-8413</td>
   </tr>
 	</tbody>
-</table>
+</table>-->
 
 </div>
 
