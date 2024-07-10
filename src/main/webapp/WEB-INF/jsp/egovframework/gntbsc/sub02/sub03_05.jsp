@@ -10,7 +10,7 @@ String lang_mode = (String) request.getAttribute("lang_temp");
 String is_main = "";
 int m1 = 2;
 int m2 = 3;
-int m3 = 3;
+int m3 = 5;
 %>
 
 <jsp:include page="/WEB-INF/jsp/egovframework/gntbsc/inc/top.jsp" flush="true" >
@@ -30,29 +30,40 @@ int m3 = 3;
 		<jsp:param name="m3" value="<%=m3%>"/>
 </jsp:include>
 
+<h4 class="tit_dot mb20">경남관광기업지원센터 운영 및 홍보강화</h4>
 
-
-<h4 class="tit_dot mb20">2024 경남관광기업 페스타 & 어워드</h4>
-<div class="pointbox mb20">
-	<p class="fsb fwb tac">경남 관광기업 성과 · 우수사례 등 공유 · 기업 간 네트워킹
-                           기회 제공을 통한 관광산업 발전 및 경남 관광산업 생태계 강화</p>
-</div>
-<table class="comm_table mb">
+<table class="comm_table mb bdbt">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
 	</colgroup>
 	<tbody>
 		<tr>
-			<th class="bgc">운영기간</th>
-			<td>24. 11월 예정</td>
+			<th class="bgc">인스타그램</th>
+			<td><a href="https://www.instagram.com/gyeongnam_tourbiz/" target="_blank">https://www.instagram.com/gyeongnam_tourbiz/</a></td>
 		</tr>
 		<tr>
-			<th class="bgc">참가대상</th>
-			<td>도내 관광업계 종사자 및 관계자, 경남관광기업지원센터            입주기업, 유관기관 관계자 등 200여명</td>
+			<th class="bgc">블로그</th>
+			<td class="tal">
+				<a href="https://blog.naver.com/gyeongnam_tourbiz" target="_blank">https://blog.naver.com/gyeongnam_tourbiz</a>
+			</td>
+		</tr>
+		<tr>
+			<th class="bgc">유튜브</th>
+			<td class="tal">
+				<a href="https://www.youtube.com/@gntourbiz" target="_blank">https://www.youtube.com/@gntourbiz</a>
+			</td>
 		</tr>
 	</tbody>
 </table>
+
+
+
+
+
+
+
+
 
 
 

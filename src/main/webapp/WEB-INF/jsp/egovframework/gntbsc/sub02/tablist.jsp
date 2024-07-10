@@ -22,11 +22,12 @@ int m3 = EgovStringUtil.zeroConvert(EgovStringUtil.clearXSS(request.getParameter
 <%} else if( m2==3){%>
 
 <div class="typebox mb">
-	<ul class="tabs list04 long">				
-		<li class="<% if(m3==1) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][1]%>">관광기업 창업 및 <span>육성 지원</span></a></li>
-		<li class="<% if(m3==2) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][2]%>">도내 관광기업 <span>역량강화</span></a></li>
-		<li class="<% if(m3==3) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][3]%>">관광일자리 <span>허브 구축 및 운영</span></a></li>
-		<li class="<% if(m3==4) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][4]%>">지역 관광산업 <span>활성화 지원</span></a></li>
+	<ul class="tabs list05 long">
+		<li class="<% if(m3==1) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][1]%>">관광스타트업 <span>발굴 및 육성</span></a></li>
+		<li class="<% if(m3==2) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][2]%>">지역 기반 <span>관광산업 개선</span></a></li>
+		<li class="<% if(m3==3) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][3]%>">협력 네트워크 <span>강화</span></a></li>
+		<li class="<% if(m3==4) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][4]%>">관광인재육성 및 <span>일자리 창출</span></a></li>
+		<li class="<% if(m3==5) out.println("current"); %>"><a href="<c:url value='/'/><%=mLink[2][3][5]%>">지역센터 <span>거버넌스 체계화</span></a></li>
 	</ul>
 </div>
 

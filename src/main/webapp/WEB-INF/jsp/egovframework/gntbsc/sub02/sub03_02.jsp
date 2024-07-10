@@ -513,10 +513,52 @@ int m3 = 2;
 -->
 
 
+<!--20240710추가-->
+<h4 class="tit_dot mb20">지역기반 경남관광 협업 프로젝트</h4>
+<table class="comm_table mb20">
+	<colgroup>
+		<col width="20%"/>
+		<col width="*"/>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th class="bgc">공모기간</th>
+			<td>상반기 중 모집 예정</td>
+		</tr>
+		<tr>
+			<th class="bgc">공모내용</th>
+			<td>협업을 통해 시너지 효과 창출할 수 있는 사업, 관광객
+                             대상 관광상품/서비스/제품을 제공하는 사업, 협약 기간
+                             내 구체적 성과 창출이 가능한 사업</td>
+		</tr>
+		<tr>
+			<th class="bgc">공모대상</th>
+			<td>경남도내·외 2개 이상 관광기업이 1팀으로 공모 /
+                             경남도 내·외 관광사업을 운영 중인 기업(대표기업+협업기업)</td>
+		</tr>
+		<tr>
+			<th class="bgc">지원규모</th>
+			<td>5개 프로젝트 내외 선정 /
+                             최대 5천만원 협업사업비 지원</td>
+		</tr>
+		<tr>
+			<th class="bgc">지원사항</th>
+			<td>협업사업비(최대5천만원 지원 – 홍보비 및 마케팅비            등), 사전컨설팅 및 상시멘토링, 기업간 네트워킹 지원</td>
+		</tr>
+	</tbody>
+</table>
+<div class="business_img mb bdbt">
+	<ul class="list02">
+		<li><img src="/img/new_prj01.jpg" alt="경남관광 협업프로젝트 포스터"></li>
+	</ul>
+</div>
+<!--20240710추가-->
 
-<h4 class="tit_dot mb20">관광기업 상설컨설팅 지원</h4>
+
+
+<h4 class="tit_dot mb20">도내 관광기업 상설 컨설팅 지원</h4>
 <div class="pointbox mb20">
-	<p class="fsb fwb tac">도내 관광기업 및 예비 창업자의 경영 개선 및 애로사항 해결 </p>
+	<p class="fsb fwb tac">도내 관광기업 및 예비 창업자의 경영 개선 및 애로사항 해결</p>
 </div>
 <table class="comm_table mb20">
 	<colgroup>
@@ -530,7 +572,8 @@ int m3 = 2;
 		</tr>
 		<tr>
 			<th class="bgc">지원내용</th>
-			<td>6개 분야(창업, 마케팅/홍보, 투자, 경영심화, 관광, 제품디자인) 무료 멘토링 지원 </td>
+			<td>6개 분야
+                 (창업, 마케팅/홍보, 투자, 경영심화, 관광, 제품디자인) 무료 멘토링 지원</td>
 		</tr>
 	</tbody>
 </table>
@@ -539,63 +582,6 @@ int m3 = 2;
 	<ul class="list02">
 		<li><a href="#img1" class="litebox"><img src="<c:url value='/img/new-consulting-1.jpg'/>" alt="관광기업 상설컨설팅 포스터" /></a></li>
 		<li><a href="#img2" class="litebox"><img src="<c:url value='/img/new-consulting-2.jpg'/>" alt="관광기업 상설컨설팅 포스터" /></a></li>
-	</ul>
-</div>
-
-<h4 class="tit_dot mb20">관광 아카데미</h4>
-<div class="pointbox mb20">
-	<p class="fsb fwb tac">도내 관광업 종사자 및 예비창업자를 위한 관광 아카데미</p>
-</div>
-<table class="comm_table mb20">
-	<colgroup>
-		<col width="20%"/>
-		<col width="*"/>
-	</colgroup>
-	<tbody>
-		<tr>
-			<th class="bgc">신청자격</th>
-			<td>경남 관광 창업에 관심있는 사람이라면 누구나!</td>
-		</tr>
-		<tr>
-			<th class="bgc">신청기간 </th>
-			<td>2023. 9. 1(금) ~ 9. 27(수) 24:00까지</td>
-		</tr>
-		<tr>
-			<th class="bgc">모집인원 </th>
-			<td>기초·심화과정 100명, 창업과정 20명 <span class="fss redTxt">( ※창업과정 : 기초·심화과정 수료자 중 조건을 충족하는 자)</span></td>
-		</tr>
-		<tr>
-			<th class="bgc">교육장소 </th>
-			<td>
-				<ul class="dot_li">
-					<li>오프라인: 경남관광기업지원센터 대회의실</li>
-					<li>온라인 : 화상회의 시스템</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<th class="bgc">교육시간</th>
-			<td>
-				<ul class="dot_li">
-					<li>기초·심화과정 : 10. 6(금) ~ 10.28(토) 13:00 ~ 17:00</li>
-					<li>창업과정 : 11. 10(금) ~ 11.18(토) 13:00 ~ 17:00 (예정)</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<th class="bgc">참여혜택</th>
-			<td>전 과정 무료 교육, 경남 관광재단 대표이사 명의 수료증 발급, 창업과정 참여 기회 제공, 협력 파트너 지원 가능(전문 컨설팅, 관광스타트업 지원 시 가산점 부여 등)</td>
-		</tr>
-		<!--
-		<tr>
-			<th class="bgc">교육신청</th>
-			<td><a href="https://gyeongnam.tourbiz.or.kr/sub05/sub01_view.do?bbsId=BBSMSTR_000000000301&nttId=275&bbsTyCode=BBST03&bbsAttrbCode=BBSA03&authFlag=Y&pageIndex=1" class="ic_blank" target="_blank">교육신청안내</a></td>
-		</tr>-->
-	</tbody>
-</table>
-<div class="business_img bdbt">
-	<ul class="list01">
-		<li><img src="<c:url value='/img/b_academy_2309.jpg'/>" alt="관광아카데미 포스터" /></li>
 	</ul>
 </div>
 
@@ -738,7 +724,7 @@ int m3 = 2;
 
 
 -->
-
+<!--
 <h4 class="tit_dot mb20">경남 관광 청년창업 사관학교 운영</h4>
 <table class="comm_table mb20">
 	<colgroup>
@@ -801,13 +787,15 @@ int m3 = 2;
 		</tr>
 	</tbody>
 </table>
+-->
 
 
 
-
-<div class="bdbt"></div>
 <h4 class="tit_dot mb20">경남 관광스타트업 팝업스토어 운영</h4>
-<table class="comm_table mb20">
+<div class="pointbox mb20">
+	<p class="fsb fwb tac">도내 관광기업 상품 판매 활성화 및 인지도 제고</p>
+</div>
+<table class="comm_table bdbt">
 	<colgroup>
 		<col width="20%"/>
 		<col width="*"/>
@@ -819,6 +807,48 @@ int m3 = 2;
 		</tr>
 	</tbody>
 </table>
+
+
+
+
+<!--20240710추가-->
+
+<h4 class="tit_dot mb20">관광상품 판매·홍보 박람회 참가</h4>
+<div class="pointbox mb20">
+	<p class="fsb fwb tac">국내 주요 관광박람회 참가 및 관광 홍보관 운영을 통한 관광객 유치</p>
+</div>
+<table class="comm_table mb20">
+	<colgroup>
+		<col width="20%"/>
+		<col width="*"/>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th class="bgc">활동내용</th>
+			<td>경남 주요 관광자원 홍보를 통한 경남관광 인지도 제고
+                             / 경남관광기업지원센터 입주기업 아웃도어 관련 제품 및
+                              브랜드 홍보<br><br>
+
+                              <b>2024년 박람회 참가 : </b><br>
+                <ul class="dot">
+                    <li>'24. 3. 21.(목) ~ 3. 23.(토) 2024 경남관광박람회 참가</li>
+                    <li>'24. 5. 24.(금) ~ 5. 26.(일) 2024 GOCAF(국제아웃도어캠핑         &레포츠 페스티벌) 참가</li>
+                </ul>
+            </td>
+		</tr>
+	</tbody>
+</table>
+<div class="business_img bdbt">
+	<ul class="list03">
+		<li><img src="<c:url value='/img/newBs03.jpg'/>" alt="" /></li>
+		<li><img src="<c:url value='/img/newBs04.jpg'/>" alt="" /></li>
+		<li><img src="<c:url value='/img/newBs05.jpg'/>" alt="" /></li>
+	</ul>
+</div>
+
+<!--20240710추가-->
+
+
 
 
 <div id="img1" class="program-img-box no-display">

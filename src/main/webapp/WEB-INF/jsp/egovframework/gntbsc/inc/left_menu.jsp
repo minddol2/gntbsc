@@ -40,6 +40,7 @@ if(loginVO == null) {
 				<li <% if(m2==3 && m3==2) out.println("class='select'"); %> ><a href="<c:url value='/'/><%=mLink[2][3][2]%>"><%=mTitle[2][3][2]%></a></li>
 				<li <% if(m2==3 && m3==3) out.println("class='select'"); %> ><a href="<c:url value='/'/><%=mLink[2][3][3]%>"><%=mTitle[2][3][3]%></a></li>
 				<li <% if(m2==3 && m3==4) out.println("class='select'"); %> ><a href="<c:url value='/'/><%=mLink[2][3][4]%>"><%=mTitle[2][3][4]%></a></li>
+				<li <% if(m2==3 && m3==5) out.println("class='select'"); %> ><a href="<c:url value='/'/><%=mLink[2][3][5]%>"><%=mTitle[2][3][5]%></a></li>
 			</ul>	
 		
 		</li>
