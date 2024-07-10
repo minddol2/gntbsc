@@ -336,39 +336,37 @@ int m3 = 4;
 	</colgroup>
 	<tbody>
 		<tr>
-			<th class="bgc">공모기간</th>
-			<td>상반기 중 모집 예정</td>
-		</tr>
-		<tr>
-			<th class="bgc">공모내용</th>
-			<td>협업을 통해 시너지 효과 창출 할 수 있는 사업, 관광객 대상 관광상품/서비스/제품을 제공하는 사업, 협약 기간 내 구체적 성과 창출이 가능한 사업</td>
-		</tr>
-		<tr>
-			<th class="bgc">공모대상</th>
-			<td class="tal">
-				경남도내·외 2개 이상 관광기업이 1팀으로 공모 / 경남도내·외 관광사업을 운영 중인 기업(대표기업+협업기업)
-			</td>
+			<th class="bgc">운영기간</th>
+			<td>’24.7~’24.11</td>
 		</tr>
 		<tr>
 			<th class="bgc">지원규모</th>
 			<td class="tal">
-				5개 프로젝트 내외 선정 / 최대 5천만원 협업사업비 지원
+				5개 프로젝트 / 최대 2천만원 지원
 			</td>
 		</tr>
 		<tr>
 			<th class="bgc">지원사항</th>
 			<td class="tal">
-				협업사업비(최대5천만원 지원 – 홍보비 및 마케팅비 등), 사전컨설팅 및 상시멘토링, 기업간 네트워킹 지원
+				협업사업비(홍보비, 판매이벤트비 등), 사전컨설팅 및 상시멘토링, 기업간 네트워킹 지원 등
 			</td>
 		</tr>
 	</tbody>
 </table>
 
+
+
+<div class="business_img mb bdbt">
+	<ul class="list02">
+		<li><img src="<c:url value='/img/new_prj01.jpg'/>" alt="경남관광 협업프로젝트 포스터" /></li>
+	</ul>
+</div>
+
 <!--h5 class="tit_nm mb20">사업설명회</h5>
 <div class="business_img mb bdbt">
 	<ul class="list02">
-		<li><img src="<c:url value='/img/b_collabo_img01.jpg'/>" alt="사업설명회 사진자료" /></li>-->
-		<!--<li><img src="<c:url value='/img/b_collabo_img02.jpg'/>" alt="사업설명회 사진자료2" /></li>
+		<li><img src="<c:url value='/img/b_collabo_img01.jpg'/>" alt="사업설명회 사진자료" /></li>
+		<li><img src="<c:url value='/img/b_collabo_img02.jpg'/>" alt="사업설명회 사진자료2" /></li>
 		<li><img src="<c:url value='/img/b_collabo_img03.jpg'/>" alt="경남관광 협업프로젝트 포스터" /></li>
 	</ul>
 </div-->

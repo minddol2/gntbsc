@@ -62,7 +62,7 @@ int m3 = 1;
 <div class="pointbox mb">
 	<ul class="dot_li">
 		<li>사전승인 가능시간 : 월~금, 9:00 ~ 18:00 <span class="ppTxt fwb">(최소 3일 전 예약 필수)</span></li>
-		<li>당일대관 예약은 온라인 예약 후 <span class="ppTxt fwb">055-277-8413로 확인전화</span> 부탁드립니다.</li>
+		<li>당일대관 예약은 온라인 예약 후 <span class="ppTxt fwb">055-277-8417로 확인전화</span> 부탁드립니다.</li>
 	</ul>
 </div>
 
